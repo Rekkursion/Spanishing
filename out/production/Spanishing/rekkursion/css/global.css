@@ -1,0 +1,14 @@
+.root {
+    -fx-font-size: 10pt;
+    -fx-font-family: 'Consolas', 'monospace', '微軟正黑體', 'sans-serif';
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background: #1d1d1d;
+    -fx-base: #1d1d1d;
+}
+
+.button {
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
