@@ -10,6 +10,8 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
 
         // set the cell factory
         setCellFactory { VocabularyListCell() }
+
+        // add the stylesheet of the vocabulary-list-view
         stylesheets.add("rekkursion/css/vocabulary_list_view.css")
     }
 }

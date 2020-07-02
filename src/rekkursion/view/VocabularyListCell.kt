@@ -2,18 +2,21 @@ package rekkursion.view
 
 import javafx.scene.control.Label
 import javafx.scene.control.ListCell
+import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import rekkursion.model.Vocabulary
 
 class VocabularyListCell: ListCell<Vocabulary>() {
-    private val mVBox = VBox()
+    private val mVbxContent = VBox()
+    private val mHbxEspAndPosp = HBox()
     private val mLblEsp = Label()
     private val mLblPosp = Label()
     private val mLblChiAndEng = Label()
 
     init {
-        // set the spacing of the content v-box
-        mVBox.spacing = 10.0
+        // set the spacings of v-box & h-box
+        mVbxContent.spacing = 10.0
+        mHbxEspAndPosp.spacing = 10.0
 
         // set the id of this list-cell
         id = "v_list_cell"
@@ -21,8 +24,11 @@ class VocabularyListCell: ListCell<Vocabulary>() {
         // set the id of lbl-esp
         mLblEsp.id = "esp"
 
-        // add texts into the v-box
-        mVBox.children.addAll(mLblEsp, mLblPosp, mLblChiAndEng)
+        // add the label of esp and the label of posp into the h-box
+        mHbxEspAndPosp.children.addAll(mLblEsp, mLblPosp)
+
+        // add the h-box and the label of chi & eng into the v-box
+        mVbxContent.children.addAll(mHbxEspAndPosp, mLblChiAndEng)
     }
 
     // update items
@@ -34,7 +40,7 @@ class VocabularyListCell: ListCell<Vocabulary>() {
             mLblEsp.text = item.esp
             mLblPosp.text = "[${item.meaningList[0].posp.abbr}]"
             mLblChiAndEng.text = "${item.meaningList[0].chi} (${item.meaningList[0].eng})"
-            graphic = mVBox
+            graphic = mVbxContent
         }
         else
             graphic = null

@@ -10,6 +10,9 @@ object PropertiesManager {
     // the height of the window
     const val windowHeight: Double = 660.0
 
+    // the list of menu features
+    val menuList: Array<String> = arrayOf("Vocabulary List", "Practice")
+
     // the location of the json file of vocabularies
     const val vocabulariesJsonFileLocation: String = "D:\\rekkursion\\mooc\\spanish\\spanish_vocabularies.json"
 }

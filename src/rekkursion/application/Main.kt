@@ -3,10 +3,11 @@ package rekkursion.application
 import javafx.application.Application
 import javafx.scene.Parent
 import javafx.scene.Scene
-import javafx.scene.layout.BorderPane
 import javafx.stage.Stage
+import rekkursion.manager.LayoutManager
 import rekkursion.manager.PropertiesManager
 import rekkursion.util.JsonReader
+import rekkursion.view.MenuListView
 import rekkursion.view.VocabularyListView
 
 class Main: Application() {
@@ -30,30 +31,7 @@ class Main: Application() {
     }
 
     // initialize all views
-    private fun initViews(): Parent? {
-        // the border-pane as the parent
-        val bdpMain = BorderPane()
-        bdpMain.layoutX = 0.0
-        bdpMain.layoutY = 0.0
-        bdpMain.setPrefSize(
-                PropertiesManager.windowWidth,
-                PropertiesManager.windowHeight
-        )
-
-        // read in all vocabularies from a json file
-        val vocList = JsonReader.readAllVocabularies(PropertiesManager.vocabulariesJsonFileLocation)
-
-        val vlv = VocabularyListView(vocList)
-
-        val vlv2 = VocabularyListView(vocList)
-
-        bdpMain.left = vlv2
-
-        bdpMain.center = vlv
-
-        // return the parent border-pane
-        return bdpMain
-    }
+    private fun initViews(): Parent? = LayoutManager.parentView
 
     /* ======================================== */
 
