@@ -6,6 +6,7 @@ import rekkursion.util.JsonReader
 import rekkursion.view.MenuListView
 import rekkursion.view.VocabularyListView
 import rekkursion.view.practiceview.PracticeContainerPane
+import rekkursion.view.practiceview.PracticeMenuView
 
 object LayoutManager {
     // the border-pane as the parent
@@ -20,6 +21,9 @@ object LayoutManager {
 
     // the practice-pane as a container of practice stuffs
     private val mPracticePane: PracticeContainerPane
+
+    // the practice-menu-view
+    private val mPracticeMenuView = PracticeMenuView()
 
     init {
         // set the location of bdp-main
@@ -55,7 +59,7 @@ object LayoutManager {
         mBdpMain.center = when (idx) {
             0 -> mVocListView
             1 -> {
-                mPracticePane.initialize()
+                switchPracticeContent()
                 mPracticePane
             }
             else -> null
@@ -65,5 +69,10 @@ object LayoutManager {
     // switch the content-view of the practice-pane
     fun switchPracticeContent(node: Node) {
         mPracticePane.center = node
+    }
+
+    // switch the content-view to the menu page
+    fun switchPracticeContent() {
+        mPracticePane.center = mPracticeMenuView
     }
 }

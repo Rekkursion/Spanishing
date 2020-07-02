@@ -29,5 +29,11 @@ object PropertiesManager {
 
         // the button name of spelling problems
         const val spellingProblem = "Spelling Practice"
+
+        // the string of 'start'
+        const val start = "Start"
+
+        // the string of 'back'
+        const val back = "Back"
     }
 }
