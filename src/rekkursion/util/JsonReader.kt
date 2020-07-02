@@ -14,7 +14,7 @@ import java.nio.charset.Charset
 object JsonReader {
     // read all vocabularies from a json file
     fun readAllVocabularies(filename: String): ArrayList<Vocabulary> {
-        // the string of json content
+        // the Strings of json content
         var jsonString = ""
 
         // get the json content from a certain file

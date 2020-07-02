@@ -4,6 +4,7 @@ import javafx.scene.control.Label
 import javafx.scene.control.ListCell
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
+import rekkursion.manager.PropertiesManager
 import rekkursion.model.Vocabulary
 
 class VocabularyListCell: ListCell<Vocabulary>() {
@@ -15,8 +16,8 @@ class VocabularyListCell: ListCell<Vocabulary>() {
 
     init {
         // set the spacings of v-box & h-box
-        mVbxContent.spacing = 10.0
-        mHbxEspAndPosp.spacing = 10.0
+        mVbxContent.spacing = PropertiesManager.generalSpacing
+        mHbxEspAndPosp.spacing = PropertiesManager.generalSpacing
 
         // set the id of this list-cell
         id = "v_list_cell"

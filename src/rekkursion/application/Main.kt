@@ -6,9 +6,6 @@ import javafx.scene.Scene
 import javafx.stage.Stage
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PropertiesManager
-import rekkursion.util.JsonReader
-import rekkursion.view.MenuListView
-import rekkursion.view.VocabularyListView
 
 class Main: Application() {
     // start the application
@@ -24,7 +21,7 @@ class Main: Application() {
             // set the style
             stage.scene.stylesheets.add("rekkursion/css/global.css")
             // set the tile
-            stage.title = PropertiesManager.title
+            stage.title = PropertiesManager.Strings.title
             // show the primary stage
             stage.show()
         }
