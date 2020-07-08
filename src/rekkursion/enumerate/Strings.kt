@@ -22,10 +22,18 @@ enum class Strings(val chi: String, val eng: String) {
     // the title for selecting the number of problems
     SelectNumOfProblems("請選擇題目的數量：", "Please select the number of problems:"),
 
+    // the string of the increment sign
+    Increment("+", "+"),
+    // the string of the decrement sign
+    Decrement("-", "-"),
+
     // the string of 'start'
     Start("開始", "Start"),
     // the string of 'back'
-    Back("返回", "Back");
+    Back("返回", "Back"),
+
+
+    ;
 
     /* ======================================== */
 

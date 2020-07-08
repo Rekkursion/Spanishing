@@ -1,5 +1,6 @@
 package rekkursion.view
 
+import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.control.Button
 import javafx.scene.control.Label
@@ -7,9 +8,11 @@ import javafx.scene.control.TextField
 import javafx.scene.input.KeyCode
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
+import rekkursion.enumerate.Strings
+import rekkursion.manager.PropertiesManager
 
 // the number selector (integer only)
-class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int): HBox() {
+class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int): HBox(PropertiesManager.generalSpacing) {
     // the minimum value
     private val mMin = min
 
@@ -25,30 +28,28 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
     // the v-box for containing incrementing & decrementing buttons
     private val mVbxIncAndDec = VBox()
 
-    // the button for incrementing the value by the amount-to-step
-    private val mBtnIncrement = Button()
+    // the label-as-button for incrementing the value by the amount-to-step
+    private val mLblIncrement = Label(Strings.get(Strings.Increment))
 
-    // the button for decrementing the value by the amount-to-step
-    private val mBtnDecrement = Button()
-
-    private val mLblIncrement = Label()
+    // the label-as-button for decrementing the value by the amount-to-step
+    private val mLblDecrement = Label(Strings.get(Strings.Decrement))
 
     init {
         // set some attributes
         mTxfNumber.alignment = Pos.CENTER
         alignment = Pos.CENTER
         mTxfNumber.style = "-fx-font-size: 18;"
-
-        // set the texts of buttons
-        mBtnIncrement.text = "+"
-        mBtnDecrement.text = "-"
+        mLblIncrement.style = "-fx-font-size: 18;"
+        mLblDecrement.style = "-fx-font-size: 18;"
+        mLblIncrement.padding = Insets(0.0, 4.0, 0.0, 4.0)
+        mLblDecrement.padding = Insets(0.0, 4.0, 0.0, 4.0)
 
         // set the heights of the two buttons
-        mBtnIncrement.prefHeight = mTxfNumber.height / 2
-        mBtnDecrement.prefHeight = mTxfNumber.height / 2
+        mLblIncrement.prefHeight = mTxfNumber.height / 2
+        mLblDecrement.prefHeight = mTxfNumber.height / 2
 
         // add those two buttons into a v-box
-        mVbxIncAndDec.children.addAll(mBtnIncrement, mBtnDecrement)
+        mVbxIncAndDec.children.addAll(mLblIncrement, mLblDecrement)
 
         // add all uis into this h-box
         children.addAll(mTxfNumber, mVbxIncAndDec)
@@ -65,15 +66,25 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
                 checkBounds()
         }
 
+        // set the hover-event on incrementing label-as-button
+        mLblIncrement.hoverProperty().addListener { _, _, newValue ->
+            setHoverEventOnBtnLbl(mLblIncrement, newValue)
+        }
+
+        // set the hover-event on decrementing label-as-button
+        mLblDecrement.hoverProperty().addListener { _, _, newValue ->
+            setHoverEventOnBtnLbl(mLblDecrement, newValue)
+        }
+
         // set the on-mouse-clicked event of the incrementing button
-        mBtnIncrement.setOnMouseClicked {
+        mLblIncrement.setOnMouseClicked {
             val num: Int = mTxfNumber.text.toIntOrNull() ?: initialValue
             mTxfNumber.text = (num + amountToStepBy).toString()
             checkBounds()
         }
 
         // set the on-mouse-clicked event of the decrementing button
-        mBtnDecrement.setOnMouseClicked {
+        mLblDecrement.setOnMouseClicked {
             val num: Int = mTxfNumber.text.toIntOrNull() ?: initialValue
             mTxfNumber.text = (num - amountToStepBy).toString()
             checkBounds()
@@ -94,5 +105,15 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
             else if (num > mMax)
                 mTxfNumber.text = mMax.toString()
         }
+    }
+
+    // set the hover-event on labels which are used as buttons
+    private fun setHoverEventOnBtnLbl(lbl: Label, isEntering: Boolean) {
+        if (isEntering)
+            lbl.style = "-fx-font-size: 18;" +
+                    "-fx-background-color: rgb(180, 180, 180);" +
+                    "-fx-text-fill: black"
+        else
+            lbl.style = "-fx-font-size: 18;"
     }
 }
