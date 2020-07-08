@@ -3,7 +3,6 @@ package rekkursion.view.practiceview
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
-import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledVBox
 

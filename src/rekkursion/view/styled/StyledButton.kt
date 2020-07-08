@@ -5,6 +5,9 @@ import javafx.scene.control.Button
 import rekkursion.manager.PropertiesManager
 
 class StyledButton(buttonName: String): Button(buttonName) {
+    // the secondary constructor
+    constructor(): this("")
+
     init {
         // set the width
         prefWidth = PropertiesManager.windowWidth

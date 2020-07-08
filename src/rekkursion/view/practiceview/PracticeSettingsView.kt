@@ -3,7 +3,6 @@ package rekkursion.view.practiceview
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
-import rekkursion.manager.PropertiesManager
 import rekkursion.manager.VocManager
 import rekkursion.view.NumberSelector
 import rekkursion.view.styled.StyledButton
@@ -43,7 +42,10 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
 
         // the event of clicking on the start button
         mBtnStartPractice.setOnMouseClicked {
-
+            LayoutManager.switchPracticeContent(SingleChoicePage(
+                    mSingleChoiceSettingsPanel.getSingleChoiceProblemType(),
+                    mNslNumOfProblems.getNumber()
+            ))
         }
 
         // the event of clicking on the go-back button

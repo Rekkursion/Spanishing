@@ -4,7 +4,6 @@ import javafx.scene.control.RadioButton
 import javafx.scene.control.ToggleGroup
 import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.enumerate.Strings
-import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 

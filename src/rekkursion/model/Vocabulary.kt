@@ -31,14 +31,18 @@ class Vocabulary(esp: String, vararg meanings: Meaning): Copiable {
         other as Vocabulary
 
         if (mEsp != other.mEsp) return false
-        if (mMeaningList != other.mMeaningList) return false
+        if (mMeaningList.size != other.mMeaningList.size) return false
+        mMeaningList.forEachIndexed { index, meaning ->
+            if (meaning != other.mMeaningList[index])
+                return false
+        }
 
         return true
     }
 
     override fun hashCode(): Int {
         var result = mEsp.hashCode()
-        result = 31 * result + mMeaningList.hashCode()
+        result = 31 * result + mMeaningList.size.hashCode()
         return result
     }
 
