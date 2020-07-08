@@ -60,7 +60,7 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
             // add the label-for-result into the grid-pane
             mGridPane.add(StyledLabel(
                     problem.ansResult.name,
-                    if (problem.ansResult == AnsResult.CORRECT) Color.GREENYELLOW else Color.ORANGERED
+                    if (problem.ansResult == AnsResult.CORRECT) Color.GREENYELLOW else Color.DARKRED
             ), 1, index + 1)
         }
 

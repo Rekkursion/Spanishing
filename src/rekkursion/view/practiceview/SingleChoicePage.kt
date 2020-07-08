@@ -3,6 +3,7 @@ package rekkursion.view.practiceview
 import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.scene.control.Button
+import javafx.scene.paint.Color
 import rekkursion.enumerate.AnsResult
 import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.manager.LayoutManager
@@ -40,6 +41,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         // add all sub-views into this v-box
         children.addAll(mLblStem, *mBtnOptionList)
 
+        // set the events of buttons of options
         mBtnOptionList.forEachIndexed { index, button ->
             button.setOnMouseClicked {
                 if (mCurrentProblemIdx < mProblemList.size) {
@@ -49,7 +51,10 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                             prob.ansResult = AnsResult.CORRECT
                         showNextProblem()
                     }
-                    else prob.ansResult = AnsResult.WRONG
+                    else {
+                        (button as StyledButton).setBgColor(Color.DARKRED)
+                        prob.ansResult = AnsResult.WRONG
+                    }
                 }
             }
         }
@@ -140,6 +145,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
             mLblStem.text = mProblemList[mCurrentProblemIdx].getStem()
             repeat(4) {
                 mBtnOptionList[it].text = mProblemList[mCurrentProblemIdx].getOption(it)
+                (mBtnOptionList[it] as StyledButton).unsetBgColor()
             }
         }
         // show the result
