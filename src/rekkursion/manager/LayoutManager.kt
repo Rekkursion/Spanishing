@@ -2,7 +2,6 @@ package rekkursion.manager
 
 import javafx.scene.Node
 import javafx.scene.layout.BorderPane
-import rekkursion.util.JsonReader
 import rekkursion.view.MenuListView
 import rekkursion.view.VocabularyListView
 import rekkursion.view.practiceview.PracticeContainerPane
@@ -35,10 +34,8 @@ object LayoutManager {
                 PropertiesManager.windowHeight
         )
 
-        // read in all vocabularies from a json file
-        val vocList = JsonReader.readAllVocabularies(PropertiesManager.vocabulariesJsonFileLocation)
         // create a vocabulary-list-view which is to be shown at the center
-        mVocListView = VocabularyListView(vocList)
+        mVocListView = VocabularyListView(VocManager.copiedVocList)
         // set the created vocabulary-list-view at the center
         mBdpMain.center = mVocListView
 

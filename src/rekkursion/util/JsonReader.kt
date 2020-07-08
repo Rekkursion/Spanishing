@@ -3,8 +3,8 @@ package rekkursion.util
 import javafx.scene.control.Alert
 import org.json.JSONArray
 import org.json.JSONObject
+import rekkursion.enumerate.PartOfSpeech
 import rekkursion.model.Meaning
-import rekkursion.model.PartOfSpeech
 import rekkursion.model.Vocabulary
 import java.io.File
 import java.io.FileInputStream
@@ -40,7 +40,7 @@ object JsonReader {
             val jObj = JSONObject(jsonString)
 
             // get the array of vocabularies
-            val jArr: JSONArray = jObj.getJSONArray("vocabularies");
+            val jArr: JSONArray = jObj.getJSONArray("vocabularies")
 
             // iterate the array of vocabularies
             // and add every json-object into the result list as a vocabulary

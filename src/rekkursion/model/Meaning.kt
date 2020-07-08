@@ -1,5 +1,7 @@
 package rekkursion.model
 
+import rekkursion.enumerate.PartOfSpeech
+
 class Meaning(chi: String, eng: String, posp: PartOfSpeech): Copiable {
     // the chinese meaning
     private val mChi = chi

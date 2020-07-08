@@ -4,6 +4,7 @@ import javafx.application.Application
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
+import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PropertiesManager
 
@@ -21,7 +22,7 @@ class Main: Application() {
             // set the style
             stage.scene.stylesheets.add("rekkursion/css/global.css")
             // set the tile
-            stage.title = PropertiesManager.Strings.title
+            stage.title = Strings.get(Strings.Title)
             // show the primary stage
             stage.show()
         }

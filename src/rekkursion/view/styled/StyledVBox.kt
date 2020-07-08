@@ -1,4 +1,4 @@
-package rekkursion.view
+package rekkursion.view.styled
 
 import javafx.geometry.Pos
 import javafx.scene.layout.VBox
