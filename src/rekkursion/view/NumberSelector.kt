@@ -5,13 +5,12 @@ import javafx.geometry.Pos
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
 import javafx.scene.input.KeyCode
-import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import rekkursion.enumerate.Strings
-import rekkursion.manager.PropertiesManager
+import rekkursion.view.styled.StyledHBox
 
 // the number selector (integer only)
-class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int): HBox(PropertiesManager.generalSpacing) {
+class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int): StyledHBox() {
     // the minimum value
     private val mMin = min
 
@@ -36,7 +35,6 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
     init {
         // set some attributes
         mTxfNumber.alignment = Pos.CENTER
-        alignment = Pos.CENTER
         mTxfNumber.style = "-fx-font-size: 18;"
         mLblIncrement.style = "-fx-font-size: 18;"
         mLblDecrement.style = "-fx-font-size: 18;"

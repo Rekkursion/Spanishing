@@ -1,5 +1,6 @@
 package rekkursion.model
 
+import rekkursion.enumerate.AnsResult
 import rekkursion.enumerate.SingleChoiceProblemType
 
 class Problem(problemType: SingleChoiceProblemType, stem: Vocabulary, options: ArrayList<Vocabulary>): Copiable {
@@ -14,7 +15,13 @@ class Problem(problemType: SingleChoiceProblemType, stem: Vocabulary, options: A
 
     // the position of the correct answer of this problem
     private val mCorrectAnsPos: Int = mOptionList.indexOf(mStem)
-    val correctAnsPos = mCorrectAnsPos
+    val correctAnsPos get() = mCorrectAnsPos
+
+    // the result of answering this single choice problem
+    private var mAnsResult = AnsResult.NO_ANSWERED
+    var ansResult
+        get() = mAnsResult
+        set(value) { mAnsResult = value }
 
     /* ======================================== */
 
@@ -29,6 +36,9 @@ class Problem(problemType: SingleChoiceProblemType, stem: Vocabulary, options: A
         mOptionList[pos].esp
     else
         "${mOptionList[pos].meaningList[0].chi} (${mOptionList[pos].meaningList[0].eng})"
+
+    // convert the problem-object into a vocabulary-object
+    fun toVoc(): Vocabulary = mStem.copy()
 
     /* ======================================== */
 

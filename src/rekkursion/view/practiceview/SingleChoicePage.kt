@@ -3,7 +3,9 @@ package rekkursion.view.practiceview
 import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.scene.control.Button
+import rekkursion.enumerate.AnsResult
 import rekkursion.enumerate.SingleChoiceProblemType
+import rekkursion.manager.LayoutManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
@@ -40,8 +42,15 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
 
         mBtnOptionList.forEachIndexed { index, button ->
             button.setOnMouseClicked {
-                if (mCurrentProblemIdx < mProblemList.size && index == mProblemList[mCurrentProblemIdx].correctAnsPos)
-                    showNextProblem()
+                if (mCurrentProblemIdx < mProblemList.size) {
+                    val prob = mProblemList[mCurrentProblemIdx]
+                    if (index == prob.correctAnsPos) {
+                        if (prob.ansResult == AnsResult.NO_ANSWERED)
+                            prob.ansResult = AnsResult.CORRECT
+                        showNextProblem()
+                    }
+                    else prob.ansResult = AnsResult.WRONG
+                }
             }
         }
     }
@@ -135,7 +144,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         }
         // show the result
         else {
-            // TODO: show the result
+            LayoutManager.switchPracticeContent(ResultPage(mProblemList))
         }
     }
 }
