@@ -1,6 +1,8 @@
 package rekkursion.enumerate
 
-@Suppress("unused")
+import rekkursion.manager.PreferenceManager
+
+@Suppress("unused", "EnumEntryName")
 enum class Strings(val chi: String, val eng: String) {
     // the title
     Title("Spanishing", "Spanishing"),
@@ -34,11 +36,17 @@ enum class Strings(val chi: String, val eng: String) {
     // the string of the decrement sign
     Decrement("-", "-"),
 
+    // pref: the interface language
+    InterfaceLang("介面語言", "Interface Language"),
+    // pref: chinese as the interface language
+    InterfaceLang_Chi("中文/Chinese", "中文/Chinese"),
+    // pref: english as the interface language
+    InterfaceLang_Eng("英文/English", "英文/English"),
+
     // the string of 'start'
     Start("開始", "Start"),
     // the string of 'back'
     Back("返回", "Back"),
-
 
     ;
 
@@ -46,6 +54,8 @@ enum class Strings(val chi: String, val eng: String) {
 
     companion object {
         // get the string by this enumeration type
-        fun get(strEnum: Strings): String = strEnum.chi
+        fun get(strEnum: Strings): String = if (PreferenceManager.lang == "英文/English")
+            strEnum.eng
+        else strEnum.chi
     }
 }

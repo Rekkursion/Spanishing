@@ -3,7 +3,7 @@ package rekkursion.view.styled
 import javafx.geometry.Pos
 import javafx.scene.control.Button
 import javafx.scene.paint.Color
-import rekkursion.manager.PropertiesManager
+import rekkursion.manager.PreferenceManager
 
 class StyledButton(buttonName: String): Button(buttonName) {
     // the secondary constructor
@@ -11,7 +11,7 @@ class StyledButton(buttonName: String): Button(buttonName) {
 
     init {
         // set the width
-        prefWidth = PropertiesManager.windowWidth
+        prefWidth = PreferenceManager.windowWidth
         // set the alignment
         alignment = Pos.CENTER
         // set the font size

@@ -1,12 +1,14 @@
 package rekkursion.manager
 
 object PropertiesManager {
+    // the default width of the window
+    const val defaultWindowWidth: Double = 1180.0
 
-    // the width of the window
-    const val windowWidth: Double = 1180.0
+    // the default height of the window
+    const val defaultWindowHeight: Double = 660.0
 
-    // the height of the window
-    const val windowHeight: Double = 660.0
+    // the default interface language
+    const val defaultLang: String = "eng"
 
     // the general spacing among uis
     const val generalSpacing: Double = 10.0
@@ -15,5 +17,9 @@ object PropertiesManager {
     const val vocabulariesJsonFileLocation: String = "D:\\rekkursion\\mooc\\spanish\\spanish_vocabularies.json"
 
     // the list of menu features
-    val menuList: Array<String> = arrayOf("Vocabulary List", "Practice")
+    val menuList: Array<String> = arrayOf(
+            "Vocabulary List",
+            "Practice",
+            "Preferences"
+    )
 }

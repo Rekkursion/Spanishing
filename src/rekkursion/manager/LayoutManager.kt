@@ -3,6 +3,7 @@ package rekkursion.manager
 import javafx.scene.Node
 import javafx.scene.layout.BorderPane
 import rekkursion.view.MenuListView
+import rekkursion.view.pref.PreferencesPage
 import rekkursion.view.VocabularyListView
 import rekkursion.view.practiceview.PracticeContainerPane
 import rekkursion.view.practiceview.PracticeMenuView
@@ -30,8 +31,8 @@ object LayoutManager {
         mBdpMain.layoutY = 0.0
         // set the size (width & height) of bpd-main
         mBdpMain.setPrefSize(
-                PropertiesManager.windowWidth,
-                PropertiesManager.windowHeight
+                PreferenceManager.windowWidth,
+                PreferenceManager.windowHeight
         )
 
         // create a vocabulary-list-view which is to be shown at the center
@@ -56,9 +57,11 @@ object LayoutManager {
         mBdpMain.center = when (idx) {
             0 -> mVocListView
             1 -> {
-                switchPracticeContent()
+                if (mPracticePane.center == null)
+                    switchPracticeContent()
                 mPracticePane
             }
+            2 -> PreferencesPage()
             else -> null
         }
     }

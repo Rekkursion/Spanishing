@@ -6,7 +6,7 @@ import javafx.scene.Scene
 import javafx.stage.Stage
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
-import rekkursion.manager.PropertiesManager
+import rekkursion.manager.PreferenceManager
 
 class Main: Application() {
     // start the application
@@ -16,8 +16,8 @@ class Main: Application() {
             // set the scene of the primary stage
             stage.scene = Scene(
                     initViews(),
-                    PropertiesManager.windowWidth,
-                    PropertiesManager.windowHeight
+                    PreferenceManager.windowWidth,
+                    PreferenceManager.windowHeight
             )
             // set the style
             stage.scene.stylesheets.add("rekkursion/css/global.css")
@@ -25,6 +25,16 @@ class Main: Application() {
             stage.title = Strings.get(Strings.Title)
             // show the primary stage
             stage.show()
+        }
+
+        // the listener for the window width
+        primaryStage?.widthProperty()?.addListener { _, _, newValue ->
+            PreferenceManager.write("window-width", newValue.toString())
+        }
+
+        // the listener for the window height
+        primaryStage?.heightProperty()?.addListener { _, _, newValue ->
+            PreferenceManager.write("window-height", newValue.toString())
         }
     }
 
