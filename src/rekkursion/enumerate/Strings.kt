@@ -22,6 +22,8 @@ enum class Strings(val chi: String, val eng: String) {
     // the title for selecting the number of problems
     SelectNumOfProblems("請選擇題目的數量：", "Please select the number of problems:"),
 
+    // the title for showing numbers per tested vocabularies
+    TestedNo("題號", "No."),
     // the title for showing tested vocabularies
     TestedVocs("本次練習的單字", "Tested vocabularies in this time"),
     // the title for showing results of tested vocabularies
