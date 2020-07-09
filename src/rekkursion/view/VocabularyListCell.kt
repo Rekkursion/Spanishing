@@ -38,9 +38,11 @@ class VocabularyListCell: ListCell<Vocabulary>() {
 
         // set the contents of the item
         if (item != null && !empty) {
+            val copiedMeaning = item.copiedMeaning
+
             mLblEsp.text = item.esp
-            mLblPosp.text = "[${item.meaningList[0].posp.abbr}]"
-            mLblChiAndEng.text = "${item.meaningList[0].chi} (${item.meaningList[0].eng})"
+            mLblPosp.text = "[${copiedMeaning.posp.abbr}]"
+            mLblChiAndEng.text = "${copiedMeaning.chi} (${copiedMeaning.eng})"
             graphic = mVbxContent
         }
         else

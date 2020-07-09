@@ -42,5 +42,5 @@ class Meaning(chi: String, eng: String, posp: PartOfSpeech): Copiable {
         return result
     }
 
-    override fun toString(): String = "$mChi ($mEng) [${mPosp.abbr}]"
+    override fun toString(): String = "[${mPosp.abbr}] $mChi ($mEng)"
 }

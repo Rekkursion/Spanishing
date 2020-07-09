@@ -1,26 +1,18 @@
 package rekkursion.model
 
-class Vocabulary(esp: String, vararg meanings: Meaning): Copiable {
+class Vocabulary(esp: String, meaning: Meaning): Copiable {
     // the vocabulary in the form of spanish (español)
     private val mEsp = esp
     val esp get() = mEsp
 
-    // the list of meanings of this vocabulary
-    private val mMeaningList: ArrayList<Meaning> = arrayListOf()
-    @Suppress("UNCHECKED_CAST")
-    val meaningList: ArrayList<Meaning> get() = mMeaningList.clone() as ArrayList<Meaning>
-
-    // initialize for some members
-    init {
-        // add all passed (and copied) meanings into the list of meanings
-        meanings.forEach { mMeaningList.add(it.copy()) }
-    }
+    // the meaning of this vocabulary
+    private val mMeaning = meaning
+    val copiedMeaning get() = mMeaning.copy()
 
     /* ======================================== */
 
     // copy a new vocabulary
-    @Suppress("UNCHECKED_CAST")
-    override fun copy(): Vocabulary = Vocabulary(mEsp, *(mMeaningList.clone() as ArrayList<Meaning>).toTypedArray())
+    override fun copy(): Vocabulary = Vocabulary(mEsp, mMeaning.copy())
 
     /* ======================================== */
 
@@ -31,20 +23,16 @@ class Vocabulary(esp: String, vararg meanings: Meaning): Copiable {
         other as Vocabulary
 
         if (mEsp != other.mEsp) return false
-        if (mMeaningList.size != other.mMeaningList.size) return false
-        mMeaningList.forEachIndexed { index, meaning ->
-            if (meaning != other.mMeaningList[index])
-                return false
-        }
+        if (mMeaning != other.mMeaning) return false
 
         return true
     }
 
     override fun hashCode(): Int {
         var result = mEsp.hashCode()
-        result = 31 * result + mMeaningList.size.hashCode()
+        result = 31 * result + mMeaning.hashCode()
         return result
     }
 
-    override fun toString(): String = mEsp
+    override fun toString(): String = "$mEsp $mMeaning"
 }

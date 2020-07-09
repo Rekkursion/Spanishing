@@ -27,15 +27,13 @@ class Problem(problemType: SingleChoiceProblemType, stem: Vocabulary, options: A
 
     // get the string of the stem
     fun getStem(): String = if (mProblemType == SingleChoiceProblemType.CHI_AND_ENG_TO_ESP)
-            "${mStem.meaningList[0].chi} (${mStem.meaningList[0].eng})"
-        else
-            mStem.esp
+        mStem.copiedMeaning.toString()
+    else mStem.esp
 
     // get the string of a certain option determined by the passed position
     fun getOption(pos: Int): String = if (mProblemType == SingleChoiceProblemType.CHI_AND_ENG_TO_ESP)
         mOptionList[pos].esp
-    else
-        "${mOptionList[pos].meaningList[0].chi} (${mOptionList[pos].meaningList[0].eng})"
+    else mOptionList[pos].copiedMeaning.toString()
 
     // convert the problem-object into a vocabulary-object
     fun toVoc(): Vocabulary = mStem.copy()
