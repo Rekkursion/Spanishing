@@ -5,6 +5,7 @@ import javafx.geometry.Pos
 import javafx.scene.Node
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
+import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledLabel
 
@@ -32,4 +33,9 @@ class PreferenceField(fieldName: String, node: Node?): GridPane() {
         // add the view-as-field-value
         add(mValueView, 1, 0)
     }
+
+    /* ======================================== */
+
+    // set the field name
+    fun setFieldName(fieldName: String) { mLblKey.text = fieldName }
 }

@@ -1,6 +1,11 @@
 package rekkursion.enumerate
 
+import javafx.scene.Node
+import javafx.scene.control.*
+import javafx.scene.text.Text
+import javafx.stage.Stage
 import rekkursion.manager.PreferenceManager
+import rekkursion.view.pref.PreferenceField
 
 @Suppress("unused", "EnumEntryName")
 enum class Strings(val chi: String, val eng: String) {
@@ -53,9 +58,34 @@ enum class Strings(val chi: String, val eng: String) {
     /* ======================================== */
 
     companion object {
+        // the hash-map of registered views
+        private val mRegisteredHashMap = hashMapOf<Any, Strings>()
+
         // get the string by this enumeration type
         fun get(strEnum: Strings): String = if (PreferenceManager.lang == "英文/English")
             strEnum.eng
         else strEnum.chi
+
+        // register a node
+        fun register(any: Any, strEnum: Strings) { mRegisteredHashMap[any] = strEnum }
+
+        // unregister a node
+        fun unregister(any: Any) { mRegisteredHashMap.remove(any) }
+
+        // notify all registered nodes to be updated
+        fun notifyAllRegistered() {
+            mRegisteredHashMap.forEach { (any, strEnum) ->
+                (any as? Stage)?.title = get(strEnum)
+                (any as? RadioButton)?.text = get(strEnum)
+                (any as? Label)?.text = get(strEnum)
+                (any as? Text)?.text = get(strEnum)
+                (any as? TextField)?.text = get(strEnum)
+                (any as? TextArea)?.text = get(strEnum)
+                (any as? Button)?.text = get(strEnum)
+                (any as? ComboBox<*>)?.promptText = get(strEnum)
+                (any as? Spinner<*>)?.promptText = get(strEnum)
+                (any as? PreferenceField)?.setFieldName(get(strEnum))
+            }
+        }
     }
 }

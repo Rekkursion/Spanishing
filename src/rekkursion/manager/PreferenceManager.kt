@@ -1,6 +1,8 @@
 package rekkursion.manager
 
+import javafx.application.Platform
 import org.json.JSONObject
+import rekkursion.enumerate.Strings
 import rekkursion.util.toAscii
 import java.io.File
 import java.io.FileInputStream
@@ -64,6 +66,9 @@ object PreferenceManager {
                     if (data != null) {
                         // set the designated property
                         property.setter.call(PreferenceManager::class.objectInstance, data)
+                        // update all interface strings
+                        if (key == "lang")
+                            Platform.runLater { Strings.notifyAllRegistered() }
                         // write to 'pref.json' file
                         writeToPrefJson()
                     }

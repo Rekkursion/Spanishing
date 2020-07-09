@@ -1,5 +1,6 @@
 package rekkursion.view.pref
 
+import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.scene.control.ComboBox
 import rekkursion.enumerate.Strings
@@ -22,12 +23,17 @@ class PreferencesPage: StyledVBox() {
                 Strings.get(Strings.InterfaceLang_Eng)
         ))
         val langPrefField = PreferenceField(Strings.get(Strings.InterfaceLang), comboBox)
+        // register the label into the strings
+        Strings.register(langPrefField, Strings.InterfaceLang)
+
         children.addAll(langPrefField)
 
         // the initial value
         comboBox.promptText = PreferenceManager.lang
 
         // the listener for selecting
-        comboBox.valueProperty().addListener { _, _, newValue -> PreferenceManager.write("lang", newValue) }
+        comboBox.valueProperty().addListener { _, _, newValue ->
+            PreferenceManager.write("lang", newValue)
+        }
     }
 }
