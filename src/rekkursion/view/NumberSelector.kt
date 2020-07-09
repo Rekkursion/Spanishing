@@ -5,6 +5,7 @@ import javafx.geometry.Pos
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
 import javafx.scene.input.KeyCode
+import javafx.scene.input.KeyEvent
 import javafx.scene.layout.VBox
 import rekkursion.enumerate.Strings
 import rekkursion.view.styled.StyledHBox
@@ -31,6 +32,9 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
 
     // the label-as-button for decrementing the value by the amount-to-step
     private val mLblDecrement = Label(Strings.get(Strings.Decrement))
+
+    // the interface of on-key-released event
+    private var mOnKeyReleased: OnKeyReleased? = null
 
     init {
         // set some attributes
@@ -61,6 +65,7 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
         mTxfNumber.setOnKeyReleased { event ->
             if (event.code == KeyCode.ENTER)
                 checkBounds()
+            mOnKeyReleased?.onKeyReleased(event)
         }
 
         // set the hover-event on incrementing label-as-button
@@ -93,6 +98,11 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
     // get the number value
     fun getNumber(): Int = mTxfNumber.text.toIntOrNull() ?: mInitialValue
 
+    // set the event of on-key-released
+    fun setOnKeyReleased(onKeyReleased: OnKeyReleased) {
+        mOnKeyReleased = onKeyReleased
+    }
+
     // check the bounds of current value
     private fun checkBounds() {
         val num = mTxfNumber.text.toIntOrNull()
@@ -112,5 +122,11 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
                     "-fx-text-fill: black"
         else
             lbl.style = "-fx-font-size: 18;"
+    }
+
+    /* ======================================== */
+
+    interface OnKeyReleased {
+        fun onKeyReleased(keyEvent: KeyEvent)
     }
 }

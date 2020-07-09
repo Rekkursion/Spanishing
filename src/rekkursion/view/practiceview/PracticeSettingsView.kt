@@ -1,5 +1,8 @@
 package rekkursion.view.practiceview
 
+import javafx.event.EventType
+import javafx.scene.input.KeyCode
+import javafx.scene.input.KeyEvent
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
@@ -41,7 +44,7 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
         children.addAll(mLblNumOfProblemsTitle, mNslNumOfProblems, mBtnStartPractice, mBtnGoBackToPracticeMenu)
 
         // the event of clicking on the start button
-        mBtnStartPractice.setOnMouseClicked {
+        mBtnStartPractice.setOnAction {
             LayoutManager.switchPracticeContent(SingleChoicePage(
                     mSingleChoiceSettingsPanel.getSingleChoiceProblemType(),
                     mNslNumOfProblems.getNumber()
@@ -52,5 +55,13 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
         mBtnGoBackToPracticeMenu.setOnMouseClicked {
             LayoutManager.switchPracticeContent()
         }
+
+        // the event of releasing a key on the number-selector
+        mNslNumOfProblems.setOnKeyReleased(object: NumberSelector.OnKeyReleased {
+            override fun onKeyReleased(keyEvent: KeyEvent) {
+                if (keyEvent.code == KeyCode.ENTER)
+                    mBtnStartPractice.fire()
+            }
+        })
     }
 }
