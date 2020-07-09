@@ -5,12 +5,13 @@ import javafx.geometry.Pos
 import javafx.scene.control.ScrollPane
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
-import javafx.scene.paint.Color
 import rekkursion.enumerate.AnsResult
+import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PropertiesManager
 import rekkursion.model.Problem
+import rekkursion.util.digits
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
@@ -61,16 +62,17 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
         // add the problems' vocabularies and results into the grid-pane
         problemList.forEachIndexed { index, problem ->
             // add the label-for-no into the grid-pane
-            mGridPane.add(StyledLabel((index + 1).toString()), 0, index + 1)
+            mGridPane.add(StyledLabel(String.format("%0${problemList.size.digits()}d", index + 1), Colors.NUMBERED.color), 0, index + 1)
             // add the label-for-vocabulary into the grid-pane
-            val subScrollPane = ScrollPane(StyledLabel(problem.toVoc().toString()))
+            val subScrollPane = ScrollPane(StyledLabel(problem.toVoc().toString(), Colors.DEFAULT.color))
             subScrollPane.vbarPolicy = ScrollPane.ScrollBarPolicy.NEVER
             subScrollPane.hbarPolicy = ScrollPane.ScrollBarPolicy.AS_NEEDED
             mGridPane.add(subScrollPane, 1, index + 1)
             // add the label-for-result into the grid-pane
             mGridPane.add(StyledLabel(
                     problem.ansResult.name,
-                    if (problem.ansResult == AnsResult.CORRECT) Color.GREENYELLOW else Color.DARKRED
+                    if (problem.ansResult == AnsResult.CORRECT) Colors.CORRECT_RES.color
+                    else Colors.WRONG_RES.color
             ), 2, index + 1)
         }
 

@@ -1,6 +1,5 @@
 package rekkursion.view.practiceview
 
-import javafx.event.EventType
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
 import rekkursion.enumerate.PracticeType

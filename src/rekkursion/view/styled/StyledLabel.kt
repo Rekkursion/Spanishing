@@ -3,13 +3,12 @@ package rekkursion.view.styled
 import javafx.geometry.Pos
 import javafx.scene.control.Label
 import javafx.scene.paint.Color
+import rekkursion.enumerate.Colors
 
-class StyledLabel(labelName: String, textColor: Color): Label(labelName) {
-    // secondary constructor w/o a initial label name
-    constructor(): this("")
-
-    // secondary constructor w/ designated text color
-    constructor(labelName: String): this(labelName, Color.rgb(205, 186, 241))
+class StyledLabel(
+        labelName: String = "",
+        textColor: Color = Colors.LABEL_DEFAULT.color)
+    : Label(labelName) {
 
     init {
         // set the alignment

@@ -3,20 +3,24 @@ package rekkursion.view.practiceview
 import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.scene.control.Button
-import javafx.scene.paint.Color
 import rekkursion.enumerate.AnsResult
+import rekkursion.enumerate.Colors
 import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
 import rekkursion.util.HoldingQueue
+import rekkursion.util.digits
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 import kotlin.random.Random
 
 class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int): StyledVBox() {
+    // the label for showing the no. of this problem
+    private val mLblNo = StyledLabel(textColor = Colors.NUMBERED.color)
+
     // the label for showing a certain problem's stem
     private val mLblStem = StyledLabel()
 
@@ -39,7 +43,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         mLblStem.style = "-fx-font-size: 24;"
 
         // add all sub-views into this v-box
-        children.addAll(mLblStem, *mBtnOptionList)
+        children.addAll(mLblNo, mLblStem, *mBtnOptionList)
 
         // set the events of buttons of options
         mBtnOptionList.forEachIndexed { index, button ->
@@ -52,7 +56,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                         showNextProblem()
                     }
                     else {
-                        (button as StyledButton).setBgColor(Color.DARKRED)
+                        (button as StyledButton).setBgColor(Colors.WRONG_ANSWER_BG.color)
                         prob.ansResult = AnsResult.WRONG
                     }
                 }
@@ -139,9 +143,13 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
 
     // show the next problem
     private fun showNextProblem() {
+        val size = mProblemList.size
+        val digits = size.digits()
+
         ++mCurrentProblemIdx
         // show the problem normally
-        if (mCurrentProblemIdx < mProblemList.size) {
+        if (mCurrentProblemIdx < size) {
+            mLblNo.text = String.format("%0${digits}d/%0${digits}d", mCurrentProblemIdx + 1, size)
             mLblStem.text = mProblemList[mCurrentProblemIdx].getStem()
             repeat(4) {
                 mBtnOptionList[it].text = mProblemList[mCurrentProblemIdx].getOption(it)
@@ -149,8 +157,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
             }
         }
         // show the result
-        else {
+        else
             LayoutManager.switchPracticeContent(ResultPage(mProblemList))
-        }
     }
 }
