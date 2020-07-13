@@ -1,7 +1,7 @@
 {
     "window-width": 1180,
     "window-height": 660,
-    "alert-when-finishing": false,
+    "alert-when-finishing": true,
     "lang": "中文/Chinese",
     "alert-when-skipping": false
 }

@@ -1,11 +1,10 @@
-package rekkursion.view.practiceview
+package rekkursion.view.prac
 
 import javafx.geometry.HPos
 import javafx.geometry.Pos
 import javafx.scene.control.ScrollPane
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
-import rekkursion.enumerate.AnsResult
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager

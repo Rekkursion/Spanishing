@@ -1,4 +1,4 @@
-package rekkursion.view.practiceview
+package rekkursion.view.prac
 
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
@@ -7,6 +7,8 @@ import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.VocManager
 import rekkursion.view.NumberSelector
+import rekkursion.view.prac.probpage.SingleChoicePage
+import rekkursion.view.prac.probpage.SpellingPage
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
@@ -44,10 +46,12 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
 
         // the event of clicking on the start button
         mBtnStartPractice.setOnAction {
-            LayoutManager.switchPracticeContent(SingleChoicePage(
-                    mSingleChoiceSettingsPanel.getSingleChoiceProblemType(),
-                    mNslNumOfProblems.getNumber()
-            ))
+            LayoutManager.switchPracticeContent(
+                    if (practiceType == PracticeType.SINGLE_CHOICE) SingleChoicePage(
+                            mSingleChoiceSettingsPanel.getSingleChoiceProblemType(),
+                            mNslNumOfProblems.getNumber()
+                    ) else SpellingPage(mNslNumOfProblems.getNumber())
+            )
         }
 
         // the event of clicking on the go-back button

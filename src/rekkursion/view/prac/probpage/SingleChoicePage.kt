@@ -1,69 +1,31 @@
-package rekkursion.view.practiceview
+package rekkursion.view.prac.probpage
 
 import javafx.application.Platform
-import javafx.geometry.Insets
-import javafx.scene.control.Alert
 import javafx.scene.control.Button
-import javafx.scene.control.ButtonType
-import rekkursion.enumerate.AnsResult
-import rekkursion.enumerate.Colors
-import rekkursion.enumerate.SingleChoiceProblemType
-import rekkursion.enumerate.Strings
+import rekkursion.enumerate.*
 import rekkursion.manager.LayoutManager
-import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
-import rekkursion.util.AlertUtils
-import rekkursion.util.GenericString
 import rekkursion.util.HoldingQueue
 import rekkursion.util.digits
+import rekkursion.view.prac.ResultPage
 import rekkursion.view.styled.StyledButton
-import rekkursion.view.styled.StyledHBox
-import rekkursion.view.styled.StyledLabel
-import rekkursion.view.styled.StyledVBox
 import kotlin.random.Random
 
-class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int): StyledVBox() {
-    // the label for showing the no. of this problem
-    private val mLblNo = StyledLabel(textColor = Colors.NUMBERED.color)
-
-    // the label for showing a certain problem's stem
-    private val mLblStem = StyledLabel()
+class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int): ProblemPage(PracticeType.SINGLE_CHOICE, numOfProblems) {
+    // the type of single-choice problems
+    private val mProblemType = problemType
 
     // the button list of options of a certain problem
     private val mBtnOptionList = arrayOf<Button>(StyledButton(), StyledButton(), StyledButton(), StyledButton())
 
-    // the list of problems
-    private val mProblemList = arrayListOf<Problem>()
-
-    // the index of the current problem
-    private var mCurrentProblemIdx = -1
-
-    // the h-box for containing skipping & finishing buttons
-    private val mHbxSkipAndFinish = StyledHBox()
-
-    // the button for skipping a single problem
-    private val mBtnSkip = StyledButton(Strings.SkipProblem)
-
-    // the button for finishing the whole problem-set
-    private val mBtnFinish = StyledButton(Strings.FinishProblemSet)
-
     init {
         // determine the problems according to the type & the number of problems
-        generateProblemsAndShowTheFirst(problemType, numOfProblems)
+        generateProblemsAndShowTheFirst()
 
-        // set the padding of the stem label
-        mLblStem.padding = Insets(0.0, 0.0, 40.0, 0.0)
-        // set the font size of the stem label
-        mLblStem.style = "-fx-font-size: 24;"
-
-        // add skipping & finishing buttons into an h-box
-        mHbxSkipAndFinish.children.addAll(mBtnSkip, mBtnFinish)
-        mHbxSkipAndFinish.padding = Insets(40.0, 0.0, 0.0, 0.0)
-
-        // add all sub-views into this v-box
-        children.addAll(mLblNo, mLblStem, *mBtnOptionList, mHbxSkipAndFinish)
+        // add all buttons of options
+        insertNodesBeforeSkippingAndFinishingButtons(*mBtnOptionList)
 
         // set the events of buttons of options
         mBtnOptionList.forEachIndexed { index, button ->
@@ -82,32 +44,12 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                 }
             }
         }
-
-        // set the event of clicking on skip-button
-        mBtnSkip.setOnMouseClicked {
-            if (PreferenceManager.alertWhenSkipping) {
-                if (AlertUtils.createConfirmAlert(Strings.SkipProblemAlertMsg).showAndWait().get() == ButtonType.OK)
-                    showNextProblem()
-            }
-            else
-                showNextProblem()
-        }
-
-        // set the event of clicking on finish-button
-        mBtnFinish.setOnMouseClicked {
-            if (PreferenceManager.alertWhenFinishing) {
-                if (AlertUtils.createConfirmAlert(Strings.FinishProblemSetAlertMsg).showAndWait().get() == ButtonType.OK)
-                    LayoutManager.switchPracticeContent(ResultPage(mProblemList))
-            }
-            else
-                LayoutManager.switchPracticeContent(ResultPage(mProblemList))
-        }
     }
 
     /* ======================================== */
 
     // determine the problems according to the type & the number of problems
-    private fun generateProblemsAndShowTheFirst(problemType: SingleChoiceProblemType, numOfProblems: Int) {
+    override fun generateProblemsAndShowTheFirst() {
         Thread {
             // get the copied vocabulary list
             val vocList = VocManager.copiedVocList
@@ -129,7 +71,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
             }
 
             // iteratively select the vocabularies counted from the front
-            repeat(numOfProblems) {
+            repeat(mNumOfProblems) {
                 // the list of options of this problem
                 val optList = arrayListOf<Vocabulary>()
 
@@ -167,10 +109,10 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                 }
 
                 // determine the type of this single choice problem
-                val type = if (problemType == SingleChoiceProblemType.BOTH) {
+                val type = if (mProblemType == SingleChoiceProblemType.BOTH) {
                     if (Random.nextInt(0, 2) == 0) SingleChoiceProblemType.ESP_TO_CHI_AND_ENG
                     else SingleChoiceProblemType.CHI_AND_ENG_TO_ESP
-                } else problemType
+                } else mProblemType
 
                 // add a new problem into the problem list
                 mProblemList.add(Problem(type, vocList[it], optList))
@@ -182,7 +124,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
     }
 
     // show the next problem
-    private fun showNextProblem() {
+    override fun showNextProblem() {
         val size = mProblemList.size
         val digits = size.digits()
 

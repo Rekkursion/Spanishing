@@ -4,9 +4,8 @@ import javafx.scene.Node
 import javafx.scene.layout.BorderPane
 import rekkursion.view.MenuListView
 import rekkursion.view.VocabularyListPage
-import rekkursion.view.VocabularyListView
-import rekkursion.view.practiceview.PracticeContainerPane
-import rekkursion.view.practiceview.PracticeMenuView
+import rekkursion.view.prac.PracticeContainerPane
+import rekkursion.view.prac.PracticeMenuView
 import rekkursion.view.pref.PreferencesPage
 
 object LayoutManager {

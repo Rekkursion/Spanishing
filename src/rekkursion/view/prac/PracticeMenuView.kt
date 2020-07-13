@@ -1,4 +1,4 @@
-package rekkursion.view.practiceview
+package rekkursion.view.prac
 
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
