@@ -3,6 +3,7 @@ package rekkursion.manager
 import javafx.scene.Node
 import javafx.scene.layout.BorderPane
 import rekkursion.view.MenuListView
+import rekkursion.view.VocabularyListPage
 import rekkursion.view.VocabularyListView
 import rekkursion.view.practiceview.PracticeContainerPane
 import rekkursion.view.practiceview.PracticeMenuView
@@ -13,8 +14,8 @@ object LayoutManager {
     private val mBdpMain: BorderPane = BorderPane()
     val parentView get() = mBdpMain
 
-    // the vocabulary-list-view
-    private val mVocListView: VocabularyListView
+    // the page of the vocabulary list
+    private val mVocListPage: VocabularyListPage
 
     // the menu-list-view
     private val mMenuListView: MenuListView
@@ -35,10 +36,11 @@ object LayoutManager {
                 PreferenceManager.windowHeight
         )
 
-        // create a vocabulary-list-view which is to be shown at the center
-        mVocListView = VocabularyListView(VocManager.copiedVocList)
+        // create a vocabulary-list page which is to be shown at the center
+        mVocListPage = VocabularyListPage()
+
         // set the created vocabulary-list-view at the center
-        mBdpMain.center = mVocListView
+        mBdpMain.center = mVocListPage
 
         // create a menu-list-view which is to be shown at the left
         mMenuListView = MenuListView()
@@ -55,7 +57,7 @@ object LayoutManager {
     fun setCenterByMenuIdx(idx: Int) {
         // set the center according to the passed-in index
         mBdpMain.center = when (idx) {
-            0 -> mVocListView
+            0 -> mVocListPage
             1 -> {
                 if (mPracticePane.center == null)
                     switchPracticeContent()

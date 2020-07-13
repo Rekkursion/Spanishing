@@ -17,16 +17,16 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
     private val mSingleChoiceSettingsPanel = SingleChoiceSettingsPanel()
 
     // the title for the num-of-problems spinner
-    private val mLblNumOfProblemsTitle = StyledLabel(Strings.get(Strings.SelectNumOfProblems))
+    private val mLblNumOfProblemsTitle = StyledLabel(Strings.SelectNumOfProblems)
 
     // the number-selector for selecting the number of problems the user want to take
     private val mNslNumOfProblems = NumberSelector(1, min(100, VocManager.numOfVocabularies), min(10, VocManager.numOfVocabularies), 1)
 
     // the button for starting practice
-    private val mBtnStartPractice = StyledButton(Strings.get(Strings.Start))
+    private val mBtnStartPractice = StyledButton(Strings.Start)
 
     // the button for going back to the menu page of practice
-    private val mBtnGoBackToPracticeMenu = StyledButton(Strings.get(Strings.Back))
+    private val mBtnGoBackToPracticeMenu = StyledButton(Strings.Back)
 
     init {
         // if the practice type is the single choice problems

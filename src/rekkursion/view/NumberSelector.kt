@@ -9,6 +9,7 @@ import javafx.scene.input.KeyEvent
 import javafx.scene.layout.VBox
 import rekkursion.enumerate.Strings
 import rekkursion.view.styled.StyledHBox
+import rekkursion.view.styled.StyledLabel
 
 // the number selector (integer only)
 class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int): StyledHBox() {
@@ -28,10 +29,10 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
     private val mVbxIncAndDec = VBox()
 
     // the label-as-button for incrementing the value by the amount-to-step
-    private val mLblIncrement = Label(Strings.get(Strings.Increment))
+    private val mLblIncrement = StyledLabel(Strings.Increment)
 
     // the label-as-button for decrementing the value by the amount-to-step
-    private val mLblDecrement = Label(Strings.get(Strings.Decrement))
+    private val mLblDecrement = StyledLabel(Strings.Decrement)
 
     // the interface of on-key-released event
     private var mOnKeyReleased: OnKeyReleased? = null

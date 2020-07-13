@@ -8,10 +8,10 @@ import rekkursion.view.styled.StyledVBox
 
 class PracticeMenuView: StyledVBox() {
     // the button for the single choice problems
-    private val mBtnSingleChoice = StyledButton(Strings.get(Strings.SingleChoiceProblem))
+    private val mBtnSingleChoice = StyledButton(Strings.SingleChoiceProblem)
 
     // the button for the spelling problems
-    private val mBtnSpelling = StyledButton(Strings.get(Strings.SpellingProblem))
+    private val mBtnSpelling = StyledButton(Strings.SpellingProblem)
 
     init {
         // add all buttons into this v-box

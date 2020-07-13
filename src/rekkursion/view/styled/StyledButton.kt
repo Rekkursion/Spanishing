@@ -3,11 +3,15 @@ package rekkursion.view.styled
 import javafx.geometry.Pos
 import javafx.scene.control.Button
 import javafx.scene.paint.Color
+import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 
-class StyledButton(buttonName: String): Button(buttonName) {
+class StyledButton(buttonName: String, strEnum: Strings? = null): Button(buttonName) {
     // the secondary constructor
     constructor(): this("")
+
+    // the secondary constructor
+    constructor(strEnum: Strings): this(Strings.get(strEnum), strEnum)
 
     init {
         // set the width
@@ -16,6 +20,10 @@ class StyledButton(buttonName: String): Button(buttonName) {
         alignment = Pos.CENTER
         // set the font size
         style = "-fx-font-size: 18;"
+
+        // register to the strings enumeration if needs
+        if (strEnum != null)
+            Strings.register(this, strEnum)
     }
 
     /* ======================================== */

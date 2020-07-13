@@ -9,7 +9,7 @@ import rekkursion.view.styled.StyledVBox
 
 class SingleChoiceSettingsPanel: StyledVBox() {
     // the label for showing the title
-    private val mLblTitle = StyledLabel(Strings.get(Strings.SelectTypeOfSingleChoiceProblem))
+    private val mLblTitle = StyledLabel(Strings.SelectTypeOfSingleChoiceProblem)
 
     // the radio-button for the type of esp-to-chi-and-eng
     private val mRdbEspToChiAndEng = RadioButton(Strings.get(Strings.EspToChiAndEng))
@@ -33,6 +33,11 @@ class SingleChoiceSettingsPanel: StyledVBox() {
         mRdbEspToChiAndEng.style = "-fx-font-size: 18;"
         mRdbChiAndEngToEsp.style = "-fx-font-size: 18;"
         mRdbBoth.style = "-fx-font-size: 18;"
+
+        // register to the strings
+        Strings.register(mRdbEspToChiAndEng, Strings.EspToChiAndEng)
+        Strings.register(mRdbChiAndEngToEsp, Strings.ChiAndEngToEsp)
+        Strings.register(mRdbBoth, Strings.BothTypes)
 
         // set the default selected radio-button
         mRdbBoth.isSelected = true

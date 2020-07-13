@@ -24,16 +24,16 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
     private val mGridPane = GridPane()
 
     // the label for showing no.'s of tested vocabularies
-    private val mLblTestedNo = StyledLabel(Strings.get(Strings.TestedNo))
+    private val mLblTestedNo = StyledLabel(Strings.TestedNo)
 
     // the label for showing tested vocabularies
-    private val mLblTestedVocs = StyledLabel(Strings.get(Strings.TestedVocs))
+    private val mLblTestedVocs = StyledLabel(Strings.TestedVocs)
 
     // the label for showing tested results (one per vocabulary)
-    private val mLblTestedResults = StyledLabel(Strings.get(Strings.TestedResults))
+    private val mLblTestedResults = StyledLabel(Strings.TestedResults)
 
     // the button for going back to the practice-menu-view
-    private val mBtnGoBack = StyledButton(Strings.get(Strings.Back))
+    private val mBtnGoBack = StyledButton(Strings.Back)
 
     init {
         // set the fit-to-height/-width
@@ -70,9 +70,9 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
             mGridPane.add(subScrollPane, 1, index + 1)
             // add the label-for-result into the grid-pane
             mGridPane.add(StyledLabel(
-                    problem.ansResult.name,
-                    if (problem.ansResult == AnsResult.CORRECT) Colors.CORRECT_RES.color
-                    else Colors.WRONG_RES.color
+                    problem.ansResult.strEnum,
+                    if (problem.ansResult == AnsResult.CORRECT) Colors.CORRECT_RES
+                    else Colors.WRONG_RES
             ), 2, index + 1)
         }
 
