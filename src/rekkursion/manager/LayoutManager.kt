@@ -3,10 +3,10 @@ package rekkursion.manager
 import javafx.scene.Node
 import javafx.scene.layout.BorderPane
 import rekkursion.view.MenuListView
-import rekkursion.view.pref.PreferencesPage
 import rekkursion.view.VocabularyListView
 import rekkursion.view.practiceview.PracticeContainerPane
 import rekkursion.view.practiceview.PracticeMenuView
+import rekkursion.view.pref.PreferencesPage
 
 object LayoutManager {
     // the border-pane as the parent

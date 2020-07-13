@@ -49,15 +49,15 @@ object JsonReader {
                 val esp = jv.getString("esp")
 
                 // add this vocabulary into the result list
-                if (esp.isNotEmpty())
+                if (esp.isNotEmpty()) {
+                    val posp = PartOfSpeech.getPospFromAbbr(jv.getString("posp"))
                     ret.add(Vocabulary(
                             esp,
-                            Meaning(
-                                    jv.getString("chi"),
-                                    jv.getString("eng"),
-                                    PartOfSpeech.getPospFromAbbr(jv.getString("posp"))
-                            )
+                            Meaning(jv.getString("chi"), jv.getString("eng"), posp)
                     ))
+                    if (posp == PartOfSpeech.NONE)
+                        println("warning: no posp \'${jv.getString("posp")}\' of the word \"$esp\"")
+                }
             }
         } catch (e: Exception) {
             val alert = Alert(Alert.AlertType.ERROR)

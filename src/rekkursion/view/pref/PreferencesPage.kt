@@ -1,11 +1,9 @@
 package rekkursion.view.pref
 
-import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.scene.control.ComboBox
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
-import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledVBox
 
 class PreferencesPage: StyledVBox() {
@@ -34,6 +32,8 @@ class PreferencesPage: StyledVBox() {
         // the listener for selecting
         comboBox.valueProperty().addListener { _, _, newValue ->
             PreferenceManager.write("lang", newValue)
+            //
+
         }
     }
 }

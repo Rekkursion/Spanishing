@@ -1,6 +1,5 @@
 package rekkursion.enumerate
 
-import javafx.scene.Node
 import javafx.scene.control.*
 import javafx.scene.text.Text
 import javafx.stage.Stage

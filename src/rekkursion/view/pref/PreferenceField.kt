@@ -5,7 +5,6 @@ import javafx.geometry.Pos
 import javafx.scene.Node
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
-import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledLabel
 
