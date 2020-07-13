@@ -14,6 +14,7 @@ import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
+import rekkursion.util.AlertUtils
 import rekkursion.util.GenericString
 import rekkursion.util.HoldingQueue
 import rekkursion.util.digits
@@ -84,20 +85,8 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
 
         // set the event of clicking on skip-button
         mBtnSkip.setOnMouseClicked {
-            // TODO: create an alert factory
             if (PreferenceManager.alertWhenSkipping) {
-                val alert = Alert(Alert.AlertType.CONFIRMATION)
-                alert.title = Strings.get(Strings.AlertConfirmationTitle)
-                alert.headerText = Strings.get(Strings.SkipProblemAlertMsg)
-                alert.contentText = Strings.get(Strings.AlertConfirmationHeaderMsg)
-
-                Strings.register(alert,
-                        GenericString(Strings.AlertConfirmationTitle),
-                        GenericString(Strings.SkipProblemAlertMsg),
-                        GenericString(Strings.AlertConfirmationHeaderMsg)
-                )
-
-                if (alert.showAndWait().get() == ButtonType.OK)
+                if (AlertUtils.createConfirmAlert(Strings.SkipProblemAlertMsg).showAndWait().get() == ButtonType.OK)
                     showNextProblem()
             }
             else
@@ -107,18 +96,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         // set the event of clicking on finish-button
         mBtnFinish.setOnMouseClicked {
             if (PreferenceManager.alertWhenFinishing) {
-                val alert = Alert(Alert.AlertType.CONFIRMATION)
-                alert.title = Strings.get(Strings.AlertConfirmationTitle)
-                alert.headerText = Strings.get(Strings.FinishProblemSetAlertMsg)
-                alert.contentText = Strings.get(Strings.AlertConfirmationHeaderMsg)
-
-                Strings.register(alert,
-                        GenericString(Strings.AlertConfirmationTitle),
-                        GenericString(Strings.FinishProblemSetAlertMsg),
-                        GenericString(Strings.AlertConfirmationHeaderMsg)
-                )
-
-                if (alert.showAndWait().get() == ButtonType.OK)
+                if (AlertUtils.createConfirmAlert(Strings.FinishProblemSetAlertMsg).showAndWait().get() == ButtonType.OK)
                     LayoutManager.switchPracticeContent(ResultPage(mProblemList))
             }
             else
