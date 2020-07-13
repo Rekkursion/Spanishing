@@ -23,6 +23,12 @@ object PreferenceManager {
     // the language the user would like to use
     var lang: String = PropertiesManager.defaultLang
 
+    // the alert when skipping a single problem
+    var alertWhenSkipping: Boolean = PropertiesManager.defaultAlertWhenSkipping
+
+    // the alert when finishing (skipping) a whole problem-set
+    var alertWhenFinishing: Boolean = PropertiesManager.defaultAlertWhenFinishing
+
     init {
         // the string of json content
         var jsonString = ""
@@ -44,6 +50,8 @@ object PreferenceManager {
             windowWidth = jObj.getDouble("window-width")
             windowHeight = jObj.getDouble("window-height")
             lang = jObj.getString("lang")
+            alertWhenSkipping = jObj.getBoolean("alert-when-skipping")
+            alertWhenFinishing = jObj.getBoolean("alert-when-finishing")
         } catch (e: Exception) {}
     }
 
@@ -61,6 +69,9 @@ object PreferenceManager {
                         Double::class.javaObjectType,
                         Double::class.javaPrimitiveType -> value.toDouble()
                         String::class.java -> value
+                        Boolean::class.java,
+                        Boolean::class.javaObjectType,
+                        Boolean::class.javaPrimitiveType -> value.toBoolean()
                         else -> null
                     }
                     if (data != null) {

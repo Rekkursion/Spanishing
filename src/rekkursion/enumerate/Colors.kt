@@ -19,5 +19,8 @@ enum class Colors(val color: Color) {
     WRONG_RES(Color.RED),
 
     // the color for showing CORRECT results at a result-page
-    CORRECT_RES(Color.GREENYELLOW)
+    CORRECT_RES(Color.GREENYELLOW),
+
+    // the color for showing NO_ANSWER results at a result-page
+    NO_ANSWER_RES(Color.ORANGE)
 }

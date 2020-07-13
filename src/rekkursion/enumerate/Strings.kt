@@ -33,6 +33,19 @@ enum class Strings(val chi: String, val eng: String) {
     // the title for selecting the number of problems
     SelectNumOfProblems("請選擇題目的數量：", "Please select the number of problems:"),
 
+    // the button name of skipping a single problem
+    SkipProblem("跳過這題", "Skip"),
+    // the button name of finishing a whole problem-set
+    FinishProblemSet("結束作答", "Finish"),
+    // the alert title of the confirmation-type
+    AlertConfirmationTitle("再次確認", "Confirmation"),
+    // the alert header text of the confirmation-type
+    AlertConfirmationHeaderMsg("若不想見到此確認框，請至設定頁進行設定（即使在作答中，也可以隨時切換至設定頁）。", "You can set preferences if you don\'t want to see this confirmation again."),
+    // the alert message of skipping a single problem
+    SkipProblemAlertMsg("確定要跳過這題嗎？", "Skip this problem?"),
+    // the alert message of finishing a whole problem-set
+    FinishProblemSetAlertMsg("確定要結束作答嗎？", "Finish the practice?"),
+
     // the title for showing numbers per tested vocabularies
     TestedNo("題號", "No."),
     // the title for showing tested vocabularies
@@ -51,18 +64,26 @@ enum class Strings(val chi: String, val eng: String) {
     InterfaceLang_Chi("中文/Chinese", "中文/Chinese"),
     // pref: english as the interface language
     InterfaceLang_Eng("英文/English", "英文/English"),
+    // pref: alert when skipping a single problem
+    AlertWhenSkippingProblem("欲跳過題目時，彈出確認的訊息框", "Prompt an alert when skipping a problem"),
+    // pref: alert when finishing (skipping) a whole problem-set
+    AlertWhenFinishingProblemSet("欲結束作答時，彈出確認的訊息框", "Prompt an alert when skipping a whole problem-set"),
 
     // used when the answer was correct
     Correct("正確", "Correct"),
     // used when the answer was wrong
     Wrong("錯誤", "Wrong"),
     // used when the problem has not been answered
-    NoAnswer("未作答", "No Answer"),
+    NoAnswer("未作答", "No Answered"),
 
     // the string of 'start'
     Start("開始", "Start"),
     // the string of 'back'
     Back("返回", "Back"),
+    // the string of 'yes'
+    Yes("要", "Yes"),
+    // the string of 'no'
+    No("不要", "No"),
 
     // the empty string
     Empty("", "")
@@ -100,9 +121,14 @@ enum class Strings(val chi: String, val eng: String) {
                 (any as? TextField)?.text = joined
                 (any as? TextArea)?.text = joined
                 (any as? Button)?.text = joined
+                (any as? ToggleButton)?.text = joined
                 (any as? ComboBox<*>)?.promptText = joined
                 (any as? Spinner<*>)?.promptText = joined
                 (any as? PreferenceField)?.setFieldName(joined)
+                (any as? Alert)?.let {
+                    it.title = strs.get(0)
+                    it.contentText = strs.get(1)
+                }
             }
         }
     }

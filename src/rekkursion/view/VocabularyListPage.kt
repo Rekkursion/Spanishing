@@ -3,6 +3,7 @@ package rekkursion.view
 import javafx.geometry.Pos
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
+import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.util.GenericString
 import rekkursion.view.styled.StyledLabel
@@ -16,6 +17,8 @@ class VocabularyListPage: StyledVBox() {
     private val mLblNumOfVocs = StyledLabel(textColor = Colors.NUMBERED.color)
 
     init {
+        prefHeight = PreferenceManager.windowHeight
+
         // bind the pref-width to the parent's width
         mLblNumOfVocs.prefWidthProperty().bind(widthProperty())
         // set the alignment

@@ -5,12 +5,13 @@ import javafx.geometry.Pos
 import javafx.scene.Node
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
+import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledLabel
 
-class PreferenceField(fieldName: String, node: Node?): GridPane() {
+class PreferenceField(fieldNameEnum: Strings, node: Node?): GridPane() {
     // the label for showing the key (title of this preference)
-    private val mLblKey = StyledLabel(fieldName)
+    private val mLblKey = StyledLabel(fieldNameEnum)
 
     // the view as the value ui for this field
     private var mValueView: Node? = node
@@ -23,8 +24,8 @@ class PreferenceField(fieldName: String, node: Node?): GridPane() {
         hgap = PropertiesManager.generalSpacing
 
         // set the column-constraints
-        val c1 = ColumnConstraints(); c1.percentWidth = 50.0; c1.halignment = HPos.CENTER; c1.isFillWidth = true
-        val c2 = ColumnConstraints(); c2.percentWidth = 50.0; c2.halignment = HPos.CENTER; c2.isFillWidth = true
+        val c1 = ColumnConstraints(); c1.percentWidth = 70.0; c1.halignment = HPos.CENTER; c1.isFillWidth = true
+        val c2 = ColumnConstraints(); c2.percentWidth = 30.0; c2.halignment = HPos.CENTER; c2.isFillWidth = true
         columnConstraints.addAll(c1, c2)
 
         // add label-as-field-title

@@ -2,17 +2,23 @@ package rekkursion.view.practiceview
 
 import javafx.application.Platform
 import javafx.geometry.Insets
+import javafx.scene.control.Alert
 import javafx.scene.control.Button
+import javafx.scene.control.ButtonType
 import rekkursion.enumerate.AnsResult
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.SingleChoiceProblemType
+import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
+import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
+import rekkursion.util.GenericString
 import rekkursion.util.HoldingQueue
 import rekkursion.util.digits
 import rekkursion.view.styled.StyledButton
+import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 import kotlin.random.Random
@@ -33,6 +39,15 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
     // the index of the current problem
     private var mCurrentProblemIdx = -1
 
+    // the h-box for containing skipping & finishing buttons
+    private val mHbxSkipAndFinish = StyledHBox()
+
+    // the button for skipping a single problem
+    private val mBtnSkip = StyledButton(Strings.SkipProblem)
+
+    // the button for finishing the whole problem-set
+    private val mBtnFinish = StyledButton(Strings.FinishProblemSet)
+
     init {
         // determine the problems according to the type & the number of problems
         generateProblemsAndShowTheFirst(problemType, numOfProblems)
@@ -42,8 +57,12 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         // set the font size of the stem label
         mLblStem.style = "-fx-font-size: 24;"
 
+        // add skipping & finishing buttons into an h-box
+        mHbxSkipAndFinish.children.addAll(mBtnSkip, mBtnFinish)
+        mHbxSkipAndFinish.padding = Insets(40.0, 0.0, 0.0, 0.0)
+
         // add all sub-views into this v-box
-        children.addAll(mLblNo, mLblStem, *mBtnOptionList)
+        children.addAll(mLblNo, mLblStem, *mBtnOptionList, mHbxSkipAndFinish)
 
         // set the events of buttons of options
         mBtnOptionList.forEachIndexed { index, button ->
@@ -61,6 +80,49 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                     }
                 }
             }
+        }
+
+        // set the event of clicking on skip-button
+        mBtnSkip.setOnMouseClicked {
+            // TODO: create an alert factory
+            if (PreferenceManager.alertWhenSkipping) {
+                val alert = Alert(Alert.AlertType.CONFIRMATION)
+                alert.title = Strings.get(Strings.AlertConfirmationTitle)
+                alert.headerText = Strings.get(Strings.SkipProblemAlertMsg)
+                alert.contentText = Strings.get(Strings.AlertConfirmationHeaderMsg)
+
+                Strings.register(alert,
+                        GenericString(Strings.AlertConfirmationTitle),
+                        GenericString(Strings.SkipProblemAlertMsg),
+                        GenericString(Strings.AlertConfirmationHeaderMsg)
+                )
+
+                if (alert.showAndWait().get() == ButtonType.OK)
+                    showNextProblem()
+            }
+            else
+                showNextProblem()
+        }
+
+        // set the event of clicking on finish-button
+        mBtnFinish.setOnMouseClicked {
+            if (PreferenceManager.alertWhenFinishing) {
+                val alert = Alert(Alert.AlertType.CONFIRMATION)
+                alert.title = Strings.get(Strings.AlertConfirmationTitle)
+                alert.headerText = Strings.get(Strings.FinishProblemSetAlertMsg)
+                alert.contentText = Strings.get(Strings.AlertConfirmationHeaderMsg)
+
+                Strings.register(alert,
+                        GenericString(Strings.AlertConfirmationTitle),
+                        GenericString(Strings.FinishProblemSetAlertMsg),
+                        GenericString(Strings.AlertConfirmationHeaderMsg)
+                )
+
+                if (alert.showAndWait().get() == ButtonType.OK)
+                    LayoutManager.switchPracticeContent(ResultPage(mProblemList))
+            }
+            else
+                LayoutManager.switchPracticeContent(ResultPage(mProblemList))
         }
     }
 

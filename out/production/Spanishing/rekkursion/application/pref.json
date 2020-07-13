@@ -1,5 +1,7 @@
 {
     "window-width": 1180,
     "window-height": 660,
-    "lang": "英文/English"
+    "alert-when-finishing": true,
+    "lang": "中文/Chinese",
+    "alert-when-skipping": true
 }

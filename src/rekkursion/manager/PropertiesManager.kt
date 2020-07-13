@@ -10,6 +10,12 @@ object PropertiesManager {
     // the default interface language
     const val defaultLang: String = "eng"
 
+    // the default boolean-value of the alert when skipping a single problem
+    const val defaultAlertWhenSkipping: Boolean = true
+
+    // the default boolean-value of the alert when finishing (skipping) a whole problem-set
+    const val defaultAlertWhenFinishing: Boolean = true
+
     // the general spacing among uis
     const val generalSpacing: Double = 10.0
 
