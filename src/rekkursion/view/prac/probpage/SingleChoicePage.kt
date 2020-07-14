@@ -2,15 +2,15 @@ package rekkursion.view.prac.probpage
 
 import javafx.application.Platform
 import javafx.scene.control.Button
-import rekkursion.enumerate.*
-import rekkursion.manager.LayoutManager
+import rekkursion.enumerate.AnsResult
+import rekkursion.enumerate.Colors
+import rekkursion.enumerate.PracticeType
+import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.manager.PropertiesManager
 import rekkursion.manager.VocManager
-import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
+import rekkursion.model.problem.SingleChoiceProblem
 import rekkursion.util.HoldingQueue
-import rekkursion.util.digits
-import rekkursion.view.prac.ResultPage
 import rekkursion.view.styled.StyledButton
 import kotlin.random.Random
 
@@ -72,7 +72,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
             } else mProblemType
 
             // add a new problem into the problem list
-            mProblemList.add(Problem(type, pickedVoc, optList))
+            mProblemList.add(SingleChoiceProblem(type, pickedVoc, optList))
         }
 
         mCurrentProblemIdx = -1
@@ -81,7 +81,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
             mBtnOptionList.forEachIndexed { index, button ->
                 button.setOnMouseClicked {
                     if (mCurrentProblemIdx < mProblemList.size) {
-                        val prob = mProblemList[mCurrentProblemIdx]
+                        val prob = mProblemList[mCurrentProblemIdx] as SingleChoiceProblem
                         if (index == prob.correctAnsPos) {
                             if (prob.ansResult == AnsResult.NO_ANSWERED)
                                 prob.ansResult = AnsResult.CORRECT
@@ -103,21 +103,13 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
 
     // show the next problem
     override fun showNextProblem() {
-        val size = mProblemList.size
-        val digits = size.digits()
-
-        ++mCurrentProblemIdx
-        // show the problem normally
-        if (mCurrentProblemIdx < size) {
-            mLblNo.text = String.format("%0${digits}d/%0${digits}d", mCurrentProblemIdx + 1, size)
-            mLblStem.text = mProblemList[mCurrentProblemIdx].getStem()
+        super.showNextProblem()
+        if (mCurrentProblemIdx < mPickedVocList.size) {
             repeat(PropertiesManager.numOfOptionsInSingleChoiceProblem) {
-                mBtnOptionList[it].text = mProblemList[mCurrentProblemIdx].getOption(it)
+                mBtnOptionList[it].text = (mProblemList[mCurrentProblemIdx] as SingleChoiceProblem).getOptionStr(it)
                 (mBtnOptionList[it] as StyledButton).unsetBgColor()
             }
         }
-        // show the result
-        else
-            LayoutManager.switchPracticeContent(ResultPage(mProblemList))
     }
+
 }

@@ -9,7 +9,7 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PropertiesManager
-import rekkursion.model.Problem
+import rekkursion.model.problem.Problem
 import rekkursion.util.digits
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledLabel

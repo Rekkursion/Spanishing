@@ -11,8 +11,4 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
     override fun generateProblemsAndShowTheFirst() {
 
     }
-
-    override fun showNextProblem() {
-
-    }
 }

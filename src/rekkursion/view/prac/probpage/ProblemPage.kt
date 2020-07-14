@@ -1,20 +1,18 @@
 package rekkursion.view.prac.probpage
 
-import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.scene.Node
 import javafx.scene.control.ButtonType
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
-import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
-import rekkursion.model.Problem
 import rekkursion.model.Vocabulary
+import rekkursion.model.problem.Problem
 import rekkursion.util.AlertUtils
-import rekkursion.util.HoldingQueue
+import rekkursion.util.digits
 import rekkursion.view.prac.ResultPage
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledHBox
@@ -24,10 +22,10 @@ import kotlin.random.Random
 
 abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {
     // the type of the practice
-    protected val mPracticeType = practiceType
+    private val mPracticeType = practiceType
 
     // the number of problems
-    protected val mNumOfProblems = numOfProblems
+    private val mNumOfProblems = numOfProblems
 
     // the label for showing the no. of this problem
     protected val mLblNo = StyledLabel(textColor = Colors.NUMBERED.color)
@@ -96,7 +94,23 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
     abstract fun generateProblemsAndShowTheFirst()
 
     // show the next problem or the result-page if there're no more problems
-    abstract fun showNextProblem()
+    protected open fun showNextProblem() {
+        val size = mPickedVocList.size
+        val digits = size.digits()
+
+        ++mCurrentProblemIdx
+
+        // show the problem normally
+        if (mCurrentProblemIdx < size) {
+            val prob = mProblemList[mCurrentProblemIdx]
+
+            mLblNo.text = String.format("%0${digits}d/%0${digits}d", mCurrentProblemIdx + 1, size)
+            mLblStem.text = prob.getStemStr()
+        }
+        // show the result
+        else
+            LayoutManager.switchPracticeContent(ResultPage(mProblemList))
+    }
 
     /* ======================================== */
 

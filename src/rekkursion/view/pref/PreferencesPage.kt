@@ -3,10 +3,8 @@ package rekkursion.view.pref
 import javafx.collections.FXCollections
 import javafx.scene.control.CheckBox
 import javafx.scene.control.ComboBox
-import javafx.scene.control.ToggleButton
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
-import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledVBox
 
 class PreferencesPage: StyledVBox() {
