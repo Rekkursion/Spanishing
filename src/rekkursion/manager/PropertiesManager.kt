@@ -16,6 +16,9 @@ object PropertiesManager {
     // the default boolean-value of the alert when finishing (skipping) a whole problem-set
     const val defaultAlertWhenFinishing: Boolean = true
 
+    // the number of options in a single choice problem
+    const val numOfOptionsInSingleChoiceProblem: Int = 4
+
     // the general spacing among uis
     const val generalSpacing: Double = 10.0
 

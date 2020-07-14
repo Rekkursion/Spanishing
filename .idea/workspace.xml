@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/ProblemPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/SpellingPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/LayoutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/LayoutManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeContainerPane.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeMenuView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeMenuView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeMenuView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeSettingsView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeSettingsView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeSettingsView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/PracticeSettingsView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/ResultPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/ResultPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoicePage$$special$$inlined$forEachIndexed$lambda$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoicePage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoicePage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoicePage$generateProblemsAndShowTheFirst$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoicePage$generateProblemsAndShowTheFirst$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoicePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/practiceview/SingleChoiceSettingsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/application/pref.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/application/pref.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/LayoutManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/LayoutManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/practiceview/PracticeContainerPane.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/PracticeContainerPane.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/practiceview/PracticeMenuView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/PracticeMenuView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/practiceview/PracticeSettingsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/PracticeSettingsView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/practiceview/ResultPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/ResultPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/practiceview/SingleChoicePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/SingleChoicePage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/practiceview/SingleChoiceSettingsPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/SingleChoiceSettingsPanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/PropertiesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/PropertiesManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/ProblemPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/ProblemPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/SingleChoicePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/SingleChoicePage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/SpellingPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/probpage/SpellingPage.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

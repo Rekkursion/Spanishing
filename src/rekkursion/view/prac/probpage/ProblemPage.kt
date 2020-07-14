@@ -1,20 +1,26 @@
 package rekkursion.view.prac.probpage
 
+import javafx.application.Platform
 import javafx.geometry.Insets
 import javafx.scene.Node
 import javafx.scene.control.ButtonType
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
+import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PreferenceManager
+import rekkursion.manager.VocManager
 import rekkursion.model.Problem
+import rekkursion.model.Vocabulary
 import rekkursion.util.AlertUtils
+import rekkursion.util.HoldingQueue
 import rekkursion.view.prac.ResultPage
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
+import kotlin.random.Random
 
 abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {
     // the type of the practice
@@ -28,6 +34,9 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
 
     // the label for showing a certain problem's stem
     protected val mLblStem = StyledLabel()
+
+    // the list of picked vocabularies as problems
+    protected val mPickedVocList = arrayListOf<Vocabulary>()
 
     // the list of problems
     protected val mProblemList = arrayListOf<Problem>()
@@ -76,17 +85,51 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
             else
                 LayoutManager.switchPracticeContent(ResultPage(mProblemList))
         }
+
+        // pick some vocabularies as problems
+        pickVocabularies()
     }
 
     /* ======================================== */
 
-    // determine the problems according to the type of practice & the number of problems
+    // determine the problems according to the generated vocabularies
     abstract fun generateProblemsAndShowTheFirst()
 
     // show the next problem or the result-page if there're no more problems
     abstract fun showNextProblem()
 
     /* ======================================== */
+
+    // pick vocabularies in the number of problems
+    private fun pickVocabularies() {
+        Thread {
+            // get the copied vocabulary list
+            val vocList = VocManager.copiedVocList
+
+            // the number of currently-generated problems
+            var curNum = 0
+
+            // the hash-set of picked vocabularies
+            val pickedVocHashSet = HashSet<Vocabulary>()
+
+            // randomly pick some vocabularies as problems
+            while (curNum < mNumOfProblems) {
+                // randomly pick an index and get the vocabulary
+                val voc = vocList[Random.nextInt(0, vocList.size)]
+                // if this index has not been picked
+                if (!pickedVocHashSet.contains(voc)) {
+                    ++curNum
+                    pickedVocHashSet.add(voc)
+                }
+            }
+
+            // convert the hash-set into an array-list
+            pickedVocHashSet.forEach { mPickedVocList.add(it.copy()) }
+
+            // generate the problems
+            generateProblemsAndShowTheFirst()
+        }.start()
+    }
 
     // insert some uis before the skipping button & the finishing button
     protected fun insertNodesBeforeSkippingAndFinishingButtons(vararg nodes: Node) {
