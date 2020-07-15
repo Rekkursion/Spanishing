@@ -12,7 +12,10 @@ import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledTextField
 
 // the input-area for a spelling problem
-class SpellingInputArea(voc: String? = null, submitButton: Button? = null): StyledHBox() {
+class SpellingInputArea(voc: String? = null,
+                        submitButton: Button? = null,
+                        skipButton: Button? = null,
+                        finishButton: Button? = null): StyledHBox() {
     // the vocabulary of this input-area
     private var mVoc = voc
 
@@ -20,7 +23,13 @@ class SpellingInputArea(voc: String? = null, submitButton: Button? = null): Styl
     private val mTextFieldList = arrayListOf<StyledTextField>()
 
     // the button for submitting
-    private var mBtnSubmit: Button? = submitButton
+    private val mBtnSubmit: Button? = submitButton
+
+    // the button for skipping
+    private val mBtnSkip: Button? = skipButton
+
+    // the button for finishing
+    private val mBtnFinish: Button? = finishButton
 
     init {
         update()
@@ -120,12 +129,19 @@ class SpellingInputArea(voc: String? = null, submitButton: Button? = null): Styl
             when (it.code) {
                 // the enter
                 KeyCode.ENTER -> {
-                    val idx = getIndexOfTextField(textField)
-                    if (idx != null) {
-                        if (idx + 1 == mTextFieldList.size)
-                            mBtnSubmit?.fire()
-                        else
-                            mTextFieldList.getOrNull(idx + 1)?.requestFocus()
+                    // ctrl + enter: skip
+                    if (it.isControlDown) mBtnSkip?.fire()
+                    // shift + enter: finish
+                    else if (it.isShiftDown) mBtnFinish?.fire()
+                    // single enter: focus on the next text-field or fire the submission button
+                    else {
+                        val idx = getIndexOfTextField(textField)
+                        if (idx != null) {
+                            if (idx + 1 == mTextFieldList.size)
+                                mBtnSubmit?.fire()
+                            else
+                                mTextFieldList.getOrNull(idx + 1)?.requestFocus()
+                        }
                     }
                 }
             }

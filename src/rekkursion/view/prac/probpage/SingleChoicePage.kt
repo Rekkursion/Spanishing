@@ -2,6 +2,7 @@ package rekkursion.view.prac.probpage
 
 import javafx.application.Platform
 import javafx.scene.control.Button
+import javafx.scene.input.KeyCode
 import rekkursion.enumerate.AnsResult
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
@@ -79,6 +80,17 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         Platform.runLater {
             // set the events of buttons of options
             mBtnOptionList.forEachIndexed { index, button ->
+                // request the focusing on the first option-button
+                if (index == 0) {
+                    this.requestFocus()
+                    this.setOnKeyPressed {
+                        if (it.code == KeyCode.ENTER) {
+                            if (it.isControlDown) mBtnSkip.fire()
+                            else if (it.isShiftDown) mBtnFinish.fire()
+                        }
+                    }
+                }
+
                 button.setOnMouseClicked {
                     if (mCurrentProblemIdx < mProblemList.size) {
                         val prob = mProblemList[mCurrentProblemIdx] as SingleChoiceProblem

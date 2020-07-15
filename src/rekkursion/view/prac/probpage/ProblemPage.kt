@@ -46,10 +46,10 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
     private val mHbxSkipAndFinish = StyledHBox()
 
     // the button for skipping a single problem
-    private val mBtnSkip = StyledButton(Strings.SkipProblem)
+    protected val mBtnSkip = StyledButton(Strings.SkipProblem)
 
     // the button for finishing the whole problem-set
-    private val mBtnFinish = StyledButton(Strings.FinishProblemSet)
+    protected val mBtnFinish = StyledButton(Strings.FinishProblemSet)
 
     init {
         // set the padding of the stem label
@@ -65,7 +65,7 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
         children.addAll(mLblNo, mLblStem, mHbxSkipAndFinish)
 
         // set the event of clicking on skip-button
-        mBtnSkip.setOnMouseClicked {
+        mBtnSkip.setOnAction {
             if (PreferenceManager.alertWhenSkipping) {
                 if (AlertUtils.createConfirmAlert(Strings.SkipProblemAlertMsg).showAndWait().get() == ButtonType.OK)
                     showNextProblem()
@@ -75,7 +75,7 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
         }
 
         // set the event of clicking on finish-button
-        mBtnFinish.setOnMouseClicked {
+        mBtnFinish.setOnAction {
             if (PreferenceManager.alertWhenFinishing) {
                 if (AlertUtils.createConfirmAlert(Strings.FinishProblemSetAlertMsg).showAndWait().get() == ButtonType.OK)
                     LayoutManager.switchPracticeContent(ResultPage(mProblemList))

@@ -22,7 +22,7 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
 
     init {
         // initialize the spelling-input-area
-        mSpellingArea = SpellingInputArea(submitButton = mBtnSubmit)
+        mSpellingArea = SpellingInputArea(submitButton = mBtnSubmit, skipButton = mBtnSkip, finishButton = mBtnFinish)
 
         // hide the telling-wrong-spelled label
         mLblShowWrongSpelling.isVisible = false

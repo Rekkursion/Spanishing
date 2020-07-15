@@ -34,9 +34,9 @@ enum class Strings(val chi: String, val eng: String) {
     SelectNumOfProblems("請選擇題目的數量：", "Please select the number of problems:"),
 
     // the button name of skipping a single problem
-    SkipProblem("跳過這題", "Skip"),
+    SkipProblem("跳過這題 (Ctrl + Enter)", "Skip (Ctrl + Enter)"),
     // the button name of finishing a whole problem-set
-    FinishProblemSet("結束作答", "Finish"),
+    FinishProblemSet("結束作答 (Shift + Enter)", "Finish (Shift + Enter)"),
     // the alert title of the confirmation-type
     AlertConfirmationTitle("再次確認", "Confirmation"),
     // the alert header text of the confirmation-type
