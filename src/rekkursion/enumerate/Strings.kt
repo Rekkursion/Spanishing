@@ -84,6 +84,8 @@ enum class Strings(val chi: String, val eng: String) {
     Yes("要", "Yes"),
     // the string of 'no'
     No("不要", "No"),
+    // the string of 'submit'
+    Submit("送出", "Submit"),
 
     // the empty string
     Empty("", "")

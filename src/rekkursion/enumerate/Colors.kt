@@ -22,5 +22,8 @@ enum class Colors(val color: Color) {
     CORRECT_RES(Color.GREENYELLOW),
 
     // the color for showing NO_ANSWER results at a result-page
-    NO_ANSWER_RES(Color.ORANGE)
+    NO_ANSWER_RES(Color.ORANGE),
+
+    // the color for spelling vocabularies in spelling problems
+    SPELLING(Color.SKYBLUE)
 }

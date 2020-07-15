@@ -104,7 +104,8 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
     // show the next problem
     override fun showNextProblem() {
         super.showNextProblem()
-        if (mCurrentProblemIdx < mPickedVocList.size) {
+
+        if (mCurrentProblemIdx < mProblemList.size) {
             repeat(PropertiesManager.numOfOptionsInSingleChoiceProblem) {
                 mBtnOptionList[it].text = (mProblemList[mCurrentProblemIdx] as SingleChoiceProblem).getOptionStr(it)
                 (mBtnOptionList[it] as StyledButton).unsetBgColor()

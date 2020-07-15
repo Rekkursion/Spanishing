@@ -25,6 +25,12 @@ object PropertiesManager {
     // the location of the json file of vocabularies
     const val vocabulariesJsonFileLocation: String = "D:\\rekkursion\\mooc\\spanish\\spanish_vocabularies.json"
 
+    // words that is no need to be spelled in a spelling problem
+    val nonSpelledWords = hashSetOf("el", "la", "los", "las", "de", "a", "y", "en")
+
+    // the width of a character in the spelling-text-field
+    const val widthOfChar: Double = 22.0
+
     // the list of menu features
     val menuList: Array<String> = arrayOf(
             "Vocabulary List",

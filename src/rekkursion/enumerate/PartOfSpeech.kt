@@ -32,7 +32,7 @@ enum class PartOfSpeech(val abbr: String) {
     companion object {
         // get the part of speech from an abbreviation
         fun getPospFromAbbr(abbr: String): PartOfSpeech {
-            /*val abbrList = abbr.split("; ?".toRegex())
+            /*val abbrList = abbr.split(";\\s?".toRegex())
             return values().filter { abbrList.contains(it.abbr) }
                     .joinToString { it.abbr }*/
             return values().filter { it.abbr == abbr }.getOrNull(0) ?: NONE
