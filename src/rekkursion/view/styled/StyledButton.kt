@@ -6,7 +6,7 @@ import javafx.scene.paint.Color
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 
-class StyledButton(buttonName: String, strEnum: Strings? = null): Button(buttonName) {
+open class StyledButton(buttonName: String, strEnum: Strings? = null): Button(buttonName) {
     // the secondary constructor
     constructor(): this("")
 

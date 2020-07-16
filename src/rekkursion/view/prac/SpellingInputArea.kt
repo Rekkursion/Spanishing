@@ -1,35 +1,26 @@
 package rekkursion.view.prac
 
-import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
 import javafx.scene.input.KeyCode
 import rekkursion.enumerate.Colors
 import rekkursion.manager.PropertiesManager
 import rekkursion.util.isEspAlphabet
+import rekkursion.view.prac.probpage.SpellingPage
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledTextField
 
 // the input-area for a spelling problem
-class SpellingInputArea(voc: String? = null,
-                        submitButton: Button? = null,
-                        skipButton: Button? = null,
-                        finishButton: Button? = null): StyledHBox() {
+class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null): StyledHBox() {
     // the vocabulary of this input-area
     private var mVoc = voc
 
+    // the spelling-page
+    private val mPage = spellingPage
+
     // the list of text-fields
     private val mTextFieldList = arrayListOf<StyledTextField>()
-
-    // the button for submitting
-    private val mBtnSubmit: Button? = submitButton
-
-    // the button for skipping
-    private val mBtnSkip: Button? = skipButton
-
-    // the button for finishing
-    private val mBtnFinish: Button? = finishButton
 
     init {
         update()
@@ -41,6 +32,13 @@ class SpellingInputArea(voc: String? = null,
     fun changeVoc(voc: String) {
         mVoc = voc
         update()
+    }
+
+    // append some spelling text at the currently-focused text-field
+    fun appendSpellingText(text: String) {
+        mTextFieldList.find { it.isFocused }?.let {
+            it.insertText(it.caretPosition, text)
+        }
     }
 
     // update the input-area
@@ -130,19 +128,54 @@ class SpellingInputArea(voc: String? = null,
                 // the enter
                 KeyCode.ENTER -> {
                     // ctrl + enter: skip
-                    if (it.isControlDown) mBtnSkip?.fire()
+                    if (it.isControlDown) mPage?.skip()
                     // shift + enter: finish
-                    else if (it.isShiftDown) mBtnFinish?.fire()
+                    else if (it.isShiftDown) mPage?.finishDirectly()
                     // single enter: focus on the next text-field or fire the submission button
                     else {
                         val idx = getIndexOfTextField(textField)
                         if (idx != null) {
-                            if (idx + 1 == mTextFieldList.size)
-                                mBtnSubmit?.fire()
-                            else
-                                mTextFieldList.getOrNull(idx + 1)?.requestFocus()
+                            if (idx + 1 == mTextFieldList.size) mPage?.submit()
+                            else mTextFieldList.getOrNull(idx + 1)?.requestFocus()
                         }
                     }
+                }
+
+                KeyCode.A -> {
+                    // alt + 'a' = 'á', alt + shift + 'a' = 'Á'
+                    if (it.isAltDown)
+                        mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'Á' else 'á')
+                }
+                KeyCode.E -> {
+                    // alt + 'e' = 'é', alt + shift + 'e' = 'É'
+                    if (it.isAltDown)
+                        mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'É' else 'é')
+                }
+                KeyCode.I -> {
+                    // alt + 'i' = 'í', alt + shift + 'i' = 'Í'
+                    if (it.isAltDown)
+                        mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'Í' else 'í')
+                }
+                // the alphabet 'o'
+                KeyCode.O -> {
+                    // alt + 'o' = 'ó', alt + shift + 'o' = 'Ó'
+                    if (it.isAltDown)
+                        mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'Ó' else 'ó')
+                }
+                // the alphabet 'u'
+                KeyCode.U -> {
+                    if (it.isAltDown) {
+                        // alt + ctrl + 'u' = 'ü', alt + ctrl + shift + 'u' = 'Ü'
+                        if (it.isControlDown) mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'Ü' else 'ü')
+                        // alt + 'u' = 'ú', alt + shift + 'u' = 'Ú'
+                        else mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'Ú' else 'ú')
+                    }
+                }
+                // the key of #1 (for typing 'ñ' & 'Ñ')
+                KeyCode.DIGIT1, KeyCode.NUMPAD1 -> {
+                    // alt + #1 = 'ñ', alt + shift + #1 = 'Ñ'
+                    if (it.isAltDown)
+                        mPage?.fireSpecialAlphabet(if (it.isShiftDown) 'Ñ' else 'ñ')
                 }
             }
         }

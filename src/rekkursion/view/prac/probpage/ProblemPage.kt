@@ -112,6 +112,12 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
             LayoutManager.switchPracticeContent(ResultPage(mProblemList))
     }
 
+    // fire the skipping button
+    fun skip() { mBtnSkip.fire() }
+
+    // fire the finishing button
+    fun finishDirectly() { mBtnFinish.fire() }
+
     /* ======================================== */
 
     // pick vocabularies in the number of problems

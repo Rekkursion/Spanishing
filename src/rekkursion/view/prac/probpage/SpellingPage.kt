@@ -12,7 +12,18 @@ import rekkursion.view.styled.StyledLabel
 
 class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOfProblems) {
     // the input-area for the user to spell
-    private val mSpellingArea: SpellingInputArea
+    private val mSpellingArea = SpellingInputArea(spellingPage = this)
+
+    // the list of buttons of special alphabets
+    private val mSpAlphabetButtonList = arrayOf(
+            StyledButton("á"), StyledButton("Á"),
+            StyledButton("é"), StyledButton("É"),
+            StyledButton("í"), StyledButton("Í"),
+            StyledButton("ó"), StyledButton("Ó"),
+            StyledButton("ú"), StyledButton("Ú"),
+            StyledButton("ü"), StyledButton("Ü"),
+            StyledButton("ñ"), StyledButton("Ñ")
+    )
 
     // the submit button
     private val mBtnSubmit = StyledButton(Strings.Submit)
@@ -21,9 +32,6 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
     private val mLblShowWrongSpelling = StyledLabel(Strings.Wrong, Colors.WRONG_RES)
 
     init {
-        // initialize the spelling-input-area
-        mSpellingArea = SpellingInputArea(submitButton = mBtnSubmit, skipButton = mBtnSkip, finishButton = mBtnFinish)
-
         // hide the telling-wrong-spelled label
         mLblShowWrongSpelling.isVisible = false
 
@@ -40,6 +48,12 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
                     mLblShowWrongSpelling.isVisible = true
                     prob.ansResult = AnsResult.WRONG
                 }
+            }
+        }
+
+        mSpAlphabetButtonList.forEach { button ->
+            button.setOnAction {
+                mSpellingArea.appendSpellingText(button.text)
             }
         }
     }
@@ -69,5 +83,13 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
         mLblShowWrongSpelling.isVisible = false
         if (mCurrentProblemIdx >= 0 && mCurrentProblemIdx < mProblemList.size)
             mSpellingArea.changeVoc(mProblemList[mCurrentProblemIdx].toVoc().esp)
+    }
+
+    // fire the submission button
+    fun submit() { mBtnSubmit.fire() }
+
+    // fire a certain button of the special alphabet
+    fun fireSpecialAlphabet(alphabet: Char) {
+        mSpAlphabetButtonList.filter { it.text == alphabet.toString() }.getOrNull(0)?.fire()
     }
 }
