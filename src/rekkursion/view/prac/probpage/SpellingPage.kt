@@ -8,11 +8,15 @@ import rekkursion.enumerate.Strings
 import rekkursion.model.problem.SpellingProblem
 import rekkursion.view.prac.SpellingInputArea
 import rekkursion.view.styled.StyledButton
+import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 
 class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOfProblems) {
     // the input-area for the user to spell
     private val mSpellingArea = SpellingInputArea(spellingPage = this)
+
+    // the h-box for containing all labels of special alphabets
+    private val mHbxSpAlphabets = StyledHBox()
 
     // the list of buttons of special alphabets
     private val mSpAlphabetButtonList = arrayOf(
@@ -35,6 +39,17 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
         // hide the telling-wrong-spelled label
         mLblShowWrongSpelling.isVisible = false
 
+        // add all labels of special alphabets to an h-box
+        mHbxSpAlphabets.children.addAll(
+                StyledLabel("á = alt + A", Colors.HINT_TYPING_SP_ALPHABET_EVEN.color),
+                StyledLabel("é = alt + E", Colors.HINT_TYPING_SP_ALPHABET_ODDS.color),
+                StyledLabel("í = alt + I", Colors.HINT_TYPING_SP_ALPHABET_EVEN.color),
+                StyledLabel("ó = alt + O", Colors.HINT_TYPING_SP_ALPHABET_ODDS.color),
+                StyledLabel("ú = alt + U", Colors.HINT_TYPING_SP_ALPHABET_EVEN.color),
+                StyledLabel("ü = alt + ctrl + u", Colors.HINT_TYPING_SP_ALPHABET_ODDS.color),
+                StyledLabel("ñ = alt + 1", Colors.HINT_TYPING_SP_ALPHABET_EVEN.color)
+        )
+
         // the event for submitting the spelling answer
         mBtnSubmit.setOnAction {
             if (mCurrentProblemIdx < mProblemList.size) {
@@ -51,6 +66,7 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
             }
         }
 
+        // set the clicking event on all buttons of special alphabets
         mSpAlphabetButtonList.forEach { button ->
             button.setOnAction {
                 mSpellingArea.appendSpellingText(button.text)
@@ -71,7 +87,7 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
         mCurrentProblemIdx = -1
         Platform.runLater {
             // insert the spelling-input-area
-            insertNodesBeforeSkippingAndFinishingButtons(mSpellingArea, mBtnSubmit, mLblShowWrongSpelling)
+            insertNodesBeforeSkippingAndFinishingButtons(mSpellingArea, mHbxSpAlphabets, mBtnSubmit, mLblShowWrongSpelling)
             // show the first problem
             showNextProblem()
         }

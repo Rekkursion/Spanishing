@@ -25,5 +25,11 @@ enum class Colors(val color: Color) {
     NO_ANSWER_RES(Color.ORANGE),
 
     // the color for spelling vocabularies in spelling problems
-    SPELLING(Color.SKYBLUE)
+    SPELLING(Color.SKYBLUE),
+
+    // the color for showing hints of typing special alphabets (even)
+    HINT_TYPING_SP_ALPHABET_EVEN(Color.BLUEVIOLET),
+
+    // the color for showing hints of typing special alphabets (odds)
+    HINT_TYPING_SP_ALPHABET_ODDS(Color.AZURE)
 }
