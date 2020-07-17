@@ -22,7 +22,6 @@ class Main: Application() {
             // set the style
             stage.scene.stylesheets.add("rekkursion/css/global.css")
             // set the tile
-            stage.title = Strings.get(Strings.Title)
             Strings.register(stage, Strings.Title)
             // show the primary stage
             stage.show()

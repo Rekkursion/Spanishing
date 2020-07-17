@@ -52,6 +52,8 @@ enum class Strings(val chi: String, val eng: String) {
     TestedVocs("本次練習的單字", "Tested vocabularies"),
     // the title for showing results of tested vocabularies
     TestedResults("結果", "Results"),
+    // the title for showing the correct rate
+    CorrectRate("正確率", "Correct rate"),
 
     // the string of the increment sign
     Increment("+", "+"),
@@ -86,6 +88,8 @@ enum class Strings(val chi: String, val eng: String) {
     No("不要", "No"),
     // the string of 'submit'
     Submit("送出", "Submit"),
+    // the string of a colon
+    COLON("：", ": "),
 
     // the empty string
     Empty("", "")
@@ -103,17 +107,32 @@ enum class Strings(val chi: String, val eng: String) {
         else strEnum.chi
 
         // register a node
-        fun register(any: Any, strEnum: Strings) { mRegisteredHashMap[any] = GenericString.Array(GenericString(strEnum)) }
+        fun register(any: Any, strEnum: Strings) {
+            mRegisteredHashMap[any] = GenericString.Array(GenericString(strEnum))
+            notifyRegistered(any)
+        }
 
         // register a node w/ a sequence of literal strings or str-enums
-        fun register(any: Any, vararg strs: GenericString) { mRegisteredHashMap[any] = GenericString.Array(*strs) }
+        fun register(any: Any, vararg strs: GenericString) {
+            mRegisteredHashMap[any] = GenericString.Array(*strs)
+            notifyRegistered(any)
+        }
 
         // unregister a node
         fun unregister(any: Any) { mRegisteredHashMap.remove(any) }
 
         // notify all registered nodes to be updated
         fun notifyAllRegistered() {
-            mRegisteredHashMap.forEach { (any, strs) ->
+            mRegisteredHashMap.forEach { (any, _) -> updateRegistered(any) }
+        }
+
+        // notify a certain registered node
+        @Suppress("MemberVisibilityCanBePrivate")
+        fun notifyRegistered(any: Any) { updateRegistered(any) }
+
+        // update a certain registered node when notifying it
+        private fun updateRegistered(any: Any) {
+            mRegisteredHashMap[any]?.let { strs ->
                 val joined = strs.toString()
 
                 (any as? Stage)?.title = joined
@@ -129,7 +148,8 @@ enum class Strings(val chi: String, val eng: String) {
                 (any as? PreferenceField)?.setFieldName(joined)
                 (any as? Alert)?.let {
                     it.title = strs.get(0)
-                    it.contentText = strs.get(1)
+                    it.headerText = strs.get(1)
+                    it.contentText = strs.get(2)
                 }
             }
         }

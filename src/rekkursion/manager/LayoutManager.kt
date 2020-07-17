@@ -1,6 +1,5 @@
 package rekkursion.manager
 
-import javafx.scene.Group
 import javafx.scene.Node
 import javafx.scene.layout.BorderPane
 import rekkursion.view.MenuListView

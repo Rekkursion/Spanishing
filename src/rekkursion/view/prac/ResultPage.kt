@@ -9,13 +9,19 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PropertiesManager
+import rekkursion.manager.StatisticsManager
 import rekkursion.model.problem.Problem
+import rekkursion.util.GenericString
 import rekkursion.util.digits
 import rekkursion.view.styled.StyledButton
+import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 
 class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
+    // the result statistics report
+    private val mReport = StatisticsManager.hacer(problemList)
+
     // the scroll-pane for containing the grid-pane
     private val mScrollPane = ScrollPane()
 
@@ -30,6 +36,21 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
 
     // the label for showing tested results (one per vocabulary)
     private val mLblTestedResults = StyledLabel(Strings.TestedResults)
+
+    // the label for showing the number of correct answers
+    private val mLblNumOfCorrect = StyledLabel(textColor = Colors.CORRECT_RES.color)
+
+    // the label for showing the number of wrong answers
+    private val mLblNumOfWrong = StyledLabel(textColor = Colors.WRONG_RES.color)
+
+    // the label for showing the number of problems that weren't answered
+    private val mLblNumOfNoAnswered = StyledLabel(textColor = Colors.NO_ANSWER_RES.color)
+
+    // the label for showing the correct rate
+    private val mLblCorrectRate = StyledLabel()
+
+    // the h-box for containing some statistics related uis
+    private val mHbxStatistics = StyledHBox()
 
     // the button for going back to the practice-menu-view
     private val mBtnGoBack = StyledButton(Strings.Back)
@@ -74,11 +95,42 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
             ), 2, index + 1)
         }
 
-        // add the scroll-pane and the go-back-button into this v-box
-        children.addAll(mScrollPane, mBtnGoBack)
+        // register labels if needs
+        registerLabels()
+
+        // add all statistics-related uis into an h-box
+        mHbxStatistics.children.addAll(mLblNumOfCorrect, mLblNumOfWrong, mLblNumOfNoAnswered)
+
+        // add the sub-views into this v-box
+        children.addAll(mScrollPane, mHbxStatistics, mLblCorrectRate, mBtnGoBack)
 
         // set the clicking event on the go-back-button
         mBtnGoBack.setOnAction { LayoutManager.switchPracticeContent() }
+    }
+
+    // register labels if needs
+    private fun registerLabels() {
+        Strings.register(mLblNumOfCorrect,
+                GenericString(Strings.Correct),
+                GenericString(Strings.COLON),
+                GenericString(str = mReport.numOfCorrect.toString())
+        )
+        Strings.register(mLblNumOfWrong,
+                GenericString(Strings.Wrong),
+                GenericString(Strings.COLON),
+                GenericString(str = mReport.numOfWrong.toString())
+        )
+        Strings.register(mLblNumOfNoAnswered,
+                GenericString(Strings.NoAnswer),
+                GenericString(Strings.COLON),
+                GenericString(str = mReport.numOfNoAnswered.toString())
+        )
+
+        Strings.register(mLblCorrectRate,
+                GenericString(Strings.CorrectRate),
+                GenericString(Strings.COLON),
+                GenericString(str = mReport.mCorrectRateWithPercentage)
+        )
     }
 
     /* ======================================== */

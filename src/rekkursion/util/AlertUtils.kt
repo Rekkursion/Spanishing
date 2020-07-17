@@ -8,6 +8,7 @@ object AlertUtils {
     fun createConfirmAlert(contentStrEnum: Strings): Alert {
         // create an alert w/ confirmation-type
         val alert = Alert(Alert.AlertType.CONFIRMATION)
+
         // set the title (fixed)
         alert.title = Strings.get(Strings.AlertConfirmationTitle)
         // set the header-text w/ the passed content string
