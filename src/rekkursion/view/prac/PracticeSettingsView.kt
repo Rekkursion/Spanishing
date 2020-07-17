@@ -55,16 +55,24 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
         }
 
         // the event of clicking on the go-back button
-        mBtnGoBackToPracticeMenu.setOnMouseClicked {
+        mBtnGoBackToPracticeMenu.setOnAction {
             LayoutManager.switchPracticeContent()
         }
 
         // the event of releasing a key on the number-selector
         mNslNumOfProblems.setOnKeyReleased(object: NumberSelector.OnKeyReleased {
             override fun onKeyReleased(keyEvent: KeyEvent) {
-                if (keyEvent.code == KeyCode.ENTER)
-                    mBtnStartPractice.fire()
+                when {
+                    keyEvent.code == KeyCode.ENTER -> mBtnStartPractice.fire()
+                    keyEvent.code == KeyCode.DOWN -> mBtnStartPractice.requestFocus()
+                }
             }
         })
+    }
+
+    /* ======================================== */
+
+    override fun requestFocus() {
+        mNslNumOfProblems.requestFocus()
     }
 }

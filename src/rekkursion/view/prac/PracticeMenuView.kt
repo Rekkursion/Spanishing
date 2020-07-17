@@ -18,13 +18,19 @@ class PracticeMenuView: StyledVBox() {
         children.addAll(mBtnSingleChoice, mBtnSpelling)
 
         // the event of clicking on single-choice-problems button
-        mBtnSingleChoice.setOnMouseClicked {
+        mBtnSingleChoice.setOnAction {
             LayoutManager.switchPracticeContent(PracticeSettingsView(PracticeType.SINGLE_CHOICE))
         }
 
         // the event of clicking on spelling-problems button
-        mBtnSpelling.setOnMouseClicked {
+        mBtnSpelling.setOnAction {
             LayoutManager.switchPracticeContent(PracticeSettingsView(PracticeType.SPELLING))
         }
+    }
+
+    /* ======================================== */
+
+    override fun requestFocus() {
+        mBtnSingleChoice.requestFocus()
     }
 }

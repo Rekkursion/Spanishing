@@ -1,5 +1,6 @@
 package rekkursion.manager
 
+import javafx.scene.Group
 import javafx.scene.Node
 import javafx.scene.layout.BorderPane
 import rekkursion.view.MenuListView
@@ -65,15 +66,17 @@ object LayoutManager {
             2 -> PreferencesPage()
             else -> null
         }
+        mBdpMain.center.requestFocus()
     }
 
     // switch the content-view of the practice-pane
     fun switchPracticeContent(node: Node) {
         mPracticePane.center = node
+        node.requestFocus()
     }
 
     // switch the content-view to the menu page
     fun switchPracticeContent() {
-        mPracticePane.center = mPracticeMenuView
+        switchPracticeContent(mPracticeMenuView)
     }
 }

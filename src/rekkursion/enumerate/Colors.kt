@@ -12,6 +12,9 @@ enum class Colors(val color: Color) {
     // the color for numbered texts
     NUMBERED(Color.PEACHPUFF),
 
+    // the color as the background color for the focused button
+    FOCUSED_BTN_BG(Color.grayRgb(84, 1.0)),
+
     // the color for the option-button in a single choice problem when the user chose it but it's a wrong answer
     WRONG_ANSWER_BG(Color.DARKRED),
 

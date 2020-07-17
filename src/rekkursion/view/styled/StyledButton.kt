@@ -3,9 +3,11 @@ package rekkursion.view.styled
 import javafx.geometry.Pos
 import javafx.scene.control.Button
 import javafx.scene.paint.Color
+import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 
+@Suppress("LeakingThis")
 open class StyledButton(buttonName: String, strEnum: Strings? = null): Button(buttonName) {
     // the secondary constructor
     constructor(): this("")
@@ -24,6 +26,13 @@ open class StyledButton(buttonName: String, strEnum: Strings? = null): Button(bu
         // register to the strings enumeration if needs
         if (strEnum != null)
             Strings.register(this, strEnum)
+
+        focusedProperty().addListener { _, _, newValue ->
+            if (newValue)
+                setBgColor(Colors.FOCUSED_BTN_BG.color)
+            else
+                unsetBgColor()
+        }
     }
 
     /* ======================================== */

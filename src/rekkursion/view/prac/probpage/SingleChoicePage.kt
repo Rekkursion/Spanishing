@@ -91,7 +91,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                     }
                 }
 
-                button.setOnMouseClicked {
+                button.setOnAction {
                     if (mCurrentProblemIdx < mProblemList.size) {
                         val prob = mProblemList[mCurrentProblemIdx] as SingleChoiceProblem
                         if (index == prob.correctAnsPos) {
@@ -122,7 +122,11 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                 mBtnOptionList[it].text = (mProblemList[mCurrentProblemIdx] as SingleChoiceProblem).getOptionStr(it)
                 (mBtnOptionList[it] as StyledButton).unsetBgColor()
             }
+            mBtnOptionList.getOrNull(0)?.requestFocus()
         }
     }
 
+    override fun requestFocus() {
+        mBtnOptionList.getOrNull(0)?.requestFocus() ?: mBtnSkip.requestFocus()
+    }
 }

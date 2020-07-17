@@ -30,7 +30,7 @@ class SingleChoiceProblem(problemType: SingleChoiceProblemType, stem: Vocabulary
 
     // get the string of the stem vocabulary
     override fun getStemStr(): String = if (mProblemType == SingleChoiceProblemType.CHI_AND_ENG_TO_ESP)
-        mStem.copiedMeaning.chi
+        "[${mStem.copiedMeaning.posp.abbr}] ${mStem.copiedMeaning.chi} (${mStem.copiedMeaning.eng})"
     else
         mStem.esp
 

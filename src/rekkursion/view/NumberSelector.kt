@@ -127,6 +127,12 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
 
     /* ======================================== */
 
+    override fun requestFocus() {
+        mTxfNumber.requestFocus()
+    }
+
+    /* ======================================== */
+
     interface OnKeyReleased {
         fun onKeyReleased(keyEvent: KeyEvent)
     }

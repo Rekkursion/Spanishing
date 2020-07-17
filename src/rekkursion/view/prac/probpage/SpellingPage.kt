@@ -101,6 +101,13 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
             mSpellingArea.changeVoc(mProblemList[mCurrentProblemIdx].toVoc().esp)
     }
 
+    override fun requestFocus() {
+        mBtnSubmit.requestFocus()
+        mSpellingArea.requestFocus()
+    }
+
+    /* ======================================== */
+
     // fire the submission button
     fun submit() { mBtnSubmit.fire() }
 

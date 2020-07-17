@@ -78,6 +78,12 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
         children.addAll(mScrollPane, mBtnGoBack)
 
         // set the clicking event on the go-back-button
-        mBtnGoBack.setOnMouseClicked { LayoutManager.switchPracticeContent() }
+        mBtnGoBack.setOnAction { LayoutManager.switchPracticeContent() }
+    }
+
+    /* ======================================== */
+
+    override fun requestFocus() {
+        mBtnGoBack.requestFocus()
     }
 }

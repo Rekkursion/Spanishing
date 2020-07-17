@@ -193,6 +193,10 @@ class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null)
 
     /* ======================================== */
 
+    override fun requestFocus() {
+        mTextFieldList.getOrNull(0)?.requestFocus()
+    }
+
     override fun toString(): String = children.joinToString("") {
         when (it) {
             is Label -> it.text
