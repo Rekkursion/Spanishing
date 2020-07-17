@@ -52,6 +52,8 @@ enum class Strings(val chi: String, val eng: String) {
     TestedVocs("本次練習的單字", "Tested vocabularies"),
     // the title for showing results of tested vocabularies
     TestedResults("結果", "Results"),
+    // the title for showing all tested vocabularies
+    TestedVocsNum("總數量", "Total tested"),
     // the title for showing the correct rate
     CorrectRate("正確率", "Correct rate"),
 

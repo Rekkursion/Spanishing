@@ -27,11 +27,13 @@ open class StyledButton(buttonName: String, strEnum: Strings? = null): Button(bu
         if (strEnum != null)
             Strings.register(this, strEnum)
 
+        // listen the focused-property to change background color
         focusedProperty().addListener { _, _, newValue ->
             if (newValue) setBgColor(Colors.FOCUSED_BTN_BG.color)
             else unsetBgColor()
         }
 
+        // listen the hover-property to request focus
         hoverProperty().addListener { _, _, newValue ->
             if (newValue) requestFocus()
         }

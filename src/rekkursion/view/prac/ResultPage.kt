@@ -37,6 +37,9 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
     // the label for showing tested results (one per vocabulary)
     private val mLblTestedResults = StyledLabel(Strings.TestedResults)
 
+    // the label for showing the total number of all tested vocabularies
+    private val mLblNumOfAll = StyledLabel(textColor = Colors.NUMBERED.color)
+
     // the label for showing the number of correct answers
     private val mLblNumOfCorrect = StyledLabel(textColor = Colors.CORRECT_RES.color)
 
@@ -99,7 +102,7 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
         registerLabels()
 
         // add all statistics-related uis into an h-box
-        mHbxStatistics.children.addAll(mLblNumOfCorrect, mLblNumOfWrong, mLblNumOfNoAnswered)
+        mHbxStatistics.children.addAll(mLblNumOfAll, mLblNumOfCorrect, mLblNumOfWrong, mLblNumOfNoAnswered)
 
         // add the sub-views into this v-box
         children.addAll(mScrollPane, mHbxStatistics, mLblCorrectRate, mBtnGoBack)
@@ -110,27 +113,22 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
 
     // register labels if needs
     private fun registerLabels() {
+        Strings.register(mLblNumOfAll,
+                GenericString(Strings.TestedVocsNum), GenericString(Strings.COLON),
+                GenericString(str = mReport.totalNum.toString()))
         Strings.register(mLblNumOfCorrect,
-                GenericString(Strings.Correct),
-                GenericString(Strings.COLON),
-                GenericString(str = mReport.numOfCorrect.toString())
-        )
+                GenericString(Strings.Correct), GenericString(Strings.COLON),
+                GenericString(str = mReport.numOfCorrect.toString()))
         Strings.register(mLblNumOfWrong,
-                GenericString(Strings.Wrong),
-                GenericString(Strings.COLON),
-                GenericString(str = mReport.numOfWrong.toString())
-        )
+                GenericString(Strings.Wrong), GenericString(Strings.COLON),
+                GenericString(str = mReport.numOfWrong.toString()))
         Strings.register(mLblNumOfNoAnswered,
-                GenericString(Strings.NoAnswer),
-                GenericString(Strings.COLON),
-                GenericString(str = mReport.numOfNoAnswered.toString())
-        )
+                GenericString(Strings.NoAnswer), GenericString(Strings.COLON),
+                GenericString(str = mReport.numOfNoAnswered.toString()))
 
         Strings.register(mLblCorrectRate,
-                GenericString(Strings.CorrectRate),
-                GenericString(Strings.COLON),
-                GenericString(str = mReport.mCorrectRateWithPercentage)
-        )
+                GenericString(Strings.CorrectRate), GenericString(Strings.COLON),
+                GenericString(str = mReport.mCorrectRateWithPercentage))
     }
 
     /* ======================================== */

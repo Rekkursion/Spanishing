@@ -1,10 +1,13 @@
 package rekkursion.view.prac
 
+import javafx.geometry.Insets
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
+import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
+import rekkursion.manager.PropertiesManager
 import rekkursion.manager.VocManager
 import rekkursion.view.NumberSelector
 import rekkursion.view.prac.probpage.SingleChoicePage
@@ -17,6 +20,12 @@ import kotlin.math.min
 class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
     // the panel for the settings of single-choice problems only
     private val mSingleChoiceSettingsPanel = SingleChoiceSettingsPanel()
+
+    // the title for showing the practice type
+    private val mLblPracticeTypeTitle = StyledLabel(
+            if (practiceType == PracticeType.SPELLING) Strings.SpellingProblem else Strings.SingleChoiceProblem,
+            Colors.DEFAULT
+    )
 
     // the title for the num-of-problems spinner
     private val mLblNumOfProblemsTitle = StyledLabel(Strings.SelectNumOfProblems)
@@ -31,6 +40,10 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
     private val mBtnGoBackToPracticeMenu = StyledButton(Strings.Back)
 
     init {
+        // set the bottom-padding of the title label and and it into this v-box
+        mLblPracticeTypeTitle.padding = Insets(0.0, 0.0, PropertiesManager.generalPadding, 0.0)
+        children.add(mLblPracticeTypeTitle)
+
         // if the practice type is the single choice problems
         if (practiceType == PracticeType.SINGLE_CHOICE) {
             children.add(mSingleChoiceSettingsPanel)

@@ -8,6 +8,7 @@ import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
 import rekkursion.manager.PreferenceManager
+import rekkursion.manager.PropertiesManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Vocabulary
 import rekkursion.model.problem.Problem
@@ -53,13 +54,13 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
 
     init {
         // set the padding of the stem label
-        mLblStem.padding = Insets(0.0, 0.0, 40.0, 0.0)
+        mLblStem.padding = Insets(0.0, 0.0, PropertiesManager.generalPadding, 0.0)
         // set the font size of the stem label
         mLblStem.style = "-fx-font-size: 24;"
 
         // add skipping & finishing buttons into an h-box
         mHbxSkipAndFinish.children.addAll(mBtnSkip, mBtnFinish)
-        mHbxSkipAndFinish.padding = Insets(40.0, 0.0, 0.0, 0.0)
+        mHbxSkipAndFinish.padding = Insets(PropertiesManager.generalPadding, 0.0, 0.0, 0.0)
 
         // add all sub-views into this v-box
         children.addAll(mLblNo, mLblStem, mHbxSkipAndFinish)

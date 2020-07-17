@@ -22,6 +22,9 @@ object PropertiesManager {
     // the general spacing among uis
     const val generalSpacing: Double = 10.0
 
+    // the general padding of a ui
+    const val generalPadding: Double = 30.0
+
     // the location of the json file of vocabularies
     const val vocabulariesJsonFileLocation: String = "D:\\rekkursion\\mooc\\spanish\\spanish_vocabularies.json"
 
