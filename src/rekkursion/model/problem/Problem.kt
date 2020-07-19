@@ -4,7 +4,11 @@ import rekkursion.enumerate.AnsResult
 import rekkursion.model.Copiable
 import rekkursion.model.Vocabulary
 
-abstract class Problem(stem: Vocabulary): Copiable {
+abstract class Problem(index: Int, stem: Vocabulary): Copiable {
+    // the index of this problem
+    protected val mIndex = index
+    val index get() = mIndex
+
     // the vocabulary of this problem's stem
     protected val mStem = stem
 
@@ -24,7 +28,7 @@ abstract class Problem(stem: Vocabulary): Copiable {
 
     /* ======================================== */
 
-    override fun toString(): String = mStem.esp
+    override fun toString(): String = mStem.toString()
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

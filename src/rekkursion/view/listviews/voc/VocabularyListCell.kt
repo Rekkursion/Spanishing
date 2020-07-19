@@ -1,4 +1,4 @@
-package rekkursion.view
+package rekkursion.view.listviews.voc
 
 import javafx.scene.control.Label
 import javafx.scene.control.ListCell
@@ -31,6 +31,8 @@ class VocabularyListCell: ListCell<Vocabulary>() {
         // add the h-box and the label of chi & eng into the v-box
         mVbxContent.children.addAll(mHbxEspAndPosp, mLblChiAndEng)
     }
+
+    /* ======================================== */
 
     // update items
     override fun updateItem(item: Vocabulary?, empty: Boolean) {

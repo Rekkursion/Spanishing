@@ -20,6 +20,15 @@ class StyledLabel(
     init {
         // set the alignment
         alignment = Pos.CENTER
+
+        // set the text-color
+        setTextColor(textColor)
+    }
+
+    /* ======================================== */
+
+    // set the text-color
+    fun setTextColor(textColor: Color) {
         // set the font size & text color
         style = "-fx-font-size: 18; -fx-text-fill: rgb(${textColor.red * 255}, ${textColor.green * 255}, ${textColor.blue * 255});"
     }

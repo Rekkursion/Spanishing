@@ -1,4 +1,4 @@
-package rekkursion.view
+package rekkursion.view.listviews.voc
 
 import javafx.scene.control.ListView
 import rekkursion.model.Vocabulary

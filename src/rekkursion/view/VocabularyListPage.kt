@@ -6,6 +6,7 @@ import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.util.GenericString
+import rekkursion.view.listviews.voc.VocabularyListView
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 

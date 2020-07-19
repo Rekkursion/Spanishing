@@ -81,7 +81,7 @@ class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOf
         val sizeOfPicked = mPickedVocList.size
 
         repeat(sizeOfPicked) { idxOfProblem ->
-            mProblemList.add(SpellingProblem(mPickedVocList[idxOfProblem]))
+            mProblemList.add(SpellingProblem(idxOfProblem, mPickedVocList[idxOfProblem]))
         }
 
         mCurrentProblemIdx = -1

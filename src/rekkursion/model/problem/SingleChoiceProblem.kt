@@ -3,8 +3,8 @@ package rekkursion.model.problem
 import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.model.Vocabulary
 
-class SingleChoiceProblem(problemType: SingleChoiceProblemType, stem: Vocabulary, options: ArrayList<Vocabulary>)
-    : Problem(stem) {
+class SingleChoiceProblem(index: Int, problemType: SingleChoiceProblemType, stem: Vocabulary, options: ArrayList<Vocabulary>)
+    : Problem(index, stem) {
 
     // the type of this single choice problem
     private val mProblemType = problemType
@@ -19,7 +19,7 @@ class SingleChoiceProblem(problemType: SingleChoiceProblemType, stem: Vocabulary
     /* ======================================== */
 
     @Suppress("UNCHECKED_CAST")
-    override fun copy(): SingleChoiceProblem = SingleChoiceProblem(mProblemType, mStem.copy(), mOptionList.clone() as ArrayList<Vocabulary>)
+    override fun copy(): SingleChoiceProblem = SingleChoiceProblem(mIndex, mProblemType, mStem.copy(), mOptionList.clone() as ArrayList<Vocabulary>)
 
     /* ======================================== */
 

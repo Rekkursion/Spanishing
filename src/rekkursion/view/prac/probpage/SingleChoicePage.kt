@@ -73,7 +73,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
             } else mProblemType
 
             // add a new problem into the problem list
-            mProblemList.add(SingleChoiceProblem(type, pickedVoc, optList))
+            mProblemList.add(SingleChoiceProblem(idxOfProblem, type, pickedVoc, optList))
         }
 
         mCurrentProblemIdx = -1
