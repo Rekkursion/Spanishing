@@ -34,9 +34,9 @@ open class StyledButton(buttonName: String, strEnum: Strings? = null): Button(bu
         }
 
         // listen the hover-property to request focus
-        hoverProperty().addListener { _, _, newValue ->
-            if (newValue) requestFocus()
-        }
+        //hoverProperty().addListener { _, _, newValue ->
+            //if (newValue) requestFocus()
+        //}
     }
 
     /* ======================================== */

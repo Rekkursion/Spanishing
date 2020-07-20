@@ -7,6 +7,7 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
+import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
 import rekkursion.manager.VocManager
 import rekkursion.view.NumberSelector
@@ -31,7 +32,12 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
     private val mLblNumOfProblemsTitle = StyledLabel(Strings.SelectNumOfProblems)
 
     // the number-selector for selecting the number of problems the user want to take
-    private val mNslNumOfProblems = NumberSelector(1, min(100, VocManager.numOfVocabularies), min(10, VocManager.numOfVocabularies), 1)
+    private val mNslNumOfProblems = NumberSelector(
+            1,
+            min(300, VocManager.numOfVocabularies),
+            min(min(300, VocManager.numOfVocabularies), PreferenceManager.preferredProblemNum),
+            1
+    )
 
     // the button for starting practice
     private val mBtnStartPractice = StyledButton(Strings.Start)

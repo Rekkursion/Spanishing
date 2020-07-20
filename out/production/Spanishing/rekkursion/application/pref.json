@@ -1,7 +1,9 @@
 {
-    "window-width": 1180,
-    "window-height": 660,
+    "preferred-single-choice-problem-type": 2,
+    "window-width": 1280,
+    "preferred-problem-num": 100,
+    "window-height": 700,
     "alert-when-finishing": true,
     "lang": "中文/Chinese",
-    "alert-when-skipping": true
+    "alert-when-skipping": false
 }

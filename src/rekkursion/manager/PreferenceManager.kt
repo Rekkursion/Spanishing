@@ -2,7 +2,9 @@ package rekkursion.manager
 
 import javafx.application.Platform
 import org.json.JSONObject
+import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.enumerate.Strings
+import rekkursion.model.problem.SingleChoiceProblem
 import rekkursion.util.toAscii
 import java.io.File
 import java.io.FileInputStream
@@ -29,6 +31,12 @@ object PreferenceManager {
     // the alert when finishing (skipping) a whole problem-set
     var alertWhenFinishing: Boolean = PropertiesManager.defaultAlertWhenFinishing
 
+    // the user-preferred problem-type
+    var preferredSingleChoiceProblemType: Int = PropertiesManager.defaultSingleChoiceProblemType
+
+    // the user-preferred number of problems when doing practice
+    var preferredProblemNum: Int = 10
+
     init {
         // the string of json content
         var jsonString = ""
@@ -52,6 +60,8 @@ object PreferenceManager {
             lang = jObj.getString("lang")
             alertWhenSkipping = jObj.getBoolean("alert-when-skipping")
             alertWhenFinishing = jObj.getBoolean("alert-when-finishing")
+            preferredSingleChoiceProblemType = jObj.getInt("preferred-single-choice-problem-type")
+            preferredProblemNum = jObj.getInt("preferred-problem-num")
         } catch (e: Exception) {}
     }
 
@@ -64,6 +74,7 @@ object PreferenceManager {
                 val property = PreferenceManager::class.memberProperties.find { it.name == varName }
                 if (property is KMutableProperty<*>) {
                     val data = when (property.returnType.javaType) {
+                        Int::class.java,
                         Int::class.javaObjectType,
                         Int::class.javaPrimitiveType -> value.toInt()
                         Double::class.javaObjectType,

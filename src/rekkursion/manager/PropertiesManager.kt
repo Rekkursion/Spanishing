@@ -1,11 +1,13 @@
 package rekkursion.manager
 
+import rekkursion.enumerate.SingleChoiceProblemType
+
 object PropertiesManager {
     // the default width of the window
-    const val defaultWindowWidth: Double = 1180.0
+    const val defaultWindowWidth: Double = 1280.0
 
     // the default height of the window
-    const val defaultWindowHeight: Double = 660.0
+    const val defaultWindowHeight: Double = 700.0
 
     // the default interface language
     const val defaultLang: String = "eng"
@@ -15,6 +17,9 @@ object PropertiesManager {
 
     // the default boolean-value of the alert when finishing (skipping) a whole problem-set
     const val defaultAlertWhenFinishing: Boolean = true
+
+    // the default single choice problem type
+    const val defaultSingleChoiceProblemType: Int = 2
 
     // the number of options in a single choice problem
     const val numOfOptionsInSingleChoiceProblem: Int = 4

@@ -1,8 +1,12 @@
 package rekkursion.view.prac.probpage
 
 import javafx.geometry.Insets
+import javafx.geometry.Orientation
 import javafx.scene.Node
 import javafx.scene.control.ButtonType
+import javafx.scene.control.OverrunStyle
+import javafx.scene.control.ScrollBar
+import javafx.scene.control.ScrollPane
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
@@ -15,10 +19,7 @@ import rekkursion.model.problem.Problem
 import rekkursion.util.AlertUtils
 import rekkursion.util.digits
 import rekkursion.view.prac.ResultPage
-import rekkursion.view.styled.StyledButton
-import rekkursion.view.styled.StyledHBox
-import rekkursion.view.styled.StyledLabel
-import rekkursion.view.styled.StyledVBox
+import rekkursion.view.styled.*
 import kotlin.random.Random
 
 abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {
@@ -29,10 +30,10 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
     private val mNumOfProblems = numOfProblems
 
     // the label for showing the no. of this problem
-    protected val mLblNo = StyledLabel(textColor = Colors.NUMBERED.color)
+    private val mLblNo = StyledLabel(textColor = Colors.NUMBERED.color)
 
     // the label for showing a certain problem's stem
-    protected val mLblStem = StyledLabel()
+    private val mLblStem = StyledLabel()
 
     // the list of picked vocabularies as problems
     protected val mPickedVocList = arrayListOf<Vocabulary>()
@@ -53,7 +54,7 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
     protected val mBtnFinish = StyledButton(Strings.FinishProblemSet)
 
     init {
-        // set the padding of the stem label
+        // set the padding of the stem label container
         mLblStem.padding = Insets(0.0, 0.0, PropertiesManager.generalPadding, 0.0)
         // set the font size of the stem label
         mLblStem.style = "-fx-font-size: 24;"

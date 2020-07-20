@@ -8,6 +8,7 @@ import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
 import javafx.scene.layout.VBox
 import rekkursion.enumerate.Strings
+import rekkursion.manager.PreferenceManager
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 
@@ -60,6 +61,7 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
         mTxfNumber.textProperty().addListener { _, oldValue, newValue ->
             if (newValue.contains("[^0-9]".toRegex()))
                 mTxfNumber.text = oldValue
+            PreferenceManager.write("preferred-problem-num", mTxfNumber.text)
         }
 
         // set the key-typed listener
@@ -97,7 +99,10 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
     /* ======================================== */
 
     // get the number value
-    fun getNumber(): Int = mTxfNumber.text.toIntOrNull() ?: mInitialValue
+    fun getNumber(): Int {
+        checkBounds()
+        return mTxfNumber.text.toIntOrNull() ?: mInitialValue
+    }
 
     // set the event of on-key-released
     fun setOnKeyReleased(onKeyReleased: OnKeyReleased) {
