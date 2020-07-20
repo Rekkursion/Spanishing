@@ -5,7 +5,7 @@ import javafx.scene.Node
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
 
-class StyledGridPane private constructor(colNum: Int = 0, vararg children: Node): GridPane() {
+class StyledGridPane private constructor(colNum: Int = 0): GridPane() {
     class Builder(colNum: Int) {
         // the instance
         private val mInstance = StyledGridPane(colNum)

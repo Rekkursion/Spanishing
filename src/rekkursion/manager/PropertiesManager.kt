@@ -12,6 +12,12 @@ object PropertiesManager {
     // the default interface language
     const val defaultLang: String = "eng"
 
+    // the default boolean value for determining using regex or not
+    const val defaultUsingRegexOrNot: Boolean = false
+
+    // the default boolean value for determining being case sensitive or not
+    const val defaultCaseSensitiveOrNot: Boolean = true
+
     // the default boolean-value of the alert when skipping a single problem
     const val defaultAlertWhenSkipping: Boolean = true
 
@@ -21,8 +27,14 @@ object PropertiesManager {
     // the default single choice problem type
     const val defaultSingleChoiceProblemType: Int = 2
 
+    // the size of a search-icon
+    const val searchIconSize: Double = 24.0
+
     // the number of options in a single choice problem
     const val numOfOptionsInSingleChoiceProblem: Int = 4
+
+    // the maximum number of problems per practice
+    const val maxNumOfProblemsPerPractice = 150
 
     // the general spacing among uis
     const val generalSpacing: Double = 10.0

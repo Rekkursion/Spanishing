@@ -20,6 +20,7 @@ import rekkursion.util.AlertUtils
 import rekkursion.util.digits
 import rekkursion.view.prac.ResultPage
 import rekkursion.view.styled.*
+import java.util.concurrent.ThreadLocalRandom
 import kotlin.random.Random
 
 abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {
@@ -134,10 +135,13 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
             // the hash-set of picked vocabularies
             val pickedVocHashSet = HashSet<Vocabulary>()
 
+            // the random generator i think?
+            val r = Random(System.currentTimeMillis())
+
             // randomly pick some vocabularies as problems
             while (curNum < mNumOfProblems) {
                 // randomly pick an index and get the vocabulary
-                val voc = vocList[Random.nextInt(0, vocList.size)]
+                val voc = vocList[r.nextInt(0, vocList.size)]
                 // if this index has not been picked
                 if (!pickedVocHashSet.contains(voc)) {
                     ++curNum

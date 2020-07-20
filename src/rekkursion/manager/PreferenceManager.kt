@@ -25,6 +25,12 @@ object PreferenceManager {
     // the language the user would like to use
     var lang: String = PropertiesManager.defaultLang
 
+    // using regex or not in a search-bar
+    var usingRegex: Boolean = PropertiesManager.defaultUsingRegexOrNot
+
+    // being case-sensitive or not in a search-bar
+    var caseSensitive: Boolean = PropertiesManager.defaultCaseSensitiveOrNot
+
     // the alert when skipping a single problem
     var alertWhenSkipping: Boolean = PropertiesManager.defaultAlertWhenSkipping
 
@@ -58,6 +64,8 @@ object PreferenceManager {
             windowWidth = jObj.getDouble("window-width")
             windowHeight = jObj.getDouble("window-height")
             lang = jObj.getString("lang")
+            usingRegex = jObj.getBoolean("using-regex")
+            caseSensitive = jObj.getBoolean("case-sensitive")
             alertWhenSkipping = jObj.getBoolean("alert-when-skipping")
             alertWhenFinishing = jObj.getBoolean("alert-when-finishing")
             preferredSingleChoiceProblemType = jObj.getInt("preferred-single-choice-problem-type")

@@ -34,8 +34,8 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
     // the number-selector for selecting the number of problems the user want to take
     private val mNslNumOfProblems = NumberSelector(
             1,
-            min(300, VocManager.numOfVocabularies),
-            min(min(300, VocManager.numOfVocabularies), PreferenceManager.preferredProblemNum),
+            min(PropertiesManager.maxNumOfProblemsPerPractice, VocManager.numOfVocabularies),
+            min(PreferenceManager.preferredProblemNum, min(PropertiesManager.maxNumOfProblemsPerPractice, VocManager.numOfVocabularies)),
             1
     )
 

@@ -12,6 +12,11 @@ enum class Strings(val chi: String, val eng: String) {
     // the title
     Title("Spanishing", "Spanishing"),
 
+    // the text of the check-box for determining using regex or not in a search-bar
+    UsingRegexOrNot("正則匹配", "Regex"),
+    // the text of the check-box for determining being case-sensitive or not in a search-bar
+    CaseSensitiveOrNot("大小寫敏感", "Case sensitive"),
+
     // the prefix of showing the number of vocabularies
     NumberOfVocs_pre("目前共有 ", "Total number of vocabularies: "),
     NumberOfVocs_suf(" 個單詞。", ""),
@@ -143,6 +148,7 @@ enum class Strings(val chi: String, val eng: String) {
                 (any as? Text)?.text = joined
                 (any as? TextField)?.text = joined
                 (any as? TextArea)?.text = joined
+                (any as? CheckBox)?.text = joined
                 (any as? Button)?.text = joined
                 (any as? ToggleButton)?.text = joined
                 (any as? ComboBox<*>)?.promptText = joined

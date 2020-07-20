@@ -11,6 +11,9 @@ import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 
 class VocabularyListPage: StyledVBox() {
+    // the search-bar for searching vocabularies
+    private val mSearchBar = SearchBar()
+
     // the view of the vocabulary list
     private val mVocListView = VocabularyListView(VocManager.copiedVocList)
 
@@ -18,6 +21,8 @@ class VocabularyListPage: StyledVBox() {
     private val mLblNumOfVocs = StyledLabel(textColor = Colors.NUMBERED.color)
 
     init {
+        // set the pref-heights
+        mVocListView.prefHeight = PreferenceManager.windowHeight
         prefHeight = PreferenceManager.windowHeight
 
         // bind the pref-width to the parent's width
@@ -27,12 +32,21 @@ class VocabularyListPage: StyledVBox() {
         // set the text
         mLblNumOfVocs.text = Strings.get(Strings.NumberOfVocs_pre) + VocManager.numOfVocabularies.toString() + Strings.get(Strings.NumberOfVocs_suf)
 
+        // register the strings of labels
         Strings.register(mLblNumOfVocs,
                 GenericString(Strings.NumberOfVocs_pre),
                 GenericString(str = VocManager.numOfVocabularies.toString()),
                 GenericString(Strings.NumberOfVocs_suf)
         )
 
-        children.addAll(mVocListView, mLblNumOfVocs)
+        // add all sub-views into this v-box
+        children.addAll(mSearchBar, mVocListView, mLblNumOfVocs)
+
+        // set the text-listening event on the search-bar
+        mSearchBar.setOnTextChangeListener(object: SearchBar.OnTextChangeListener {
+            override fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, usingRegex: Boolean, caseSensitive: Boolean) {
+                mVocListView.filterByString(newValue, usingRegex, caseSensitive)
+            }
+        })
     }
 }

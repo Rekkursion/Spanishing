@@ -1,9 +1,11 @@
 {
+    "case-sensitive": true,
     "preferred-single-choice-problem-type": 2,
     "window-width": 1280,
-    "preferred-problem-num": 100,
+    "preferred-problem-num": 10,
+    "using-regex": true,
     "window-height": 700,
     "alert-when-finishing": true,
     "lang": "中文/Chinese",
-    "alert-when-skipping": false
+    "alert-when-skipping": true
 }
