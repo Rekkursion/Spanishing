@@ -1,14 +1,51 @@
 package rekkursion.view.searchbar
 
 import rekkursion.enumerate.Strings
+import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledButton
+import rekkursion.view.styled.StyledVBox
 
-class VocSearchBar: SearchBar() {
+class VocSearchBar(searchBar: SearchBar): StyledVBox() {
+    // the basic search-bar
+    private val mSearchBar = searchBar
+
     // the button for adjusting advanced options for searching (filtering) vocabularies
     private val mBtnAdvancedOptions = StyledButton(Strings.AdvancedVocSearchOptions)
 
+    // the boolean value for checking if it's currently showing the panel for advanced options
+    private var mShowingAdvancedOptionsPanel = false
+
     init {
-        mBtnAdvancedOptions.maxWidth = 100.0
-        children.add(mBtnAdvancedOptions)
+        // unify the text-sizes
+        mSearchBar.setTextSizes(PropertiesManager.searchBarTextSize)
+        mBtnAdvancedOptions.textSize = PropertiesManager.searchBarTextSize
+
+        // set the width of advanced-options-button
+        mBtnAdvancedOptions.maxWidth = 150.0
+
+        // add the advanced-options-button into the basic search-bar
+        mSearchBar.children.add(mBtnAdvancedOptions)
+
+        // add the basic search-bar into this v-box
+        children.add(mSearchBar)
+
+        // set the mouse-clicking event on advanced-options-button
+        mBtnAdvancedOptions.setOnAction { toggleAdvancedOptionsPanel() }
+    }
+
+    /* ======================================== */
+
+    // set the on-text-change-listener
+    fun setOnTextChangeListener(onTextChangeListener: SearchBar.OnTextChangeListener) {
+        mSearchBar.setOnTextChangeListener(onTextChangeListener)
+    }
+
+    // toggle (hide or show) the advanced-options-panel
+    private fun toggleAdvancedOptionsPanel() {
+        if (mShowingAdvancedOptionsPanel)
+            children.removeAt(children.size - 1)
+        else
+            children.add(AdvancedOptionsPanel())
+        mShowingAdvancedOptionsPanel = !mShowingAdvancedOptionsPanel
     }
 }

@@ -10,6 +10,7 @@ enum class PartOfSpeech(val abbr: String) {
     PRONOUN("pron"),
 
     M_OR_ADJ("m; adj"),
+    M_OR_F_OR_ADJ("m/f; adj"),
 
     DEFINITE_ARTICLE("art.d"),
     INDEFINITE_ARTICLE("art.i"),

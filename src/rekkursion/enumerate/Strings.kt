@@ -18,6 +18,16 @@ enum class Strings(val chi: String, val eng: String) {
     CaseSensitiveOrNot("大小寫敏感", "Case sensitive"),
     // the text of the advanced options for searching (filtering) vocabularies
     AdvancedVocSearchOptions("進階選項", "Advanced options"),
+    // the text of spanish
+    Esp("西文", "Esp"),
+    // the text of english
+    Eng("英文", "Eng"),
+    // the text of chinese
+    Chi("中文", "Chi"),
+    // the text of the field of searching texts
+    AdvancedVocSearchOptions_searchingTexts("查找文字的對象", "Search on"),
+    // the text of the field of searching part-of-speeches
+    AdvancedVocSearchOptions_searchingPosp("詞性過濾", "Part of speeches"),
 
     // the prefix of showing the number of vocabularies
     NumberOfVocs_pre("目前共有 ", "Total number of vocabularies: "),

@@ -9,7 +9,13 @@ import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledLabel
 
-class PreferenceField(fieldNameEnum: Strings, node: Node?): GridPane() {
+class PreferenceField(
+        fieldNameEnum: Strings,
+        node: Node?,
+        textSize: Int = 18,
+        widthsRatio: Pair<Double, Double> = Pair(70.0, 30.0))
+    : GridPane() {
+
     // the label for showing the key (title of this preference)
     private val mLblKey = StyledLabel(fieldNameEnum)
 
@@ -17,6 +23,9 @@ class PreferenceField(fieldNameEnum: Strings, node: Node?): GridPane() {
     private var mValueView: Node? = node
 
     init {
+        // set the text-size of the label for showing the key
+        mLblKey.textSize = textSize
+
         // set the alignment
         alignment = Pos.CENTER
         // set the gaps
@@ -24,8 +33,8 @@ class PreferenceField(fieldNameEnum: Strings, node: Node?): GridPane() {
         hgap = PropertiesManager.generalSpacing
 
         // set the column-constraints
-        val c1 = ColumnConstraints(); c1.percentWidth = 70.0; c1.halignment = HPos.CENTER; c1.isFillWidth = true
-        val c2 = ColumnConstraints(); c2.percentWidth = 30.0; c2.halignment = HPos.CENTER; c2.isFillWidth = true
+        val c1 = ColumnConstraints(); c1.percentWidth = widthsRatio.first ; c1.halignment = HPos.CENTER; //c1.isFillWidth = true
+        val c2 = ColumnConstraints(); c2.percentWidth = widthsRatio.second; c2.halignment = HPos.CENTER; //c2.isFillWidth = true
         columnConstraints.addAll(c1, c2)
 
         // add label-as-field-title

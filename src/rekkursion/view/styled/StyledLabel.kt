@@ -7,7 +7,7 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 
-class StyledLabel(
+open class StyledLabel(
         labelName: String = "",
         textColor: Color = Colors.LABEL_DEFAULT.color)
     : Label(labelName), Styled {
@@ -37,7 +37,7 @@ class StyledLabel(
 
     /* ======================================== */
 
-    override fun adjustStyle() {
+    final override fun adjustStyle() {
         style = "-fx-font-size: $textSize;" +
                 "-fx-text-fill: rgb(${textColor.red * 255}, ${textColor.green * 255}, ${textColor.blue * 255});" +
                 "-fx-background-color: rgba(${bgColor.red * 255}, ${bgColor.green * 255}, ${bgColor.blue * 255}, ${bgColor.opacity * 255});"

@@ -1,6 +1,8 @@
 package rekkursion.util
 
+import javafx.scene.Node
 import javafx.scene.control.Alert
+import javafx.scene.control.ButtonType
 import rekkursion.enumerate.Strings
 
 object AlertUtils {
@@ -24,6 +26,20 @@ object AlertUtils {
         )
 
         // return the created confirmation alert
+        return alert
+    }
+
+    // create and return a user-defined alert with a confirmation button
+    fun createUserDefinedAlert(node: Node): Alert {
+        // create an alert w/ confirmation-type
+        val alert = Alert(Alert.AlertType.NONE)
+
+        // set the content
+        alert.dialogPane.content = node
+        // set the applying & canceling buttons
+        alert.buttonTypes.addAll(ButtonType.APPLY, ButtonType.CANCEL)
+
+        // return the created alert
         return alert
     }
 }

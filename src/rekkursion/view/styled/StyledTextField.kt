@@ -6,7 +6,7 @@ import javafx.scene.paint.Color
 import rekkursion.enumerate.Colors
 import rekkursion.manager.PropertiesManager
 
-class StyledTextField(width: Double,
+open class StyledTextField(width: Double,
                       text: String = "",
                       textColor: Color = Colors.DEFAULT.color)
     : TextField(text), Styled {
@@ -35,7 +35,7 @@ class StyledTextField(width: Double,
 
     /* ======================================== */
 
-    override fun adjustStyle() {
+    final override fun adjustStyle() {
         style = "-fx-font-size: $textSize;" +
                 "-fx-text-fill: rgb(${textColor.red * 255}, ${textColor.green * 255}, ${textColor.blue * 255});" +
                 "-fx-background-color: rgba(${bgColor.red * 255}, ${bgColor.green * 255}, ${bgColor.blue * 255}, ${bgColor.opacity * 255});"

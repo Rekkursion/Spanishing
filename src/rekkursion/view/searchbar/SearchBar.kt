@@ -7,32 +7,31 @@ import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
 import rekkursion.util.SearchOptions
+import rekkursion.view.SpanishSupportedTextField
+import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
 import rekkursion.view.styled.StyledHBox
-import rekkursion.view.styled.StyledTextField
 
+@Suppress("MemberVisibilityCanBePrivate")
 open class SearchBar: StyledHBox() {
     // the image for showing the search-icon
     private val mImgvIcon = ImageView()
 
     // the text-field for users to input
-    private val mTxfInput = StyledTextField(200.0)
+    protected val mTxfInput = SpanishSupportedTextField(200.0)
 
     // the check-box for determining applying regex or not
-    private val mCkbRegex = StyledCheckBox(Strings.UsingRegexOrNot)
+    protected val mCkbRegex = StyledCheckBox(Strings.UsingRegexOrNot)
 
     // the check-box for determining being case-sensitive or not
-    private val mCkbCaseSensitive = StyledCheckBox(Strings.CaseSensitiveOrNot)
+    protected val mCkbCaseSensitive = StyledCheckBox(Strings.CaseSensitiveOrNot)
 
     // the on-text-change-listener
-    private var mOnTextChangeListener: OnTextChangeListener? = null
+    protected var mOnTextChangeListener: OnTextChangeListener? = null
 
     init {
         // set the icon image of the image-view
         mImgvIcon.image = Image("rekkursion/res/search.png", PropertiesManager.searchIconSize, PropertiesManager.searchIconSize, false, false)
-
-        // the text-size
-        mTxfInput.textSize = 14
 
         // set the padding-left of the check-boxes
         mCkbRegex.padding = Insets(0.0, 0.0, 0.0, PropertiesManager.generalPadding)
@@ -85,6 +84,9 @@ open class SearchBar: StyledHBox() {
     fun setOnTextChangeListener(onTextChangeListener: OnTextChangeListener) {
         mOnTextChangeListener = onTextChangeListener
     }
+
+    // set the text-sizes of all sub-views
+    fun setTextSizes(textSize: Int) { Styled.unifyTextSize(textSize, mTxfInput, mCkbRegex, mCkbCaseSensitive) }
 
     /* ======================================== */
 

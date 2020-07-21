@@ -15,7 +15,7 @@ import rekkursion.view.styled.StyledVBox
 
 class VocabularyListPage: StyledVBox() {
     // the search-bar for searching vocabularies
-    private val mSearchBar = VocSearchBar()
+    private val mSearchBar = VocSearchBar(SearchBar())
 
     // the view of the vocabulary list
     private val mVocListView = VocabularyListView(VocManager.copiedVocList)

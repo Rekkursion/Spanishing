@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane
 import javafx.scene.paint.Color
 import rekkursion.manager.PropertiesManager
 
-class StyledGridPane private constructor(colNum: Int = 0): GridPane(), Styled {
+open class StyledGridPane private constructor(colNum: Int = 0): GridPane(), Styled {
     class Builder(colNum: Int) {
         // the instance
         private val mInstance = StyledGridPane(colNum)

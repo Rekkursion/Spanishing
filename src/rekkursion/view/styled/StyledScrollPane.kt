@@ -6,7 +6,7 @@ import javafx.scene.control.ScrollPane
 import javafx.scene.paint.Color
 import rekkursion.manager.PropertiesManager
 
-class StyledScrollPane(
+open class StyledScrollPane(
         child: Node? = null,
         orientation: Orientation = Orientation.HORIZONTAL)
     : ScrollPane(child), Styled {

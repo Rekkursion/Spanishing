@@ -31,6 +31,9 @@ object PropertiesManager {
     // the size of a search-icon
     const val searchIconSize: Double = 24.0
 
+    // the text-size using in a search-bar
+    const val searchBarTextSize: Int = 14
+
     // the number of options in a single choice problem
     const val numOfOptionsInSingleChoiceProblem: Int = 4
 
