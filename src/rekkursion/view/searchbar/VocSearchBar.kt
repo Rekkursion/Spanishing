@@ -1,8 +1,11 @@
 package rekkursion.view.searchbar
 
+import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
+import rekkursion.util.GenericString
 import rekkursion.view.styled.StyledButton
+import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 
 class VocSearchBar(searchBar: SearchBar): StyledVBox() {
@@ -12,7 +15,10 @@ class VocSearchBar(searchBar: SearchBar): StyledVBox() {
     // the button for adjusting advanced options for searching (filtering) vocabularies
     private val mBtnAdvancedOptions = StyledButton(Strings.AdvancedVocSearchOptions)
 
-    // the boolean value for checking if it's currently showing the panel for advanced options
+    // the label for showing the number of filtered vocabularies
+    private val mLblNumOfFilteredVocs = StyledLabel(textColor = Colors.NUMBERED.color)
+
+            // the boolean value for checking if it's currently showing the panel for advanced options
     private var mShowingAdvancedOptionsPanel = false
 
     init {
@@ -24,7 +30,7 @@ class VocSearchBar(searchBar: SearchBar): StyledVBox() {
         mBtnAdvancedOptions.maxWidth = 150.0
 
         // add the advanced-options-button into the basic search-bar
-        mSearchBar.children.add(mBtnAdvancedOptions)
+        mSearchBar.children.addAll(mBtnAdvancedOptions, mLblNumOfFilteredVocs)
 
         // add the basic search-bar into this v-box
         children.add(mSearchBar)
@@ -38,6 +44,22 @@ class VocSearchBar(searchBar: SearchBar): StyledVBox() {
     // set the on-text-change-listener
     fun setOnTextChangeListener(onTextChangeListener: SearchBar.OnTextChangeListener) {
         mSearchBar.setOnTextChangeListener(onTextChangeListener)
+    }
+
+    // set the number of filtered
+    fun setNumOfFiltered(numOfFiltered: Int) {
+        // hide the text of num-label
+        if (mSearchBar.text.isEmpty()) {
+            Strings.unregister(mLblNumOfFilteredVocs)
+            mLblNumOfFilteredVocs.text = ""
+        }
+        // set and register the strings of num-label
+        else
+            Strings.register(mLblNumOfFilteredVocs,
+                    GenericString(Strings.NumOfFilteredVocs_pre),
+                    GenericString(str = numOfFiltered.toString()),
+                    GenericString(Strings.NumOfFilteredVocs_suf)
+            )
     }
 
     // toggle (hide or show) the advanced-options-panel

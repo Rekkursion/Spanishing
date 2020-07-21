@@ -19,6 +19,7 @@ open class SearchBar: StyledHBox() {
 
     // the text-field for users to input
     protected val mTxfInput = SpanishSupportedTextField(200.0)
+    val text: String get() = mTxfInput.text
 
     // the check-box for determining applying regex or not
     protected val mCkbRegex = StyledCheckBox(Strings.UsingRegexOrNot)

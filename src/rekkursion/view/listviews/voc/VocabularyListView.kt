@@ -23,7 +23,7 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
     /* ======================================== */
 
     // filter the vocabularies by a string (w/ some options like using regex or not, case sensitive or not)
-    fun filterByString(str: String, searchOptions: SearchOptions) {
+    fun filterByString(str: String, searchOptions: SearchOptions): Int {
         val usingRegex = searchOptions.usingRegex
         val caseSensitive = searchOptions.caseSensitive
 
@@ -50,6 +50,9 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
                             it.copiedMeaning.chi.contains(str, !caseSensitive) ||
                             it.copiedMeaning.eng.contains(str, !caseSensitive)
                 })
-        } catch (e: PatternSyntaxException) {}
+        } catch (e: PatternSyntaxException) { return 0 }
+
+        // return the number of filtered vocabularies
+        return items.size
     }
 }

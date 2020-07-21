@@ -48,7 +48,7 @@ class VocabularyListPage: StyledVBox() {
         // set the text-listening event on the search-bar
         mSearchBar.setOnTextChangeListener(object: SearchBar.OnTextChangeListener {
             override fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions) {
-                mVocListView.filterByString(newValue, searchOptions)
+                mSearchBar.setNumOfFiltered(mVocListView.filterByString(newValue, searchOptions))
             }
         })
     }

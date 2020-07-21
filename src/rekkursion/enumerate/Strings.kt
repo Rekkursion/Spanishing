@@ -7,7 +7,7 @@ import rekkursion.manager.PreferenceManager
 import rekkursion.util.GenericString
 import rekkursion.view.pref.PreferenceField
 
-@Suppress("unused", "EnumEntryName")
+@Suppress("EnumEntryName")
 enum class Strings(val chi: String, val eng: String) {
     // the title
     Title("Spanishing", "Spanishing"),
@@ -18,14 +18,18 @@ enum class Strings(val chi: String, val eng: String) {
     CaseSensitiveOrNot("大小寫敏感", "Case sensitive"),
     // the text of the advanced options for searching (filtering) vocabularies
     AdvancedVocSearchOptions("進階選項", "Advanced options"),
+    // the prefix of text for showing the number of filtered vocabularies
+    NumOfFilteredVocs_pre("找到 ", "Num of filtered: "),
+    // the suffix of text for showing the number of filtered vocabularies
+    NumOfFilteredVocs_suf(" 個單字", ""),
     // the text of spanish
-    Esp("西文", "Esp"),
+    Esp("西文", "ESP"),
     // the text of english
-    Eng("英文", "Eng"),
+    Eng("英文", "ENG"),
     // the text of chinese
-    Chi("中文", "Chi"),
+    Chi("中文", "CHI"),
     // the text of the field of searching texts
-    AdvancedVocSearchOptions_searchingTexts("查找文字的對象", "Search on"),
+    AdvancedVocSearchOptions_searchingTexts("查找文字的對象", "Search on ESP, ENG, and/or CHI?"),
     // the text of the field of searching part-of-speeches
     AdvancedVocSearchOptions_searchingPosp("詞性過濾", "Part of speeches"),
 
