@@ -1,12 +1,8 @@
 package rekkursion.view.prac.probpage
 
 import javafx.geometry.Insets
-import javafx.geometry.Orientation
 import javafx.scene.Node
 import javafx.scene.control.ButtonType
-import javafx.scene.control.OverrunStyle
-import javafx.scene.control.ScrollBar
-import javafx.scene.control.ScrollPane
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
@@ -19,8 +15,10 @@ import rekkursion.model.problem.Problem
 import rekkursion.util.AlertUtils
 import rekkursion.util.digits
 import rekkursion.view.prac.ResultPage
-import rekkursion.view.styled.*
-import java.util.concurrent.ThreadLocalRandom
+import rekkursion.view.styled.StyledButton
+import rekkursion.view.styled.StyledHBox
+import rekkursion.view.styled.StyledLabel
+import rekkursion.view.styled.StyledVBox
 import kotlin.random.Random
 
 abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {

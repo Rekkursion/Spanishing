@@ -2,9 +2,7 @@ package rekkursion.manager
 
 import javafx.application.Platform
 import org.json.JSONObject
-import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.enumerate.Strings
-import rekkursion.model.problem.SingleChoiceProblem
 import rekkursion.util.toAscii
 import java.io.File
 import java.io.FileInputStream

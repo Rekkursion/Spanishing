@@ -1,19 +1,17 @@
-package rekkursion.view
+package rekkursion.view.searchbar
 
-import javafx.event.EventHandler
-import javafx.event.EventType
 import javafx.geometry.Insets
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
+import rekkursion.util.SearchOptions
 import rekkursion.view.styled.StyledCheckBox
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledTextField
-import java.awt.event.MouseEvent
 
-class SearchBar: StyledHBox() {
+open class SearchBar: StyledHBox() {
     // the image for showing the search-icon
     private val mImgvIcon = ImageView()
 
@@ -32,6 +30,9 @@ class SearchBar: StyledHBox() {
     init {
         // set the icon image of the image-view
         mImgvIcon.image = Image("rekkursion/res/search.png", PropertiesManager.searchIconSize, PropertiesManager.searchIconSize, false, false)
+
+        // the text-size
+        mTxfInput.textSize = 14
 
         // set the padding-left of the check-boxes
         mCkbRegex.padding = Insets(0.0, 0.0, 0.0, PropertiesManager.generalPadding)
@@ -53,8 +54,7 @@ class SearchBar: StyledHBox() {
                     this,
                     oldValue,
                     newValue,
-                    mCkbRegex.isSelected,
-                    mCkbCaseSensitive.isSelected
+                    SearchOptions(mCkbRegex.isSelected, mCkbCaseSensitive.isSelected)
             )
         }
         mCkbRegex.selectedProperty().addListener { _, _, newValue ->
@@ -62,8 +62,7 @@ class SearchBar: StyledHBox() {
                     this,
                     mTxfInput.text,
                     mTxfInput.text,
-                    newValue,
-                    mCkbCaseSensitive.isSelected
+                    SearchOptions(newValue, mCkbCaseSensitive.isSelected)
             )
             requestFocus()
             PreferenceManager.write("using-regex", newValue.toString())
@@ -73,8 +72,7 @@ class SearchBar: StyledHBox() {
                     this,
                     mTxfInput.text,
                     mTxfInput.text,
-                    mCkbRegex.isSelected,
-                    newValue
+                    SearchOptions(mCkbRegex.isSelected, newValue)
             )
             requestFocus()
             PreferenceManager.write("case-sensitive", newValue.toString())
@@ -96,6 +94,6 @@ class SearchBar: StyledHBox() {
 
     // interface for listening the text change
     interface OnTextChangeListener {
-        fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, usingRegex: Boolean, caseSensitive: Boolean)
+        fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions)
     }
 }

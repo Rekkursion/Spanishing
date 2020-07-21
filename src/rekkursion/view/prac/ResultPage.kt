@@ -1,6 +1,5 @@
 package rekkursion.view.prac
 
-import javafx.scene.layout.GridPane
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager

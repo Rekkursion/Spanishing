@@ -1,6 +1,7 @@
 package rekkursion.manager
 
-import rekkursion.enumerate.SingleChoiceProblemType
+import javafx.scene.paint.Color
+import rekkursion.enumerate.Colors
 
 object PropertiesManager {
     // the default width of the window
@@ -60,4 +61,24 @@ object PropertiesManager {
             "Practice",
             "Preferences"
     )
+
+    /* ======================================== */
+
+    // the dedicated object for some default values of styled-nodes
+    object Styled {
+        // the default text-size
+        const val defaultTextSize: Int = 18
+
+        // the default text-color
+        val defaultTextColor: Color = Colors.DEFAULT.color
+
+        // the default background-color of text-fields
+        val defaultTextFieldBgColor: Color = Color.rgb(100, 100, 100)
+
+        // the default background-color of buttons
+        val defaultButtonBgColor: Color = Color.rgb(30, 30, 30)
+
+        // the default background-color of buttons when mouse-hovering it
+        val defaultButtonHoveringBgColor: Color = Colors.FOCUSED_BTN_BG.color
+    }
 }

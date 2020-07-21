@@ -100,7 +100,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
                             showNextProblem()
                         }
                         else {
-                            (button as StyledButton).setBgColor(Colors.WRONG_ANSWER_BG.color)
+                            (button as StyledButton).bgColor = Colors.WRONG_ANSWER_BG.color
                             prob.ansResult = AnsResult.WRONG
                         }
                     }
@@ -120,7 +120,7 @@ class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int)
         if (mCurrentProblemIdx < mProblemList.size) {
             repeat(PropertiesManager.numOfOptionsInSingleChoiceProblem) {
                 mBtnOptionList[it].text = (mProblemList[mCurrentProblemIdx] as SingleChoiceProblem).getOptionStr(it)
-                (mBtnOptionList[it] as StyledButton).unsetBgColor()
+                //(mBtnOptionList[it] as StyledButton).unsetBgColor()
             }
             mBtnOptionList.getOrNull(0)?.requestFocus()
         }

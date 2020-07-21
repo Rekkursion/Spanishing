@@ -2,9 +2,8 @@ package rekkursion.view.listviews.voc
 
 import javafx.collections.FXCollections
 import javafx.scene.control.ListView
-import rekkursion.enumerate.PartOfSpeech
-import rekkursion.model.Meaning
 import rekkursion.model.Vocabulary
+import rekkursion.util.SearchOptions
 import java.util.regex.PatternSyntaxException
 
 class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>() {
@@ -24,7 +23,10 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
     /* ======================================== */
 
     // filter the vocabularies by a string (w/ some options like using regex or not, case sensitive or not)
-    fun filterByString(str: String, usingRegex: Boolean, caseSensitive: Boolean) {
+    fun filterByString(str: String, searchOptions: SearchOptions) {
+        val usingRegex = searchOptions.usingRegex
+        val caseSensitive = searchOptions.caseSensitive
+
         items.clear()
         try {
             // the passed string shall be used as a regex

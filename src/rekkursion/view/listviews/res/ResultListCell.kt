@@ -1,10 +1,7 @@
 package rekkursion.view.listviews.res
 
-import javafx.geometry.HPos
 import javafx.scene.control.ListCell
 import javafx.scene.control.ScrollPane
-import javafx.scene.layout.ColumnConstraints
-import javafx.scene.layout.GridPane
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
@@ -53,7 +50,7 @@ class ResultListCell(numOfProblems: Int): ListCell<Problem>() {
             mLblProblemNo.text = String.format("%0${mNumOfProblems.digits()}d", item.index + 1)
             mLblVoc.text = item.toString()
             Strings.register(mLblResult, item.ansResult.strEnum)
-            mLblResult.setTextColor(item.ansResult.colorEnum.color)
+            mLblResult.textColor = item.ansResult.colorEnum.color
 
             if (graphic != mGdpRow) graphic = mGdpRow
         }

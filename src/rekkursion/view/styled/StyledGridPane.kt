@@ -4,8 +4,10 @@ import javafx.geometry.HPos
 import javafx.scene.Node
 import javafx.scene.layout.ColumnConstraints
 import javafx.scene.layout.GridPane
+import javafx.scene.paint.Color
+import rekkursion.manager.PropertiesManager
 
-class StyledGridPane private constructor(colNum: Int = 0): GridPane() {
+class StyledGridPane private constructor(colNum: Int = 0): GridPane(), Styled {
     class Builder(colNum: Int) {
         // the instance
         private val mInstance = StyledGridPane(colNum)
@@ -41,6 +43,19 @@ class StyledGridPane private constructor(colNum: Int = 0): GridPane() {
 
     /* ======================================== */
 
+    override var textSize: Int = PropertiesManager.Styled.defaultTextSize
+        set(value) { field = value; adjustStyle() }
+
+    override var textColor: Color = PropertiesManager.Styled.defaultTextColor
+        set(value) { field = value; adjustStyle() }
+
+    override var bgColor: Color = Color.TRANSPARENT
+        set(value) { field = value; adjustStyle() }
+
     // the total number of columns
     private val mColNum = colNum
+
+    /* ======================================== */
+
+    override fun adjustStyle() {}
 }

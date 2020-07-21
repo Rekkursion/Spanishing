@@ -6,13 +6,16 @@ import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.util.GenericString
+import rekkursion.util.SearchOptions
 import rekkursion.view.listviews.voc.VocabularyListView
+import rekkursion.view.searchbar.SearchBar
+import rekkursion.view.searchbar.VocSearchBar
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 
 class VocabularyListPage: StyledVBox() {
     // the search-bar for searching vocabularies
-    private val mSearchBar = SearchBar()
+    private val mSearchBar = VocSearchBar()
 
     // the view of the vocabulary list
     private val mVocListView = VocabularyListView(VocManager.copiedVocList)
@@ -44,8 +47,8 @@ class VocabularyListPage: StyledVBox() {
 
         // set the text-listening event on the search-bar
         mSearchBar.setOnTextChangeListener(object: SearchBar.OnTextChangeListener {
-            override fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, usingRegex: Boolean, caseSensitive: Boolean) {
-                mVocListView.filterByString(newValue, usingRegex, caseSensitive)
+            override fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions) {
+                mVocListView.filterByString(newValue, searchOptions)
             }
         })
     }

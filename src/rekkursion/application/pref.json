@@ -1,5 +1,5 @@
 {
-    "case-sensitive": false,
+    "case-sensitive": true,
     "preferred-single-choice-problem-type": 2,
     "window-width": 1280,
     "preferred-problem-num": 10,
