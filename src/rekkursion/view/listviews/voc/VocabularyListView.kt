@@ -37,21 +37,24 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
                 (if (!caseSensitive) str.toLowerCase().toRegex() else str.toRegex()).let { regex ->
                     items.addAll(mObservable.filter {
                         if (!caseSensitive)
-                            (onEsp && it.esp.toLowerCase().contains(regex)) ||
+                            searchOptions.isSearchingCertainPosp(it.copiedMeaning.posp) && (
+                                    (onEsp && it.esp.toLowerCase().contains(regex)) ||
                                     (onEng && it.copiedMeaning.eng.toLowerCase().contains(regex)) ||
-                                    (onChi && it.copiedMeaning.chi.toLowerCase().contains(regex))
+                                    (onChi && it.copiedMeaning.chi.toLowerCase().contains(regex)))
                         else
-                            (onEsp && it.esp.contains(regex)) ||
+                            searchOptions.isSearchingCertainPosp(it.copiedMeaning.posp) && (
+                                    (onEsp && it.esp.contains(regex)) ||
                                     (onEng && it.copiedMeaning.eng.contains(regex)) ||
-                                    (onChi && it.copiedMeaning.chi.contains(regex))
+                                    (onChi && it.copiedMeaning.chi.contains(regex)))
                     })
                 }
             // the plain text
             else
                 items.addAll(mObservable.filter {
-                    (onEsp && it.esp.contains(str, !caseSensitive)) ||
+                    searchOptions.isSearchingCertainPosp(it.copiedMeaning.posp) && (
+                            (onEsp && it.esp.contains(str, !caseSensitive)) ||
                             (onEng && it.copiedMeaning.eng.contains(str, !caseSensitive)) ||
-                            (onChi && it.copiedMeaning.chi.contains(str, !caseSensitive))
+                            (onChi && it.copiedMeaning.chi.contains(str, !caseSensitive)))
                 })
         } catch (e: PatternSyntaxException) { return 0 }
 

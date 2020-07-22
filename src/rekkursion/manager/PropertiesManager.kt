@@ -22,6 +22,9 @@ object PropertiesManager {
     // the default bit values for determining texts searched on (7 = 111 = YYY, in the order of ESP|ENG|CHI)
     const val defaultTextsSearchOn: Int = 7
 
+    // the default bit values for determining posp's searched on
+    const val defaultPospsSearchOn: Int = Int.MAX_VALUE
+
     // the default boolean-value of the alert when skipping a single problem
     const val defaultAlertWhenSkipping: Boolean = true
 

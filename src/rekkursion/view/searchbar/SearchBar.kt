@@ -38,7 +38,8 @@ open class SearchBar: StyledVBox() {
     private val mSearchOpts = SearchOptions(
             PreferenceManager.usingRegex,
             PreferenceManager.caseSensitive,
-            PropertiesManager.defaultTextsSearchOn
+            PropertiesManager.defaultTextsSearchOn,
+            PropertiesManager.defaultPospsSearchOn
     )
     val searchOptionsCopied = mSearchOpts.copy()
 

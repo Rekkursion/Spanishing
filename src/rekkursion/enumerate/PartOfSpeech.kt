@@ -20,6 +20,7 @@ enum class PartOfSpeech(val abbr: String) {
 
     ADJECTIVE("adj"),
     ADVERB("adv"),
+    ADJ_OR_ADV("adj; adv"),
 
     PREPOSITION("prep"),
     CONJUNCTION("conj"),

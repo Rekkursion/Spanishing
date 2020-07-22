@@ -5,7 +5,6 @@ import javafx.scene.layout.FlowPane
 import rekkursion.enumerate.PartOfSpeech
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
-import rekkursion.util.SearchOptions
 import rekkursion.view.pref.PreferenceField
 import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
@@ -44,6 +43,7 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
         ckbEsp.isSelected = true; ckbEng.isSelected = true; ckbChi.isSelected = true
         Styled.unifyTextSize(PropertiesManager.searchBarTextSize, ckbEsp, ckbEng, ckbChi)
 
+        // add listeners for check-boxes when the selected properties have been changed
         ckbEsp.selectedProperty().addListener { _, _, newValue ->
             val opts = mSearchBar.searchOptionsCopied; opts.isSearchingOnESP = newValue
             mSearchBar.setSearchOptions(opts)
@@ -60,13 +60,17 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
 
     private fun addSearchPospField() {
         val flowPane = FlowPane(Orientation.HORIZONTAL, PropertiesManager.generalSpacing, PropertiesManager.generalSpacing)
-        flowPane.children.addAll(PartOfSpeech
-                .values()
+        flowPane.children.addAll(PartOfSpeech.values()
                 .filter { posp -> !posp.name.contains("OR") && posp != PartOfSpeech.NONE }
                 .map { posp ->
                     val ckb = StyledCheckBox(posp.abbr)
                     ckb.isSelected = true
                     ckb.textSize = PropertiesManager.searchBarTextSize
+                    ckb.selectedProperty().addListener { _, _, newValue ->
+                        val opts = mSearchBar.searchOptionsCopied
+                        if (newValue) opts.addPosps(posp) else opts.dropPosps(posp)
+                        mSearchBar.setSearchOptions(opts)
+                    }
                     ckb
                 })
 

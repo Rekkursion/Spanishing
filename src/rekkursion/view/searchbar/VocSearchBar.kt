@@ -4,10 +4,8 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.util.GenericString
-import rekkursion.util.SearchOptions
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledLabel
-import rekkursion.view.styled.StyledVBox
 
 class VocSearchBar: SearchBar() {
     // the button for adjusting advanced options for searching (filtering) vocabularies
