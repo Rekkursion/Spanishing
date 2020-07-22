@@ -1,15 +1,13 @@
 package rekkursion.view.searchbar
 
+import javafx.application.Platform
 import javafx.geometry.Orientation
 import javafx.scene.layout.FlowPane
 import rekkursion.enumerate.PartOfSpeech
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.view.pref.PreferenceField
-import rekkursion.view.styled.Styled
-import rekkursion.view.styled.StyledCheckBox
-import rekkursion.view.styled.StyledHBox
-import rekkursion.view.styled.StyledVBox
+import rekkursion.view.styled.*
 
 class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
     // the voc-search-bar
@@ -40,7 +38,10 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
         children.add(searchObjectsField)
 
         // the initial values
-        ckbEsp.isSelected = true; ckbEng.isSelected = true; ckbChi.isSelected = true
+        val opts = mSearchBar.searchOptionsCopied
+        ckbEsp.isSelected = opts.isSearchingOnESP
+        ckbEng.isSelected = opts.isSearchingOnENG
+        ckbChi.isSelected = opts.isSearchingOnCHI
         Styled.unifyTextSize(PropertiesManager.searchBarTextSize, ckbEsp, ckbEng, ckbChi)
 
         // add listeners for check-boxes when the selected properties have been changed
@@ -63,11 +64,11 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
         flowPane.children.addAll(PartOfSpeech.values()
                 .filter { posp -> !posp.name.contains("OR") && posp != PartOfSpeech.NONE }
                 .map { posp ->
+                    val opts = mSearchBar.searchOptionsCopied
                     val ckb = StyledCheckBox(posp.abbr)
-                    ckb.isSelected = true
+                    ckb.isSelected = opts.isSearchingCertainPosp(posp)
                     ckb.textSize = PropertiesManager.searchBarTextSize
                     ckb.selectedProperty().addListener { _, _, newValue ->
-                        val opts = mSearchBar.searchOptionsCopied
                         if (newValue) opts.addPosps(posp) else opts.dropPosps(posp)
                         mSearchBar.setSearchOptions(opts)
                     }

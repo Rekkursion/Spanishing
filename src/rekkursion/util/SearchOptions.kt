@@ -1,6 +1,7 @@
 package rekkursion.util
 
 import rekkursion.enumerate.PartOfSpeech
+import rekkursion.manager.PreferenceManager
 import rekkursion.model.Copiable
 
 // some options for searching
@@ -54,6 +55,11 @@ class SearchOptions(
     fun setAll(searchOptions: SearchOptions) {
         usingRegex = searchOptions.usingRegex
         caseSensitive = searchOptions.mCaseSensitive
+
+        if (mSearchTextOn != searchOptions.mSearchTextOn)
+            PreferenceManager.write("texts-search-on", searchOptions.mSearchTextOn.toString())
+        if (mSearchPosp != searchOptions.mSearchPosp)
+            PreferenceManager.write("posps-search-on", searchOptions.mSearchPosp.toString())
         mSearchTextOn = searchOptions.mSearchTextOn
         mSearchPosp = searchOptions.mSearchPosp
     }
@@ -70,6 +76,7 @@ class SearchOptions(
 
     // check if it should search a certain part-of-speech
     fun isSearchingCertainPosp(posp: PartOfSpeech): Boolean {
+        @Suppress("RegExpRedundantEscape")
         posp.abbr.split("(;\\s*)|\\/".toRegex())
                 .map { atomAbbr -> PartOfSpeech.getPospFromAbbr(atomAbbr) }
                 .forEach { atom ->

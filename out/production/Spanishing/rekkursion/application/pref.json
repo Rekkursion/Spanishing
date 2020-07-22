@@ -1,8 +1,10 @@
 {
+    "posps-search-on": 2147483647,
     "case-sensitive": true,
-    "preferred-single-choice-problem-type": 0,
-    "window-width": 1350.4000244140625,
-    "preferred-problem-num": 10,
+    "preferred-single-choice-problem-type": 2,
+    "window-width": 1280,
+    "preferred-problem-num": 50,
+    "texts-search-on": 7,
     "using-regex": true,
     "window-height": 700,
     "alert-when-finishing": true,

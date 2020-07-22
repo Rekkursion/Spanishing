@@ -1,6 +1,7 @@
 package rekkursion.view.searchbar
 
 import javafx.geometry.Insets
+import javafx.geometry.Pos
 import javafx.scene.Node
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
@@ -34,12 +35,11 @@ open class SearchBar: StyledVBox() {
     private var mOnSearchStatusChangeListener: OnSearchStatusChangeListener? = null
 
     // some search-options
-    // TODO: preference-lize
     private val mSearchOpts = SearchOptions(
             PreferenceManager.usingRegex,
             PreferenceManager.caseSensitive,
-            PropertiesManager.defaultTextsSearchOn,
-            PropertiesManager.defaultPospsSearchOn
+            PreferenceManager.textsSearchOn,
+            PreferenceManager.pospsSearchOn
     )
     val searchOptionsCopied = mSearchOpts.copy()
 

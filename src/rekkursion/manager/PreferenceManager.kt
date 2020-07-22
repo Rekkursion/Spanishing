@@ -29,6 +29,12 @@ object PreferenceManager {
     // being case-sensitive or not in a search-bar
     var caseSensitive: Boolean = PropertiesManager.defaultCaseSensitiveOrNot
 
+    // the types of texts (ESP, ENG, and/or CHI) searching on
+    var textsSearchOn: Int = PropertiesManager.defaultTextsSearchOn
+
+    // the part-of-speeches searching with
+    var pospsSearchOn: Int = PropertiesManager.defaultPospsSearchOn
+
     // the alert when skipping a single problem
     var alertWhenSkipping: Boolean = PropertiesManager.defaultAlertWhenSkipping
 
@@ -64,6 +70,8 @@ object PreferenceManager {
             lang = jObj.getString("lang")
             usingRegex = jObj.getBoolean("using-regex")
             caseSensitive = jObj.getBoolean("case-sensitive")
+            textsSearchOn = jObj.getInt("texts-search-on")
+            pospsSearchOn = jObj.getInt("posps-search-on")
             alertWhenSkipping = jObj.getBoolean("alert-when-skipping")
             alertWhenFinishing = jObj.getBoolean("alert-when-finishing")
             preferredSingleChoiceProblemType = jObj.getInt("preferred-single-choice-problem-type")
