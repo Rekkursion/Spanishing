@@ -1,13 +1,15 @@
 package rekkursion.view.searchbar
 
-import javafx.application.Platform
 import javafx.geometry.Orientation
 import javafx.scene.layout.FlowPane
 import rekkursion.enumerate.PartOfSpeech
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
 import rekkursion.view.pref.PreferenceField
-import rekkursion.view.styled.*
+import rekkursion.view.styled.Styled
+import rekkursion.view.styled.StyledCheckBox
+import rekkursion.view.styled.StyledHBox
+import rekkursion.view.styled.StyledVBox
 
 class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
     // the voc-search-bar

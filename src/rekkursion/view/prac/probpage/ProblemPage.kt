@@ -19,7 +19,6 @@ import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
-import kotlin.random.Random
 
 abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {
     // the type of the practice
@@ -124,32 +123,8 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
     // pick vocabularies in the number of problems
     private fun pickVocabularies() {
         Thread {
-            // get the copied vocabulary list
-            val vocList = VocManager.copiedVocList
-
-            // the number of currently-generated problems
-            var curNum = 0
-
-            // the hash-set of picked vocabularies
-            val pickedVocHashSet = HashSet<Vocabulary>()
-
-            // the random generator i think?
-            val r = Random(System.currentTimeMillis())
-
-            // randomly pick some vocabularies as problems
-            while (curNum < mNumOfProblems) {
-                // randomly pick an index and get the vocabulary
-                val voc = vocList[r.nextInt(0, vocList.size)]
-                // if this index has not been picked
-                if (!pickedVocHashSet.contains(voc)) {
-                    ++curNum
-                    pickedVocHashSet.add(voc)
-                }
-            }
-
-            // convert the hash-set into an array-list
-            pickedVocHashSet.forEach { mPickedVocList.add(it.copy()) }
-
+            // pick some vocabularies
+            VocManager.pickVocabularies(mNumOfProblems).forEach { mPickedVocList.add(it.copy()) }
             // generate the problems
             generateProblemsAndShowTheFirst()
         }.start()
