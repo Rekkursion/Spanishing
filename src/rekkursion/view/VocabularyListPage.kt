@@ -15,7 +15,7 @@ import rekkursion.view.styled.StyledVBox
 
 class VocabularyListPage: StyledVBox() {
     // the search-bar for searching vocabularies
-    private val mSearchBar = VocSearchBar(SearchBar())
+    private val mSearchBar = VocSearchBar()
 
     // the view of the vocabulary list
     private val mVocListView = VocabularyListView(VocManager.copiedVocList)
@@ -46,8 +46,8 @@ class VocabularyListPage: StyledVBox() {
         children.addAll(mSearchBar, mVocListView, mLblNumOfVocs)
 
         // set the text-listening event on the search-bar
-        mSearchBar.setOnTextChangeListener(object: SearchBar.OnTextChangeListener {
-            override fun onTextChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions) {
+        mSearchBar.setOnSearchStatusChangeListener(object: SearchBar.OnSearchStatusChangeListener {
+            override fun onSearchStatusChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions) {
                 mSearchBar.setNumOfFiltered(mVocListView.filterByString(newValue, searchOptions))
             }
         })

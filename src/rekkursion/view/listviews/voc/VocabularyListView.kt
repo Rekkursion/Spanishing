@@ -26,6 +26,9 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
     fun filterByString(str: String, searchOptions: SearchOptions): Int {
         val usingRegex = searchOptions.usingRegex
         val caseSensitive = searchOptions.caseSensitive
+        val onEsp = searchOptions.isSearchingOnESP
+        val onEng = searchOptions.isSearchingOnENG
+        val onChi = searchOptions.isSearchingOnCHI
 
         items.clear()
         try {
@@ -34,21 +37,21 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
                 (if (!caseSensitive) str.toLowerCase().toRegex() else str.toRegex()).let { regex ->
                     items.addAll(mObservable.filter {
                         if (!caseSensitive)
-                            it.esp.toLowerCase().contains(regex) ||
-                                    it.copiedMeaning.chi.toLowerCase().contains(regex) ||
-                                    it.copiedMeaning.eng.toLowerCase().contains(regex)
+                            (onEsp && it.esp.toLowerCase().contains(regex)) ||
+                                    (onEng && it.copiedMeaning.eng.toLowerCase().contains(regex)) ||
+                                    (onChi && it.copiedMeaning.chi.toLowerCase().contains(regex))
                         else
-                            it.esp.contains(regex) ||
-                                    it.copiedMeaning.chi.contains(regex) ||
-                                    it.copiedMeaning.eng.contains(regex)
+                            (onEsp && it.esp.contains(regex)) ||
+                                    (onEng && it.copiedMeaning.eng.contains(regex)) ||
+                                    (onChi && it.copiedMeaning.chi.contains(regex))
                     })
                 }
             // the plain text
             else
                 items.addAll(mObservable.filter {
-                    it.esp.contains(str, !caseSensitive) ||
-                            it.copiedMeaning.chi.contains(str, !caseSensitive) ||
-                            it.copiedMeaning.eng.contains(str, !caseSensitive)
+                    (onEsp && it.esp.contains(str, !caseSensitive)) ||
+                            (onEng && it.copiedMeaning.eng.contains(str, !caseSensitive)) ||
+                            (onChi && it.copiedMeaning.chi.contains(str, !caseSensitive))
                 })
         } catch (e: PatternSyntaxException) { return 0 }
 

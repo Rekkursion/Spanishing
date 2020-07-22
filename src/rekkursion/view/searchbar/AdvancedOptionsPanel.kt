@@ -5,13 +5,17 @@ import javafx.scene.layout.FlowPane
 import rekkursion.enumerate.PartOfSpeech
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
+import rekkursion.util.SearchOptions
 import rekkursion.view.pref.PreferenceField
 import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledVBox
 
-class AdvancedOptionsPanel: StyledVBox() {
+class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
+    // the voc-search-bar
+    private val mSearchBar = searchBar
+
     init {
         // add the field for determining which texts shall be searched on
         addSearchTextsField()
@@ -39,6 +43,19 @@ class AdvancedOptionsPanel: StyledVBox() {
         // the initial values
         ckbEsp.isSelected = true; ckbEng.isSelected = true; ckbChi.isSelected = true
         Styled.unifyTextSize(PropertiesManager.searchBarTextSize, ckbEsp, ckbEng, ckbChi)
+
+        ckbEsp.selectedProperty().addListener { _, _, newValue ->
+            val opts = mSearchBar.searchOptionsCopied; opts.isSearchingOnESP = newValue
+            mSearchBar.setSearchOptions(opts)
+        }
+        ckbEng.selectedProperty().addListener { _, _, newValue ->
+            val opts = mSearchBar.searchOptionsCopied; opts.isSearchingOnENG = newValue
+            mSearchBar.setSearchOptions(opts)
+        }
+        ckbChi.selectedProperty().addListener { _, _, newValue ->
+            val opts = mSearchBar.searchOptionsCopied; opts.isSearchingOnCHI = newValue
+            mSearchBar.setSearchOptions(opts)
+        }
     }
 
     private fun addSearchPospField() {

@@ -19,6 +19,9 @@ object PropertiesManager {
     // the default boolean value for determining being case sensitive or not
     const val defaultCaseSensitiveOrNot: Boolean = true
 
+    // the default bit values for determining texts searched on (7 = 111 = YYY, in the order of ESP|ENG|CHI)
+    const val defaultTextsSearchOn: Int = 7
+
     // the default boolean-value of the alert when skipping a single problem
     const val defaultAlertWhenSkipping: Boolean = true
 
