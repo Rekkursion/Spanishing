@@ -29,6 +29,9 @@ object PreferenceManager {
     // being case-sensitive or not in a search-bar
     var caseSensitive: Boolean = PropertiesManager.defaultCaseSensitiveOrNot
 
+    // showing only collected vocabularies or not in a search-bar
+    var isCollectedOnly: Boolean = PropertiesManager.defaultIsCollectedOnly
+
     // the types of texts (ESP, ENG, and/or CHI) searching on
     var textsSearchOn: Int = PropertiesManager.defaultTextsSearchOn
 
@@ -70,6 +73,7 @@ object PreferenceManager {
             lang = jObj.getString("lang")
             usingRegex = jObj.getBoolean("using-regex")
             caseSensitive = jObj.getBoolean("case-sensitive")
+            isCollectedOnly = jObj.getBoolean("is-collected-only")
             textsSearchOn = jObj.getInt("texts-search-on")
             pospsSearchOn = jObj.getInt("posps-search-on")
             alertWhenSkipping = jObj.getBoolean("alert-when-skipping")

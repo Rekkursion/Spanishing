@@ -9,7 +9,8 @@ class SearchOptions(
         usingRegex: Boolean,
         caseSensitive: Boolean,
         searchTextOn: Int,
-        searchPosp: Int)
+        searchPosp: Int,
+        isCollectedOnly: Boolean)
     : Copiable {
 
     // using regex or not
@@ -49,6 +50,12 @@ class SearchOptions(
     // search part-of-speeches
     private var mSearchPosp: Int = searchPosp
 
+    // search only the collected vocabularies
+    private var mIsCollectedOnly: Boolean = isCollectedOnly
+    var isCollectedOnly
+        get() = mIsCollectedOnly
+        set(value) { mIsCollectedOnly = value }
+
     /* ======================================== */
 
     // set all search-options by another search-options
@@ -62,6 +69,7 @@ class SearchOptions(
             PreferenceManager.write("posps-search-on", searchOptions.mSearchPosp.toString())
         mSearchTextOn = searchOptions.mSearchTextOn
         mSearchPosp = searchOptions.mSearchPosp
+        mIsCollectedOnly = searchOptions.mIsCollectedOnly
     }
 
     // add part-of-speeches
@@ -88,5 +96,5 @@ class SearchOptions(
 
     /* ======================================== */
 
-    override fun copy(): SearchOptions = SearchOptions(usingRegex, caseSensitive, mSearchTextOn, mSearchPosp)
+    override fun copy(): SearchOptions = SearchOptions(mUsingRegex, mCaseSensitive, mSearchTextOn, mSearchPosp, mIsCollectedOnly)
 }

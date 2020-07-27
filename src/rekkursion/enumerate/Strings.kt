@@ -16,6 +16,8 @@ enum class Strings(val chi: String, val eng: String) {
     UsingRegexOrNot("正則匹配", "Regex"),
     // the text of the check-box for determining being case-sensitive or not in a search-bar
     CaseSensitiveOrNot("大小寫敏感", "Case sensitive"),
+    // the text of the check-box for showing only collected vocabularies
+    ShowOnlyCollectedVocs("只顯示收藏", "Collected only"),
     // the text of the advanced options for searching (filtering) vocabularies
     AdvancedVocSearchOptions("進階選項", "Advanced options"),
     // the prefix of text for showing the number of filtered vocabularies

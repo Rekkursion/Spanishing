@@ -38,7 +38,8 @@ open class SearchBar: StyledVBox() {
             PreferenceManager.usingRegex,
             PreferenceManager.caseSensitive,
             PreferenceManager.textsSearchOn,
-            PreferenceManager.pospsSearchOn
+            PreferenceManager.pospsSearchOn,
+            PreferenceManager.isCollectedOnly
     )
     val searchOptionsCopied = mSearchOpts.copy()
 
@@ -83,6 +84,7 @@ open class SearchBar: StyledVBox() {
     // set the listen of search-status changing
     fun setOnSearchStatusChangeListener(onSearchStatusChangeListener: OnSearchStatusChangeListener) {
         mOnSearchStatusChangeListener = onSearchStatusChangeListener
+        notifyOptionsChanged()
     }
 
     // notify that some search-options might be changed

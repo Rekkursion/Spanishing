@@ -1,10 +1,6 @@
 package rekkursion.view.searchbar
 
-import javafx.geometry.HPos
 import javafx.geometry.Orientation
-import javafx.geometry.Pos
-import javafx.scene.layout.Background
-import javafx.scene.layout.BackgroundFill
 import javafx.scene.layout.FlowPane
 import rekkursion.enumerate.PartOfSpeech
 import rekkursion.enumerate.Strings
@@ -15,7 +11,6 @@ import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledVBox
-import java.awt.Color
 
 class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
     // the voc-search-bar
@@ -125,10 +120,10 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
 
     /* ======================================== */
 
+    // set the style by the order of the field when being added to this panel
     private fun setStyle(field: PreferenceField) {
-        if (mFieldCounter.and(1) == 1) {
+        if (mFieldCounter.and(1) == 1)
             field.style = "-fx-background-color: rgb(50, 50, 50);"
-        }
         ++mFieldCounter
     }
 }

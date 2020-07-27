@@ -1,12 +1,13 @@
 {
-    "posps-search-on": 2147483644,
-    "case-sensitive": true,
+    "posps-search-on": 2147483647,
+    "case-sensitive": false,
     "preferred-single-choice-problem-type": 2,
-    "window-width": 1294.4000244140625,
+    "window-width": 1280,
     "preferred-problem-num": 100,
-    "texts-search-on": 6,
+    "is-collected-only": false,
+    "texts-search-on": 7,
     "using-regex": false,
-    "window-height": 737.5999755859375,
+    "window-height": 700,
     "alert-when-finishing": true,
     "lang": "中文/Chinese",
     "alert-when-skipping": true

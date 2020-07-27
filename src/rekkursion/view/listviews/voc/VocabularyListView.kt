@@ -29,6 +29,7 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
         val onEsp = searchOptions.isSearchingOnESP
         val onEng = searchOptions.isSearchingOnENG
         val onChi = searchOptions.isSearchingOnCHI
+        val collectedOnly = searchOptions.isCollectedOnly
 
         items.clear()
         try {
@@ -36,7 +37,7 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
             if (usingRegex)
                 (if (!caseSensitive) str.toLowerCase().toRegex() else str.toRegex()).let { regex ->
                     items.addAll(mObservable.filter {
-                        if (!caseSensitive)
+                        (if (!caseSensitive)
                             searchOptions.isSearchingCertainPosp(it.copiedMeaning.posp) && (
                                     (onEsp && it.esp.toLowerCase().contains(regex)) ||
                                     (onEng && it.copiedMeaning.eng.toLowerCase().contains(regex)) ||
@@ -46,15 +47,19 @@ class VocabularyListView(vocList: ArrayList<Vocabulary>): ListView<Vocabulary>()
                                     (onEsp && it.esp.contains(regex)) ||
                                     (onEng && it.copiedMeaning.eng.contains(regex)) ||
                                     (onChi && it.copiedMeaning.chi.contains(regex)))
+
+                        ) && (!collectedOnly || (collectedOnly && it.isCollected))
                     })
                 }
             // the plain text
             else
                 items.addAll(mObservable.filter {
-                    searchOptions.isSearchingCertainPosp(it.copiedMeaning.posp) && (
+                    (searchOptions.isSearchingCertainPosp(it.copiedMeaning.posp) && (
                             (onEsp && it.esp.contains(str, !caseSensitive)) ||
                             (onEng && it.copiedMeaning.eng.contains(str, !caseSensitive)) ||
                             (onChi && it.copiedMeaning.chi.contains(str, !caseSensitive)))
+
+                    ) && (!collectedOnly || (collectedOnly && it.isCollected))
                 })
         } catch (e: PatternSyntaxException) { return 0 }
 

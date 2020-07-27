@@ -25,6 +25,9 @@ object PropertiesManager {
     // the default bit values for determining posp's searched on
     const val defaultPospsSearchOn: Int = Int.MAX_VALUE
 
+    // the default boolean value for determining showing only collected vocabularies
+    const val defaultIsCollectedOnly: Boolean = false
+
     // the default boolean-value of the alert when skipping a single problem
     const val defaultAlertWhenSkipping: Boolean = true
 
@@ -51,6 +54,9 @@ object PropertiesManager {
 
     // the general padding of a ui
     const val generalPadding: Double = 30.0
+
+    // the padding of items of the vocabulary-list
+    const val vocListItemPadding: Double = 4.0
 
     // the list of percent widths of columns used in the result-list-view
     val percentWidthsOfColumnsInResultListView = doubleArrayOf(10.0, 70.0, 20.0)
