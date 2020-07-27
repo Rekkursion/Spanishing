@@ -1,6 +1,7 @@
 package rekkursion.view.pref
 
 import javafx.geometry.HPos
+import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.Node
 import javafx.scene.layout.ColumnConstraints
@@ -31,6 +32,8 @@ class PreferenceField(
         // set the gaps
         vgap = PropertiesManager.generalSpacing
         hgap = PropertiesManager.generalSpacing
+        // set the padding
+        padding = Insets(PropertiesManager.generalPadding)
 
         // set the column-constraints
         val c1 = ColumnConstraints(); c1.percentWidth = widthsRatio.first ; c1.halignment = HPos.CENTER; //c1.isFillWidth = true

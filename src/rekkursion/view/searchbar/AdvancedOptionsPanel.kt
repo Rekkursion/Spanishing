@@ -1,19 +1,28 @@
 package rekkursion.view.searchbar
 
+import javafx.geometry.HPos
 import javafx.geometry.Orientation
+import javafx.geometry.Pos
+import javafx.scene.layout.Background
+import javafx.scene.layout.BackgroundFill
 import javafx.scene.layout.FlowPane
 import rekkursion.enumerate.PartOfSpeech
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PropertiesManager
+import rekkursion.view.SelectingButtonBar
 import rekkursion.view.pref.PreferenceField
 import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledVBox
+import java.awt.Color
 
 class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
     // the voc-search-bar
     private val mSearchBar = searchBar
+
+    // the global counter for the added fields
+    private var mFieldCounter = 0
 
     init {
         // add the field for determining which texts shall be searched on
@@ -60,11 +69,15 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
             val opts = mSearchBar.searchOptionsCopied; opts.isSearchingOnCHI = newValue
             mSearchBar.setSearchOptions(opts)
         }
+
+        setStyle(searchObjectsField)
     }
 
     private fun addSearchPospField() {
-        val flowPane = FlowPane(Orientation.HORIZONTAL, PropertiesManager.generalSpacing, PropertiesManager.generalSpacing)
-        flowPane.children.addAll(PartOfSpeech.values()
+        // create a v-box for containing all check-boxes & selecting-button-bar
+        val vbx = StyledVBox()
+
+        val ckbPospList = PartOfSpeech.values()
                 .filter { posp -> !posp.name.contains("OR") && posp != PartOfSpeech.NONE }
                 .map { posp ->
                     val opts = mSearchBar.searchOptionsCopied
@@ -76,15 +89,46 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
                         mSearchBar.setSearchOptions(opts)
                     }
                     ckb
-                })
+                }
 
+        // create a flow-pane and add check-boxes for all part-of-speeches
+        val flowPane = FlowPane(Orientation.HORIZONTAL, PropertiesManager.generalSpacing, PropertiesManager.generalSpacing)
+        flowPane.children.addAll(ckbPospList)
+
+        // create a selecting-button-bar
+        val selectingBar = SelectingButtonBar()
+        selectingBar.setOnSelectingListener(object: SelectingButtonBar.OnSelectingListener {
+            override fun onSelectAll() { ckbPospList.forEach { ckb -> ckb.isSelected = true } }
+
+            override fun onUnselectAll() {
+                ckbPospList.forEach { ckb -> ckb.isSelected = false }
+            }
+
+            override fun onReverseSelect() {
+                ckbPospList.forEach { ckb -> ckb.isSelected = !ckb.isSelected }
+            }
+        })
+
+        // set the v-box as a part of this field
+        vbx.children.addAll(flowPane, selectingBar)
         val searchPospField = PreferenceField(
                 Strings.AdvancedVocSearchOptions_searchingPosp,
-                flowPane,
+                vbx,
                 PropertiesManager.searchBarTextSize
         )
 
         // add the created field into this page
         children.add(searchPospField)
+
+        setStyle(searchPospField)
+    }
+
+    /* ======================================== */
+
+    private fun setStyle(field: PreferenceField) {
+        if (mFieldCounter.and(1) == 1) {
+            field.style = "-fx-background-color: rgb(50, 50, 50);"
+        }
+        ++mFieldCounter
     }
 }

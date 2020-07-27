@@ -3,7 +3,7 @@
         "esp": "el bar",
         "chi": "酒吧",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the bar"
     },
     {
@@ -66,7 +66,7 @@
         "esp": "la primavera",
         "chi": "春天",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the spring"
     },
     {
@@ -108,14 +108,14 @@
         "esp": "el Señor",
         "chi": "上帝",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the Lord"
     },
     {
         "esp": "señor/señora",
         "chi": "極好的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "awesome"
     },
     {

@@ -32,6 +32,12 @@ enum class Strings(val chi: String, val eng: String) {
     AdvancedVocSearchOptions_searchingTexts("查找文字的對象", "Search on ESP, ENG, and/or CHI?"),
     // the text of the field of searching part-of-speeches
     AdvancedVocSearchOptions_searchingPosp("詞性過濾", "Part of speeches"),
+    // the button text for selecting all items
+    SelectAll("全選", "ALL"),
+    // the button text for unselecting all items
+    UnselectAll("全不選", "NONE"),
+    // the button text for reversely selecting items
+    ReverseSelect("反選", "REV"),
 
     // the prefix of showing the number of vocabularies
     NumberOfVocs_pre("目前共有 ", "Total number of vocabularies: "),
