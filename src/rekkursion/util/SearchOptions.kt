@@ -53,7 +53,7 @@ class SearchOptions(
 
     // set all search-options by another search-options
     fun setAll(searchOptions: SearchOptions) {
-        usingRegex = searchOptions.usingRegex
+        usingRegex = searchOptions.mUsingRegex
         caseSensitive = searchOptions.mCaseSensitive
 
         if (mSearchTextOn != searchOptions.mSearchTextOn)

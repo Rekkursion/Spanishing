@@ -1,6 +1,6 @@
 package rekkursion.model
 
-class Vocabulary(esp: String, meaning: Meaning): Copiable {
+class Vocabulary(esp: String, meaning: Meaning, isCollected: Boolean = false): Copiable {
     // the vocabulary in the form of spanish (español)
     private val mEsp = esp
     val esp get() = mEsp
@@ -8,6 +8,12 @@ class Vocabulary(esp: String, meaning: Meaning): Copiable {
     // the meaning of this vocabulary
     private val mMeaning = meaning
     val copiedMeaning get() = mMeaning.copy()
+
+    // if this vocabulary is collected or not
+    private var mIsCollected = isCollected
+    var isCollected
+        get() = mIsCollected
+        set(value) { mIsCollected = value }
 
     /* ======================================== */
 

@@ -4,7 +4,6 @@ import rekkursion.model.Vocabulary
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.math.min
-import kotlin.random.Random
 
 object PickingPriorityManager {
     // the priority-queue prioritized by the weights of vocabularies

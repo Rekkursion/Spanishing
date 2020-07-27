@@ -1,15 +1,15 @@
 package rekkursion.manager
 
 import rekkursion.model.Vocabulary
-import rekkursion.util.JsonReader
-import kotlin.random.Random
+import rekkursion.util.VocIO
 
+@Suppress("UNCHECKED_CAST")
 object VocManager {
     // read in all vocabularies from a json file
-    private val mVocList = JsonReader.readAllVocabularies(PropertiesManager.vocabulariesJsonFileLocation)
-    @Suppress("UNCHECKED_CAST")
-    val copiedVocList: ArrayList<Vocabulary> get() = mVocList.clone() as ArrayList<Vocabulary>
+    private val mVocList = VocIO.readAllVocabularies()
     val numOfVocabularies: Int get() = mVocList.size
+    val copiedVocList: ArrayList<Vocabulary> get() = mVocList.clone() as ArrayList<Vocabulary>
+    val copiedCollectedList: ArrayList<Vocabulary> get() = mVocList.filter { it.isCollected }.toCollection(arrayListOf()).clone() as ArrayList<Vocabulary>
 
     /* ======================================== */
 
@@ -28,9 +28,6 @@ object VocManager {
         // the hash-set of picked vocabularies
         val pickedVocHashSet = HashSet<Vocabulary>()
 
-        // the random generator i think?
-        //val r = Random(System.currentTimeMillis())
-
         // randomly pick some vocabularies as problems
         while (curNum < trueNum) {
             val voc = PickingPriorityManager.pickVoc()
@@ -43,5 +40,22 @@ object VocManager {
 
         // convert the built hash-set into an array and return it
         return pickedVocHashSet.toTypedArray()
+    }
+
+    // collect a certain vocabulary
+    fun collectOrUncollect(voc: Vocabulary, isCollecting: Boolean) {
+        mVocList.find { it == voc }?.let {
+            if (isCollecting) {
+                if (!it.isCollected) {
+                    it.isCollected = true
+                    VocIO.collectOrUncollectCertainVocabulary(it.esp, isCollecting)
+                }
+            } else {
+                if (it.isCollected) {
+                    it.isCollected = false
+                    VocIO.collectOrUncollectCertainVocabulary(it.esp, isCollecting)
+                }
+            }
+        }
     }
 }

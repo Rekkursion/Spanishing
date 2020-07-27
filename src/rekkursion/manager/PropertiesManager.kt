@@ -55,9 +55,6 @@ object PropertiesManager {
     // the list of percent widths of columns used in the result-list-view
     val percentWidthsOfColumnsInResultListView = doubleArrayOf(10.0, 70.0, 20.0)
 
-    // the location of the json file of vocabularies
-    const val vocabulariesJsonFileLocation: String = "D:\\rekkursion\\mooc\\spanish\\spanish_vocabularies.json"
-
     // words that is no need to be spelled in a spelling problem
     val nonSpelledWords = hashSetOf("el", "la", "los", "las", "de", "a", "y", "en")
 

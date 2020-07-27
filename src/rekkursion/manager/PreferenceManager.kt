@@ -58,7 +58,7 @@ object PreferenceManager {
             val byteArr = fis.readAllBytes()
             fis.close()
             jsonString = String(byteArr, Charset.forName("UTF-8"))
-        } catch (e: FileNotFoundException) {}
+        } catch (e: FileNotFoundException) { e.printStackTrace() }
 
         // read the json content
         try {
@@ -76,7 +76,7 @@ object PreferenceManager {
             alertWhenFinishing = jObj.getBoolean("alert-when-finishing")
             preferredSingleChoiceProblemType = jObj.getInt("preferred-single-choice-problem-type")
             preferredProblemNum = jObj.getInt("preferred-problem-num")
-        } catch (e: Exception) {}
+        } catch (e: Exception) { e.printStackTrace() }
     }
 
     /* ======================================== */
@@ -109,7 +109,7 @@ object PreferenceManager {
                         writeToPrefJson()
                     }
                 }
-            } catch (e: java.lang.Exception) {}
+            } catch (e: Exception) { e.printStackTrace() }
         }.start()
     }
 

@@ -1,0 +1,1857 @@
+[
+    {
+        "esp": "el bar",
+        "chi": "酒吧",
+        "posp": "m",
+        "collected": true,
+        "eng": "the bar"
+    },
+    {
+        "esp": "la tarde",
+        "chi": "下午；傍晚",
+        "posp": "f",
+        "collected": false,
+        "eng": "the afternoon; the evening"
+    },
+    {
+        "esp": "tarde",
+        "chi": "遲地",
+        "posp": "adv",
+        "collected": false,
+        "eng": "late"
+    },
+    {
+        "esp": "llegar",
+        "chi": "到達；來到；達成",
+        "posp": "v",
+        "collected": false,
+        "eng": "to arrive; to come; to reach; (to reach a place) to get"
+    },
+    {
+        "esp": "el campo",
+        "chi": "鄉村；鄉下；田園；田地；場地；營地；領域",
+        "posp": "m",
+        "collected": false,
+        "eng": "the countryside; the country; the field; the camp"
+    },
+    {
+        "esp": "el arma",
+        "chi": "武器；武裝",
+        "posp": "f",
+        "collected": false,
+        "eng": "the weapon; (military) the arm"
+    },
+    {
+        "esp": "débil",
+        "chi": "弱的；微弱的；軟弱的；懦弱的；虛弱的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "weak"
+    },
+    {
+        "esp": "delgado/delgada",
+        "chi": "瘦的；苗條的；細的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "thin; slim"
+    },
+    {
+        "esp": "la estación",
+        "chi": "季節；車站",
+        "posp": "f",
+        "collected": false,
+        "eng": "the season; the station"
+    },
+    {
+        "esp": "la primavera",
+        "chi": "春天",
+        "posp": "f",
+        "collected": false,
+        "eng": "the spring"
+    },
+    {
+        "esp": "el verano",
+        "chi": "夏天",
+        "posp": "m",
+        "collected": false,
+        "eng": "the summer"
+    },
+    {
+        "esp": "el otoño",
+        "chi": "秋天；（一生中的）暮年",
+        "posp": "m",
+        "collected": false,
+        "eng": "the fall; the autumn"
+    },
+    {
+        "esp": "el invierno",
+        "chi": "冬天",
+        "posp": "m",
+        "collected": false,
+        "eng": "the winter"
+    },
+    {
+        "esp": "estricto/estricta",
+        "chi": "嚴格的；苛刻的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "strict"
+    },
+    {
+        "esp": "el señor/la señora",
+        "chi": "男士；先生/女士；夫人",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "Mr.; sir; the man/Mrs; ma'ma; madam; the lady"
+    },
+    {
+        "esp": "el Señor",
+        "chi": "上帝",
+        "posp": "m",
+        "collected": false,
+        "eng": "the Lord"
+    },
+    {
+        "esp": "señor/señora",
+        "chi": "極好的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "awesome"
+    },
+    {
+        "esp": "perezoso/perezosa",
+        "chi": "懶惰的；偷懶的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "lazy"
+    },
+    {
+        "esp": "el perezoso",
+        "chi": "樹懶",
+        "posp": "m",
+        "collected": false,
+        "eng": "the sloth"
+    },
+    {
+        "esp": "la Tierra",
+        "chi": "地球",
+        "posp": "f",
+        "collected": false,
+        "eng": "the Earth; the earth"
+    },
+    {
+        "esp": "la tierra",
+        "chi": "陸地；土地",
+        "posp": "f",
+        "collected": false,
+        "eng": "the land"
+    },
+    {
+        "esp": "el caballo",
+        "chi": "公馬；（西洋棋）騎士",
+        "posp": "m",
+        "collected": false,
+        "eng": "the horse; (chess) the knight"
+    },
+    {
+        "esp": "la yegua",
+        "chi": "母馬",
+        "posp": "f",
+        "collected": false,
+        "eng": "the mare"
+    },
+    {
+        "esp": "el escritorio",
+        "chi": "書桌；檯桌；辦公桌",
+        "posp": "m",
+        "collected": false,
+        "eng": "the desk"
+    },
+    {
+        "esp": "el médico/la médica",
+        "chi": "醫生；醫師",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the doctor"
+    },
+    {
+        "esp": "médico/médica",
+        "chi": "醫學的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "medical"
+    },
+    {
+        "esp": "olvidar",
+        "chi": "忘記；遺忘",
+        "posp": "v",
+        "collected": false,
+        "eng": "to forget"
+    },
+    {
+        "esp": "la guerra",
+        "chi": "戰爭",
+        "posp": "f",
+        "collected": false,
+        "eng": "the war"
+    },
+    {
+        "esp": "el peluquero/la peluquera",
+        "chi": "理髮師",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the hairdresser; the hairstylist"
+    },
+    {
+        "esp": "el café",
+        "chi": "咖啡；咖啡廳",
+        "posp": "m",
+        "collected": false,
+        "eng": "the coffee; the café"
+    },
+    {
+        "esp": "el/la piloto",
+        "chi": "機長；飛行員；駕駛員；騎士",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the pilot; the driver; the rider"
+    },
+    {
+        "esp": "piloto",
+        "chi": "實驗的；試驗性的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "pilot"
+    },
+    {
+        "esp": "llamar",
+        "chi": "叫；叫做；呼叫；呼喊；稱呼；通知；打電話",
+        "posp": "v",
+        "collected": false,
+        "eng": "to call"
+    },
+    {
+        "esp": "el barco",
+        "chi": "船",
+        "posp": "m",
+        "collected": false,
+        "eng": "the boat; the ship"
+    },
+    {
+        "esp": "el sueño",
+        "chi": "夢；夢想；睡覺；睡眠",
+        "posp": "m",
+        "collected": false,
+        "eng": "the dream; the sleep"
+    },
+    {
+        "esp": "el juego",
+        "chi": "遊戲；競賽；博弈；集合",
+        "posp": "m",
+        "collected": false,
+        "eng": "the game; the play; the gamble; the set"
+    },
+    {
+        "esp": "el/la visitante",
+        "chi": "訪客",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the visitor"
+    },
+    {
+        "esp": "leer",
+        "chi": "讀；閱讀；讀出",
+        "posp": "v",
+        "collected": false,
+        "eng": "to read"
+    },
+    {
+        "esp": "el silencio",
+        "chi": "沉默；安靜；（樂理）休止符",
+        "posp": "m",
+        "collected": false,
+        "eng": "the silence; (music) the rest"
+    },
+    {
+        "esp": "silencioso/silenciosa",
+        "chi": "沉默的；安靜的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "silent; quiet; noiseless"
+    },
+    {
+        "esp": "el pedazo",
+        "chi": "片；塊",
+        "posp": "m",
+        "collected": false,
+        "eng": "the piece; the slice"
+    },
+    {
+        "esp": "la piel",
+        "chi": "皮膚；果皮；毛皮；皮革",
+        "posp": "f",
+        "collected": false,
+        "eng": "the skin; the peel; the fur; the leather"
+    },
+    {
+        "esp": "la derecha",
+        "chi": "右邊；右手",
+        "posp": "f",
+        "collected": false,
+        "eng": "the right; the right hand"
+    },
+    {
+        "esp": "derecho/derecha",
+        "chi": "右邊的；右手的；直的；直地",
+        "posp": "adj; adv",
+        "collected": false,
+        "eng": "right; right-hand; straight"
+    },
+    {
+        "esp": "la izquierda",
+        "chi": "左邊；左手",
+        "posp": "f",
+        "collected": false,
+        "eng": "the left; the left hand"
+    },
+    {
+        "esp": "izquierdo/izquierda",
+        "chi": "左邊的；左手的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "left; left-hand"
+    },
+    {
+        "esp": "la razón",
+        "chi": "原因；理由；明智；理智；正確；比例",
+        "posp": "f",
+        "collected": false,
+        "eng": "the reason; (truth) the right; the ratio"
+    },
+    {
+        "esp": "el pícnic",
+        "chi": "野餐",
+        "posp": "m",
+        "collected": false,
+        "eng": "the picnic"
+    },
+    {
+        "esp": "la carta",
+        "chi": "信；信書；菜單；牌；撲克牌；憲章；章程",
+        "posp": "f",
+        "collected": false,
+        "eng": "the letter; the menu; the card; the charter"
+    },
+    {
+        "esp": "ser",
+        "chi": "是；存在；屬於（永久或長期屬性）",
+        "posp": "v",
+        "collected": false,
+        "eng": "(permanent or lasting attributes) to be"
+    },
+    {
+        "esp": "estar",
+        "chi": "是；在；正在；處於；處在（暫時性或短期狀態）",
+        "posp": "v",
+        "collected": false,
+        "eng": "(temporary states) to be"
+    },
+    {
+        "esp": "estar de pie",
+        "chi": "站；站立；站起來",
+        "posp": "v",
+        "collected": false,
+        "eng": "to stand; to stand up"
+    },
+    {
+        "esp": "visitar",
+        "chi": "拜訪；參觀",
+        "posp": "v",
+        "collected": false,
+        "eng": "to visit"
+    },
+    {
+        "esp": "abrir",
+        "chi": "打開",
+        "posp": "v",
+        "collected": false,
+        "eng": "to open"
+    },
+    {
+        "esp": "la piedra",
+        "chi": "石頭",
+        "posp": "f",
+        "collected": false,
+        "eng": "the stone; the rock"
+    },
+    {
+        "esp": "el viento",
+        "chi": "風",
+        "posp": "m",
+        "collected": false,
+        "eng": "the wind"
+    },
+    {
+        "esp": "el estilo",
+        "chi": "風格；型類",
+        "posp": "m",
+        "collected": false,
+        "eng": "the style; the type"
+    },
+    {
+        "esp": "permitir",
+        "chi": "核許；允許；准許；許可",
+        "posp": "v",
+        "collected": false,
+        "eng": "to permit; to allow"
+    },
+    {
+        "esp": "permitido/permitida",
+        "chi": "核許的；允許的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "permitted; allowed"
+    },
+    {
+        "esp": "la esquina",
+        "chi": "角落",
+        "posp": "f",
+        "collected": false,
+        "eng": "the corner"
+    },
+    {
+        "esp": "la pasta de dientes",
+        "chi": "牙膏",
+        "posp": "f",
+        "collected": false,
+        "eng": "the toothpaste"
+    },
+    {
+        "esp": "la pasta",
+        "chi": "糊；麵糊；膏；膏狀物；義大利麵",
+        "posp": "f",
+        "collected": false,
+        "eng": "the pastry; the paste; the pasta"
+    },
+    {
+        "esp": "el diente",
+        "chi": "牙齒；尖牙",
+        "posp": "m",
+        "collected": false,
+        "eng": "the tooth; the fang"
+    },
+    {
+        "esp": "la profesión",
+        "chi": "專業；職業",
+        "posp": "f",
+        "collected": false,
+        "eng": "the profession"
+    },
+    {
+        "esp": "ver",
+        "chi": "看；看見",
+        "posp": "v",
+        "collected": false,
+        "eng": "to see; to watch; to look at; to witness"
+    },
+    {
+        "esp": "el ver",
+        "chi": "視覺；外觀；看法",
+        "posp": "m",
+        "collected": false,
+        "eng": "the visual; the appearance; (opinion) the view"
+    },
+    {
+        "esp": "la respiración",
+        "chi": "呼吸",
+        "posp": "f",
+        "collected": false,
+        "eng": "the breath; the breathing; the respiration"
+    },
+    {
+        "esp": "fácil",
+        "chi": "簡單的；容易的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "easy"
+    },
+    {
+        "esp": "volar",
+        "chi": "飛行；消失",
+        "posp": "v",
+        "collected": false,
+        "eng": "to fly; to vanish; to disappear"
+    },
+    {
+        "esp": "la literatura",
+        "chi": "文學",
+        "posp": "f",
+        "collected": false,
+        "eng": "the literature"
+    },
+    {
+        "esp": "el visado",
+        "chi": "簽證",
+        "posp": "m",
+        "collected": false,
+        "eng": "the visa"
+    },
+    {
+        "esp": "el edificio",
+        "chi": "建築；建築物",
+        "posp": "m",
+        "collected": false,
+        "eng": "the building"
+    },
+    {
+        "esp": "la idea",
+        "chi": "想法；看法；意見；概念",
+        "posp": "f",
+        "collected": false,
+        "eng": "the idea; the concept"
+    },
+    {
+        "esp": "las ideas",
+        "chi": "觀點；思想",
+        "posp": "pl",
+        "collected": false,
+        "eng": "(opinion) the ideas"
+    },
+    {
+        "esp": "el/la artista",
+        "chi": "藝術家",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the artist"
+    },
+    {
+        "esp": "correr",
+        "chi": "跑；催促；流逝；經過；移動",
+        "posp": "v",
+        "collected": false,
+        "eng": "to run; to hurry (up); to go by; to move"
+    },
+    {
+        "esp": "el infierno",
+        "chi": "地獄；黃泉",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hell; the inferno"
+    },
+    {
+        "esp": "el secador",
+        "chi": "烘乾機",
+        "posp": "m",
+        "collected": false,
+        "eng": "the dryer"
+    },
+    {
+        "esp": "el secador de pelo",
+        "chi": "電吹風；吹風機",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hairdryer; the hair dryer"
+    },
+    {
+        "esp": "el secador de mano",
+        "chi": "烘手機",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hand dryer"
+    },
+    {
+        "esp": "el marido",
+        "chi": "丈夫",
+        "posp": "m",
+        "collected": false,
+        "eng": "the husband"
+    },
+    {
+        "esp": "el problema",
+        "chi": "問題；議題；麻煩",
+        "posp": "m",
+        "collected": false,
+        "eng": "the problem; the issue; the trouble"
+    },
+    {
+        "esp": "el número",
+        "chi": "數字；號碼；尺寸；數量詞",
+        "posp": "m",
+        "collected": false,
+        "eng": "the number"
+    },
+    {
+        "esp": "el sol",
+        "chi": "太陽；陽光",
+        "posp": "m",
+        "collected": false,
+        "eng": "the sun; the sunshine; the sunlight"
+    },
+    {
+        "esp": "el paso",
+        "chi": "腳步；步伐；（時間的）流逝",
+        "posp": "m",
+        "collected": false,
+        "eng": "the step; the passage; the passing"
+    },
+    {
+        "esp": "el perro/la perra",
+        "chi": "狗",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the dog"
+    },
+    {
+        "esp": "el hijo/la hija",
+        "chi": "兒子/女兒",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the son/the daughter"
+    },
+    {
+        "esp": "la lotería",
+        "chi": "彩票；彩券；樂透",
+        "posp": "f",
+        "collected": false,
+        "eng": "the lottery; the lotto"
+    },
+    {
+        "esp": "la cocina",
+        "chi": "廚房；火爐；廚具；烹調",
+        "posp": "f",
+        "collected": false,
+        "eng": "the kitchen; the stove; the cooker; the cooking"
+    },
+    {
+        "esp": "dar",
+        "chi": "給予；交給",
+        "posp": "v",
+        "collected": false,
+        "eng": "to give"
+    },
+    {
+        "esp": "buscar",
+        "chi": "尋找；查找；搜尋",
+        "posp": "v",
+        "collected": false,
+        "eng": "to look for; to search; to seek"
+    },
+    {
+        "esp": "el ratón/la ratona",
+        "chi": "老鼠",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the mouse"
+    },
+    {
+        "esp": "los padres",
+        "chi": "父母；雙親",
+        "posp": "pl",
+        "collected": false,
+        "eng": "the parents"
+    },
+    {
+        "esp": "el labio",
+        "chi": "嘴唇",
+        "posp": "m",
+        "collected": false,
+        "eng": "the lip"
+    },
+    {
+        "esp": "esperar",
+        "chi": "希望；期待；等待",
+        "posp": "v",
+        "collected": false,
+        "eng": "to hope; to expect; to wait for"
+    },
+    {
+        "esp": "trabajar",
+        "chi": "工作",
+        "posp": "v",
+        "collected": false,
+        "eng": "to work"
+    },
+    {
+        "esp": "el hecho",
+        "chi": "事實",
+        "posp": "m",
+        "collected": false,
+        "eng": "the fact"
+    },
+    {
+        "esp": "hecho/hecha",
+        "chi": "做成的；完成的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "made; done"
+    },
+    {
+        "esp": "la muerte",
+        "chi": "死亡",
+        "posp": "f",
+        "collected": false,
+        "eng": "the death"
+    },
+    {
+        "esp": "el papel",
+        "chi": "紙；角色",
+        "posp": "m",
+        "collected": false,
+        "eng": "the paper; the role"
+    },
+    {
+        "esp": "feo/fea",
+        "chi": "醜的；醜陋的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "ugly"
+    },
+    {
+        "esp": "el/la bebé (el/la bebe)",
+        "chi": "寶寶；嬰兒",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the baby"
+    },
+    {
+        "esp": "la caja",
+        "chi": "箱子；收銀台",
+        "posp": "f",
+        "collected": false,
+        "eng": "the box; the cash register"
+    },
+    {
+        "esp": "la sangre",
+        "chi": "血；血液",
+        "posp": "f",
+        "collected": false,
+        "eng": "the blood"
+    },
+    {
+        "esp": "honesto/honesta",
+        "chi": "誠實的；得體的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "honest; decent"
+    },
+    {
+        "esp": "el pensamiento",
+        "chi": "思想；想法",
+        "posp": "m",
+        "collected": false,
+        "eng": "the thought"
+    },
+    {
+        "esp": "el hábito",
+        "chi": "習慣",
+        "posp": "m",
+        "collected": false,
+        "eng": "the habit"
+    },
+    {
+        "esp": "el cielo",
+        "chi": "天空；天堂",
+        "posp": "m",
+        "collected": false,
+        "eng": "the sky; the heaven"
+    },
+    {
+        "esp": "triste",
+        "chi": "難過的；憂鬱的；悲傷的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "sad; melancholy; gloomy"
+    },
+    {
+        "esp": "el fuego",
+        "chi": "火；熱情",
+        "posp": "m",
+        "collected": false,
+        "eng": "the fire; the flame; the passion"
+    },
+    {
+        "esp": "¡Fuego!",
+        "chi": "開火！",
+        "posp": "int",
+        "collected": false,
+        "eng": "Fire!"
+    },
+    {
+        "esp": "el amor",
+        "chi": "愛",
+        "posp": "m",
+        "collected": false,
+        "eng": "the love"
+    },
+    {
+        "esp": "la sonrisa",
+        "chi": "微笑",
+        "posp": "f",
+        "collected": false,
+        "eng": "the smile"
+    },
+    {
+        "esp": "el minuto",
+        "chi": "分鐘",
+        "posp": "m",
+        "collected": false,
+        "eng": "the minute"
+    },
+    {
+        "esp": "el libro",
+        "chi": "書",
+        "posp": "m",
+        "collected": false,
+        "eng": "the book"
+    },
+    {
+        "esp": "el colegio",
+        "chi": "學校",
+        "posp": "m",
+        "collected": false,
+        "eng": "the school"
+    },
+    {
+        "esp": "salvaje",
+        "chi": "野生的；野蠻的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "wild; savage"
+    },
+    {
+        "esp": "coger",
+        "chi": "拿；拿到；取得",
+        "posp": "v",
+        "collected": false,
+        "eng": "to grab; to take; to get"
+    },
+    {
+        "esp": "la mente",
+        "chi": "頭腦；智力；思想",
+        "posp": "f",
+        "collected": false,
+        "eng": "the mind"
+    },
+    {
+        "esp": "la ciudad",
+        "chi": "城市；城鎮",
+        "posp": "f",
+        "collected": false,
+        "eng": "the city; the town"
+    },
+    {
+        "esp": "la historia",
+        "chi": "故事；歷史",
+        "posp": "f",
+        "collected": false,
+        "eng": "the history; the story"
+    },
+    {
+        "esp": "el mes",
+        "chi": "月；月份；月薪",
+        "posp": "m",
+        "collected": false,
+        "eng": "the month; the monthly salary"
+    },
+    {
+        "esp": "hablar",
+        "chi": "說話；談話；講話",
+        "posp": "v",
+        "collected": false,
+        "eng": "to speak; to talk"
+    },
+    {
+        "esp": "el vaso",
+        "chi": "玻璃杯；杯子",
+        "posp": "m",
+        "collected": false,
+        "eng": "the glass; the cup"
+    },
+    {
+        "esp": "la mañana",
+        "chi": "早上",
+        "posp": "f",
+        "collected": false,
+        "eng": "the morning"
+    },
+    {
+        "esp": "el mañana",
+        "chi": "明天；未來",
+        "posp": "m",
+        "collected": false,
+        "eng": "the future"
+    },
+    {
+        "esp": "mañana",
+        "chi": "明天",
+        "posp": "adv",
+        "collected": false,
+        "eng": "tomorrow"
+    },
+    {
+        "esp": "la cama",
+        "chi": "床",
+        "posp": "f",
+        "collected": false,
+        "eng": "the bed"
+    },
+    {
+        "esp": "el fin",
+        "chi": "結束；結局；目的；目標",
+        "posp": "m",
+        "collected": false,
+        "eng": "the end; the aim"
+    },
+    {
+        "esp": "la dirección",
+        "chi": "方向；地址",
+        "posp": "f",
+        "collected": false,
+        "eng": "the direction; the address"
+    },
+    {
+        "esp": "el corazón",
+        "chi": "心；心臟",
+        "posp": "m",
+        "collected": false,
+        "eng": "the heart"
+    },
+    {
+        "esp": "cien",
+        "chi": "一百",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "one hundred"
+    },
+    {
+        "esp": "la hora",
+        "chi": "小時；時間",
+        "posp": "f",
+        "collected": false,
+        "eng": "the hour; the time"
+    },
+    {
+        "esp": "el muro",
+        "chi": "牆壁",
+        "posp": "m",
+        "collected": false,
+        "eng": "the wall"
+    },
+    {
+        "esp": "creer",
+        "chi": "相信；認為",
+        "posp": "v",
+        "collected": false,
+        "eng": "to believe; to think"
+    },
+    {
+        "esp": "la oficina",
+        "chi": "辦公室",
+        "posp": "f",
+        "collected": false,
+        "eng": "the office"
+    },
+    {
+        "esp": "la familia",
+        "chi": "家庭",
+        "posp": "f",
+        "collected": false,
+        "eng": "the family"
+    },
+    {
+        "esp": "practicar",
+        "chi": "練習；鍛鍊；實踐",
+        "posp": "v",
+        "collected": false,
+        "eng": "to practice"
+    },
+    {
+        "esp": "cambiar",
+        "chi": "調換；交換；更改；改變；變更；變化",
+        "posp": "v",
+        "collected": false,
+        "eng": "to exchange; to change"
+    },
+    {
+        "esp": "la pierna",
+        "chi": "腿；小腿",
+        "posp": "f",
+        "collected": false,
+        "eng": "the leg"
+    },
+    {
+        "esp": "el teléfono",
+        "chi": "電話",
+        "posp": "m",
+        "collected": false,
+        "eng": "the telephone"
+    },
+    {
+        "esp": "el sonido",
+        "chi": "聲音；聲響",
+        "posp": "m",
+        "collected": false,
+        "eng": "the sound"
+    },
+    {
+        "esp": "el dedo",
+        "chi": "手指；腳趾",
+        "posp": "m",
+        "collected": false,
+        "eng": "the finger; the toe"
+    },
+    {
+        "esp": "el dios/la diosa",
+        "chi": "神/女神",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the god/the goddess"
+    },
+    {
+        "esp": "la emergencia",
+        "chi": "緊急狀況；突發狀況",
+        "posp": "f",
+        "collected": false,
+        "eng": "the emergency"
+    },
+    {
+        "esp": "la parte",
+        "chi": "部分；部位；局部",
+        "posp": "f",
+        "collected": false,
+        "eng": "the part"
+    },
+    {
+        "esp": "el suelo",
+        "chi": "地面；地板",
+        "posp": "m",
+        "collected": false,
+        "eng": "the ground; the floor"
+    },
+    {
+        "esp": "el aire",
+        "chi": "空氣；風",
+        "posp": "m",
+        "collected": false,
+        "eng": "the air; the wind"
+    },
+    {
+        "esp": "poner",
+        "chi": "放；放置",
+        "posp": "v",
+        "collected": false,
+        "eng": "to put; to set"
+    },
+    {
+        "esp": "la silla",
+        "chi": "椅子",
+        "posp": "f",
+        "collected": false,
+        "eng": "the chair"
+    },
+    {
+        "esp": "¡Hola!",
+        "chi": "你好！",
+        "posp": "int",
+        "collected": false,
+        "eng": "Hello!; Hi!"
+    },
+    {
+        "esp": "el tipo",
+        "chi": "類型；種類；傢伙",
+        "posp": "m",
+        "collected": false,
+        "eng": "the type; the sort; the kind; the guy"
+    },
+    {
+        "esp": "la calle",
+        "chi": "街道；街",
+        "posp": "f",
+        "collected": false,
+        "eng": "the street"
+    },
+    {
+        "esp": "hacer",
+        "chi": "做；製造；生產",
+        "posp": "v",
+        "collected": false,
+        "eng": "to do; to make"
+    },
+    {
+        "esp": "la pregunta",
+        "chi": "問題",
+        "posp": "f",
+        "collected": false,
+        "eng": "the question"
+    },
+    {
+        "esp": "la apariencia",
+        "chi": "外表",
+        "posp": "f",
+        "collected": false,
+        "eng": "the appearance"
+    },
+    {
+        "esp": "la boca",
+        "chi": "口；嘴巴",
+        "posp": "f",
+        "collected": false,
+        "eng": "the mouth"
+    },
+    {
+        "esp": "el hombro",
+        "chi": "肩膀",
+        "posp": "m",
+        "collected": false,
+        "eng": "the shoulder"
+    },
+    {
+        "esp": "estudiar",
+        "chi": "研究；學習",
+        "posp": "v",
+        "collected": false,
+        "eng": "to study"
+    },
+    {
+        "esp": "el hermano/la hermana",
+        "chi": "兄弟/姊妹",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the brother/the sister"
+    },
+    {
+        "esp": "el dinero",
+        "chi": "錢；財富",
+        "posp": "m",
+        "collected": false,
+        "eng": "the money"
+    },
+    {
+        "esp": "el árbol",
+        "chi": "樹",
+        "posp": "m",
+        "collected": false,
+        "eng": "the tree"
+    },
+    {
+        "esp": "la semana",
+        "chi": "星期；禮拜；周",
+        "posp": "f",
+        "collected": false,
+        "eng": "the week"
+    },
+    {
+        "esp": "aprender",
+        "chi": "學習；記住",
+        "posp": "v",
+        "collected": false,
+        "eng": "to learn"
+    },
+    {
+        "esp": "el pie",
+        "chi": "腳；足",
+        "posp": "m",
+        "collected": false,
+        "eng": "the foot"
+    },
+    {
+        "esp": "la palabra",
+        "chi": "詞彙；單詞",
+        "posp": "f",
+        "collected": false,
+        "eng": "the word"
+    },
+    {
+        "esp": "el padre",
+        "chi": "父親",
+        "posp": "m",
+        "collected": false,
+        "eng": "the father"
+    },
+    {
+        "esp": "el día",
+        "chi": "日；天",
+        "posp": "m",
+        "collected": false,
+        "eng": "the day"
+    },
+    {
+        "esp": "el hombre",
+        "chi": "男人",
+        "posp": "m",
+        "collected": false,
+        "eng": "the man"
+    },
+    {
+        "esp": "el coche",
+        "chi": "汽車",
+        "posp": "m",
+        "collected": false,
+        "eng": "the car"
+    },
+    {
+        "esp": "el lugar",
+        "chi": "地點；場所",
+        "posp": "m",
+        "collected": false,
+        "eng": "the place"
+    },
+    {
+        "esp": "la habitación",
+        "chi": "房間",
+        "posp": "f",
+        "collected": false,
+        "eng": "the room; the bedroom"
+    },
+    {
+        "esp": "el ojo",
+        "chi": "眼睛",
+        "posp": "m",
+        "collected": false,
+        "eng": "the eye"
+    },
+    {
+        "esp": "necesitar",
+        "chi": "需要",
+        "posp": "v",
+        "collected": false,
+        "eng": "to need"
+    },
+    {
+        "esp": "la mano",
+        "chi": "手",
+        "posp": "f",
+        "collected": false,
+        "eng": "the hand"
+    },
+    {
+        "esp": "la voz",
+        "chi": "聲音；語音；嗓音",
+        "posp": "f",
+        "collected": false,
+        "eng": "the voice"
+    },
+    {
+        "esp": "la luz",
+        "chi": "光",
+        "posp": "f",
+        "collected": false,
+        "eng": "the light"
+    },
+    {
+        "esp": "el mundo",
+        "chi": "世界；宇宙",
+        "posp": "m",
+        "collected": false,
+        "eng": "the world"
+    },
+    {
+        "esp": "el cuerpo",
+        "chi": "身體",
+        "posp": "m",
+        "collected": false,
+        "eng": "the body"
+    },
+    {
+        "esp": "comer",
+        "chi": "吃",
+        "posp": "v",
+        "collected": false,
+        "eng": "to eat"
+    },
+    {
+        "esp": "amar",
+        "chi": "喜歡；愛",
+        "posp": "v",
+        "collected": false,
+        "eng": "to love"
+    },
+    {
+        "esp": "hornear",
+        "chi": "烘；烤",
+        "posp": "v",
+        "collected": false,
+        "eng": "to bake"
+    },
+    {
+        "esp": "la carretera",
+        "chi": "馬路",
+        "posp": "f",
+        "collected": false,
+        "eng": "the road"
+    },
+    {
+        "esp": "la cara",
+        "chi": "臉；容貌；顏面",
+        "posp": "f",
+        "collected": false,
+        "eng": "the face"
+    },
+    {
+        "esp": "la cabeza",
+        "chi": "頭",
+        "posp": "f",
+        "collected": false,
+        "eng": "the head"
+    },
+    {
+        "esp": "el tiempo",
+        "chi": "時間",
+        "posp": "m",
+        "collected": false,
+        "eng": "the time"
+    },
+    {
+        "esp": "tener",
+        "chi": "有",
+        "posp": "v",
+        "collected": false,
+        "eng": "to have; to be"
+    },
+    {
+        "esp": "la espalda",
+        "chi": "背部；背面",
+        "posp": "f",
+        "collected": false,
+        "eng": "the back"
+    },
+    {
+        "esp": "la vida",
+        "chi": "生活；生命",
+        "posp": "f",
+        "collected": false,
+        "eng": "the life"
+    },
+    {
+        "esp": "la casa",
+        "chi": "房子；住家",
+        "posp": "f",
+        "collected": false,
+        "eng": "the house"
+    },
+    {
+        "esp": "la cosa",
+        "chi": "事情",
+        "posp": "f",
+        "collected": false,
+        "eng": "the thing"
+    },
+    {
+        "esp": "la mesa",
+        "chi": "桌子",
+        "posp": "f",
+        "collected": false,
+        "eng": "the table"
+    },
+    {
+        "esp": "el amigo/la amiga",
+        "chi": "朋友",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the friend"
+    },
+    {
+        "esp": "el momento",
+        "chi": "時刻",
+        "posp": "m",
+        "collected": false,
+        "eng": "the moment"
+    },
+    {
+        "esp": "la página",
+        "chi": "頁",
+        "posp": "f",
+        "collected": false,
+        "eng": "the page"
+    },
+    {
+        "esp": "la mujer",
+        "chi": "女人；妻子",
+        "posp": "f",
+        "collected": false,
+        "eng": "the woman; the wife"
+    },
+    {
+        "esp": "el agua",
+        "chi": "水",
+        "posp": "f",
+        "collected": false,
+        "eng": "the water"
+    },
+    {
+        "esp": "el pelo",
+        "chi": "頭髮；毛髮",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hair"
+    },
+    {
+        "esp": "la puerta",
+        "chi": "門",
+        "posp": "f",
+        "collected": false,
+        "eng": "the door"
+    },
+    {
+        "esp": "el año",
+        "chi": "年",
+        "posp": "m",
+        "collected": false,
+        "eng": "the year"
+    },
+    {
+        "esp": "pensar",
+        "chi": "認為；思考；考慮",
+        "posp": "v",
+        "collected": false,
+        "eng": "to think"
+    },
+    {
+        "esp": "la ventana",
+        "chi": "窗戶",
+        "posp": "f",
+        "collected": false,
+        "eng": "the window"
+    },
+    {
+        "esp": "el niño/la niña",
+        "chi": "兒童",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the child"
+    },
+    {
+        "esp": "el brazo",
+        "chi": "手臂",
+        "posp": "m",
+        "collected": false,
+        "eng": "the arm"
+    },
+    {
+        "esp": "la nación",
+        "chi": "國家",
+        "posp": "f",
+        "collected": false,
+        "eng": "the nation"
+    },
+    {
+        "esp": "ir",
+        "chi": "去",
+        "posp": "v",
+        "collected": false,
+        "eng": "to go"
+    },
+    {
+        "esp": "el nombre",
+        "chi": "名字；名稱",
+        "posp": "m",
+        "collected": false,
+        "eng": "the name"
+    },
+    {
+        "esp": "la noche",
+        "chi": "夜晚",
+        "posp": "f",
+        "collected": false,
+        "eng": "the night"
+    },
+    {
+        "esp": "la madre",
+        "chi": "母親",
+        "posp": "f",
+        "collected": false,
+        "eng": "the mother"
+    },
+    {
+        "esp": "intentar",
+        "chi": "嘗試；企圖做",
+        "posp": "v",
+        "collected": false,
+        "eng": "to try"
+    },
+    {
+        "esp": "el semáforo",
+        "chi": "紅綠燈；信號燈",
+        "posp": "m",
+        "collected": false,
+        "eng": "the traffic light"
+    },
+    {
+        "esp": "cero",
+        "chi": "零",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "zero"
+    },
+    {
+        "esp": "uno/una",
+        "chi": "一",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "one"
+    },
+    {
+        "esp": "dos",
+        "chi": "二",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "two"
+    },
+    {
+        "esp": "tres",
+        "chi": "三",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "three"
+    },
+    {
+        "esp": "cuatro",
+        "chi": "四",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "four"
+    },
+    {
+        "esp": "cinco",
+        "chi": "五",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "five"
+    },
+    {
+        "esp": "seis",
+        "chi": "六",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "six"
+    },
+    {
+        "esp": "siete",
+        "chi": "七",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "seven"
+    },
+    {
+        "esp": "ocho",
+        "chi": "八",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "eight"
+    },
+    {
+        "esp": "nueve",
+        "chi": "九",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "nine"
+    },
+    {
+        "esp": "diez",
+        "chi": "十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "ten"
+    },
+    {
+        "esp": "once",
+        "chi": "十一",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "eleven"
+    },
+    {
+        "esp": "doce",
+        "chi": "十二",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twelve"
+    },
+    {
+        "esp": "trece",
+        "chi": "十三",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "thirteen"
+    },
+    {
+        "esp": "catorce",
+        "chi": "十四",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "fourteen"
+    },
+    {
+        "esp": "quince",
+        "chi": "十五",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "fifteen"
+    },
+    {
+        "esp": "dieciséis",
+        "chi": "十六",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "sixteen"
+    },
+    {
+        "esp": "diecisiete",
+        "chi": "十七",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "seventeen"
+    },
+    {
+        "esp": "dieciocho",
+        "chi": "十八",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "eighteen"
+    },
+    {
+        "esp": "diecinueve",
+        "chi": "十九",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "nineteen"
+    },
+    {
+        "esp": "veinte",
+        "chi": "二十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty"
+    },
+    {
+        "esp": "veintiuno/veintiuna",
+        "chi": "二十一",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "twenty-one"
+    },
+    {
+        "esp": "veintidós",
+        "chi": "二十二",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-two"
+    },
+    {
+        "esp": "veintitrés",
+        "chi": "二十三",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-three"
+    },
+    {
+        "esp": "veinticuatro",
+        "chi": "二十四",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-four"
+    },
+    {
+        "esp": "veinticinco",
+        "chi": "二十五",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-five"
+    },
+    {
+        "esp": "veintiséis",
+        "chi": "二十六",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-six"
+    },
+    {
+        "esp": "veintisiete",
+        "chi": "二十七",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-seven"
+    },
+    {
+        "esp": "veintiocho",
+        "chi": "二十八",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-eight"
+    },
+    {
+        "esp": "veintinueve",
+        "chi": "二十九",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "twenty-nine"
+    },
+    {
+        "esp": "treinta",
+        "chi": "三十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "thirty"
+    },
+    {
+        "esp": "cuarenta",
+        "chi": "四十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "forty"
+    },
+    {
+        "esp": "sexto/sexta",
+        "chi": "第六；第六的；六分之一；六分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "sixth"
+    },
+    {
+        "esp": "octubre",
+        "chi": "十月",
+        "posp": "m",
+        "collected": false,
+        "eng": "October"
+    },
+    {
+        "esp": "café",
+        "chi": "咖啡色",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "brown"
+    },
+    {
+        "esp": "sediento",
+        "chi": "口渴的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "thirsty"
+    },
+    {
+        "esp": "el columpio",
+        "chi": "鞦韆",
+        "posp": "m",
+        "collected": false,
+        "eng": "the swing"
+    },
+    {
+        "esp": "septentrional",
+        "chi": "北方的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "northern (Northern)"
+    },
+    {
+        "esp": "fructífero",
+        "chi": "有成效的；有成果的；有收穫的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "fruitful"
+    },
+    {
+        "esp": "alquilar",
+        "chi": "出租；租賃",
+        "posp": "v",
+        "collected": false,
+        "eng": "to rent"
+    },
+    {
+        "esp": "el pastizal",
+        "chi": "牧場",
+        "posp": "m",
+        "collected": false,
+        "eng": "the pasture"
+    },
+    {
+        "esp": "el castillo de arena",
+        "chi": "沙灘城堡；沙塔",
+        "posp": "m",
+        "collected": false,
+        "eng": "sandcastle"
+    },
+    {
+        "esp": "el/la futbolista",
+        "chi": "足球員",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the soccer player; the football player"
+    },
+    {
+        "esp": "la campiña",
+        "chi": "農村",
+        "posp": "f",
+        "collected": false,
+        "eng": "the countryside"
+    },
+    {
+        "esp": "estival",
+        "chi": "夏天的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "summery"
+    },
+    {
+        "esp": "la taza",
+        "chi": "（有把手的）杯子；馬克杯",
+        "posp": "f",
+        "collected": false,
+        "eng": "the cup; the mug"
+    },
+    {
+        "esp": "de antemano",
+        "chi": "預先；事先",
+        "posp": "adv",
+        "collected": false,
+        "eng": "in advance; beforehand"
+    },
+    {
+        "esp": "el esposo/la esposa",
+        "chi": "丈夫/妻子",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the husband/the wife"
+    },
+    {
+        "esp": "la campana",
+        "chi": "鐘；鐘狀物",
+        "posp": "f",
+        "collected": false,
+        "eng": "the bell"
+    },
+    {
+        "esp": "la versión",
+        "chi": "版本；翻譯",
+        "posp": "f",
+        "collected": false,
+        "eng": "the version; the translation"
+    },
+    {
+        "esp": "la ocupación",
+        "chi": "工作；職業；佔用；佔領；佔據",
+        "posp": "f",
+        "collected": false,
+        "eng": "the occupation"
+    },
+    {
+        "esp": "mundial",
+        "chi": "世界的；全球的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "global; worldwide"
+    },
+    {
+        "esp": "el fin de semana",
+        "chi": "周末",
+        "posp": "m",
+        "collected": false,
+        "eng": "the weekend"
+    },
+    {
+        "esp": "el tesauro",
+        "chi": "同義詞辭典",
+        "posp": "m",
+        "collected": false,
+        "eng": "the thesaurus"
+    }
+]

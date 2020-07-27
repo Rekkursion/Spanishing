@@ -6,7 +6,6 @@ import javafx.scene.Scene
 import javafx.stage.Stage
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
-import rekkursion.manager.PickingPriorityManager
 import rekkursion.manager.PreferenceManager
 
 class Main: Application() {

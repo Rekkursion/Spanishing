@@ -7,6 +7,8 @@
       <root url="jar://$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar!/" />
       <root url="jar://D:/rekkursion/downloads/jars/json-20200518.jar!/" />
+      <root url="jar://D:/rekkursion/downloads/jars/javax.mail.jar!/" />
+      <root url="jar://D:/rekkursion/downloads/jars/javax.activation-1.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

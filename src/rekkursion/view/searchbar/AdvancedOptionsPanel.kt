@@ -25,6 +25,7 @@ class AdvancedOptionsPanel(searchBar: VocSearchBar): StyledVBox() {
 
     /* ======================================== */
 
+    @Suppress("NAME_SHADOWING")
     private fun addSearchTextsField() {
         val ckbEsp = StyledCheckBox(Strings.Esp)
         val ckbEng = StyledCheckBox(Strings.Eng)

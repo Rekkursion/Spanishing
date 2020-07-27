@@ -5,7 +5,9 @@ import javafx.scene.control.ListCell
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import rekkursion.manager.PropertiesManager
+import rekkursion.manager.VocManager
 import rekkursion.model.Vocabulary
+import rekkursion.view.StarButton
 
 class VocabularyListCell: ListCell<Vocabulary>() {
     private val mVbxContent = VBox()
@@ -13,6 +15,8 @@ class VocabularyListCell: ListCell<Vocabulary>() {
     private val mLblEsp = Label()
     private val mLblPosp = Label()
     private val mLblChiAndEng = Label()
+
+    private val mStarButton = StarButton(false, 40.0, 40.0)
 
     init {
         // set the spacings of v-box & h-box
@@ -26,7 +30,7 @@ class VocabularyListCell: ListCell<Vocabulary>() {
         mLblEsp.id = "esp"
 
         // add the label of esp and the label of posp into the h-box
-        mHbxEspAndPosp.children.addAll(mLblEsp, mLblPosp)
+        mHbxEspAndPosp.children.addAll(mLblEsp, mLblPosp, mStarButton)
 
         // add the h-box and the label of chi & eng into the v-box
         mVbxContent.children.addAll(mHbxEspAndPosp, mLblChiAndEng)
@@ -42,9 +46,17 @@ class VocabularyListCell: ListCell<Vocabulary>() {
         if (item != null && !empty) {
             val copiedMeaning = item.copiedMeaning
 
+            // set the pressing-listener on the star-button for collecting this vocabulary
+            mStarButton.setOnPressingListener(object: StarButton.OnPressingListener {
+                override fun onPressing(oldValue: Boolean, newValue: Boolean) {
+                    VocManager.collectOrUncollect(item, newValue)
+                }
+            })
+
             mLblEsp.text = item.esp
             mLblPosp.text = "[${copiedMeaning.posp.abbr}]"
             mLblChiAndEng.text = "${copiedMeaning.chi} (${copiedMeaning.eng})"
+            if (item.isCollected) mStarButton.press() else mStarButton.unpress()
             graphic = mVbxContent
         }
         else
