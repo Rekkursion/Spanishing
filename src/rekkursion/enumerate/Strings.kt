@@ -41,7 +41,7 @@ enum class Strings(val chi: String, val eng: String) {
     // the button text for reversely selecting items
     ReverseSelect("反選", "REV"),
 
-    // the prefix of showing the number of vocabularies
+    // the prefix & suffix for showing the number of vocabularies
     NumberOfVocs_pre("目前共有 ", "Total number of vocabularies: "),
     NumberOfVocs_suf(" 個單詞。", ""),
 
@@ -107,7 +107,7 @@ enum class Strings(val chi: String, val eng: String) {
     // used when the answer was wrong
     Wrong("錯誤", "Wrong"),
     // used when the problem has not been answered
-    NoAnswer("未作答", "No Answered"),
+    NoAnswered("未作答", "No Answered"),
 
     // the string of 'start'
     Start("開始", "Start"),

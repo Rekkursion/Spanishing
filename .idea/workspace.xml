@@ -2,31 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/rekkursion/model/Adjustable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rekkursion/util/searchopts/ResultSearchOptions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rekkursion/util/searchopts/VocSearchComp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rekkursion/util/searchopts/VocSearchOptions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rekkursion/view/listviews/AdjustableListView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rekkursion/view/searchbar/ResultSearchBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/admin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/admin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/application/pref.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/application/pref.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PreferenceManager$write$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PreferenceManager$write$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PreferenceManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PreferenceManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PropertiesManager$Styled.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PropertiesManager$Styled.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PropertiesManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/manager/PropertiesManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/application/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/application/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/enumerate/AnsResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/enumerate/AnsResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/enumerate/Colors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/enumerate/Colors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/enumerate/Strings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/enumerate/Strings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/model/Vocabulary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/model/Vocabulary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/model/problem/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/model/problem/Problem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/res/vocs/vocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/res/vocs/vocs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/util/SearchOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/util/SearchOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListCell$updateItem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListCell$updateItem$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/util/SearchOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/VocabularyListPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/VocabularyListPage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/res/ResultListView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/res/ResultListView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/res/ResultListView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/res/ResultListView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/listviews/voc/VocabularyListView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/prac/ResultPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/prac/ResultPage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/prac/ResultPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/prac/ResultPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchPospField$$inlined$map$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchPospField$$inlined$map$lambda$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchPospField$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchPospField$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchTextsField$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchTextsField$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchTextsField$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchTextsField$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchTextsField$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel$addSearchTextsField$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/AdvancedOptionsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$OnSearchStatusChangeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar$OnSearchStatusChangeListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/SearchBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/VocSearchBar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/VocSearchBar$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/VocSearchBar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/VocSearchBar$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/VocSearchBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/view/searchbar/VocSearchBar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/application/pref.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/application/pref.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/application/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/application/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/enumerate/AnsResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/enumerate/AnsResult.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/enumerate/Colors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/enumerate/Colors.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/enumerate/Strings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/enumerate/Strings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/PreferenceManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/PreferenceManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/PropertiesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/PropertiesManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/res/vocs/collected.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/res/vocs/collected.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/model/Vocabulary.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/model/Vocabulary.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/model/problem/Problem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/model/problem/Problem.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/res/vocs/vocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/res/vocs/vocs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/util/SearchOptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/util/SearchOptions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/listviews/voc/VocabularyListCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/listviews/voc/VocabularyListCell.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/util/SearchOptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/util/searchopts/SearchOptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/VocabularyListPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/VocabularyListPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/listviews/res/ResultListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/listviews/res/ResultListView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/view/listviews/voc/VocabularyListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/listviews/voc/VocabularyListView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/prac/ResultPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/ResultPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/view/searchbar/AdvancedOptionsPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/searchbar/AdvancedOptionsPanel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/view/searchbar/SearchBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/searchbar/SearchBar.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/view/searchbar/VocSearchBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/searchbar/VocSearchBar.kt" afterDir="false" />
@@ -87,10 +114,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
         <option value="Kotlin Enum" />
-        <option value="Kotlin File" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -138,11 +165,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="rekkursion.util.searchopts" />
       <recent name="rekkursion.view.searchbar" />
       <recent name="rekkursion.view" />
       <recent name="rekkursion.view.listviews.voc" />
       <recent name="rekkursion.view.listviews" />
-      <recent name="rekkursion.model.problem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\intellij_idea_projects\Spanishing\src\rekkursion\res" />

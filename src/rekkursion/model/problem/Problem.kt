@@ -1,10 +1,13 @@
 package rekkursion.model.problem
 
 import rekkursion.enumerate.AnsResult
+import rekkursion.model.Adjustable
 import rekkursion.model.Copiable
 import rekkursion.model.Vocabulary
+import rekkursion.util.searchopts.SearchOptions
+import java.util.regex.PatternSyntaxException
 
-abstract class Problem(index: Int, stem: Vocabulary): Copiable {
+abstract class Problem(index: Int, stem: Vocabulary): Copiable, Adjustable {
     // the index of this problem
     protected val mIndex = index
     val index get() = mIndex
@@ -25,6 +28,19 @@ abstract class Problem(index: Int, stem: Vocabulary): Copiable {
 
     // get the string of the stem vocabulary
     abstract fun getStemStr(): String
+
+    override fun filterFrom(str: String, searchOptions: SearchOptions): Boolean {
+        val usingRegex = searchOptions.usingRegex
+        val caseSensitive = searchOptions.caseSensitive
+        try {
+            // the passed string shall be used as a regex
+            if (usingRegex) (if (!caseSensitive) str.toLowerCase().toRegex() else str.toRegex()).let { regex ->
+                return mStem.esp.contains(regex)
+            }
+            // the plain text
+            else return mStem.esp == str
+        } catch (e: PatternSyntaxException) { return false }
+    }
 
     /* ======================================== */
 

@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
-import rekkursion.util.SearchOptions
+import rekkursion.util.searchopts.SearchOptions
 import rekkursion.view.SpanishSupportedTextField
 import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
@@ -36,12 +36,9 @@ open class SearchBar: StyledVBox() {
     // some search-options
     private val mSearchOpts = SearchOptions(
             PreferenceManager.usingRegex,
-            PreferenceManager.caseSensitive,
-            PreferenceManager.textsSearchOn,
-            PreferenceManager.pospsSearchOn,
-            PreferenceManager.isCollectedOnly
+            PreferenceManager.caseSensitive
     )
-    val searchOptionsCopied = mSearchOpts.copy()
+    val searchOpts get() = mSearchOpts
 
     init {
         // set the icon image of the image-view
@@ -66,15 +63,13 @@ open class SearchBar: StyledVBox() {
             notifyOptionsChanged(oldValue, newValue)
         }
         mCkbRegex.selectedProperty().addListener { _, _, newValue ->
-            mSearchOpts.usingRegex = newValue
+            searchOpts.usingRegex = newValue
             notifyOptionsChanged()
-            requestFocus()
             PreferenceManager.write("using-regex", newValue.toString())
         }
         mCkbCaseSensitive.selectedProperty().addListener { _, _, newValue ->
-            mSearchOpts.caseSensitive = newValue
+            searchOpts.caseSensitive = newValue
             notifyOptionsChanged()
-            requestFocus()
             PreferenceManager.write("case-sensitive", newValue.toString())
         }
     }
@@ -88,18 +83,13 @@ open class SearchBar: StyledVBox() {
     }
 
     // notify that some search-options might be changed
-    private fun notifyOptionsChanged(oldText: String = mTxfInput.text, newValue: String = mTxfInput.text) {
-        mOnSearchStatusChangeListener?.onSearchStatusChanged(this, oldText, newValue, mSearchOpts)
+    fun notifyOptionsChanged(oldText: String = mTxfInput.text, newValue: String = mTxfInput.text) {
+        mOnSearchStatusChangeListener?.onSearchStatusChanged(this, oldText, newValue, searchOpts)
+        requestFocus()
     }
 
     // set the text-sizes of all sub-views
     fun setTextSizes(textSize: Int) { Styled.unifyTextSize(textSize, mTxfInput, mCkbRegex, mCkbCaseSensitive) }
-
-    // set the search-options by another search-options
-    fun setSearchOptions(searchOptions: SearchOptions) {
-        mSearchOpts.setAll(searchOptions)
-        notifyOptionsChanged(); requestFocus()
-    }
 
     // add a new node at the first row (the tail of basic search-bar)
     protected fun pushNodesAtFirstRow(vararg nodes: Node) {

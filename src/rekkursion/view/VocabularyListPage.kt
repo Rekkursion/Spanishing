@@ -6,7 +6,7 @@ import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
 import rekkursion.util.GenericString
-import rekkursion.util.SearchOptions
+import rekkursion.util.searchopts.SearchOptions
 import rekkursion.view.listviews.voc.VocabularyListView
 import rekkursion.view.searchbar.SearchBar
 import rekkursion.view.searchbar.VocSearchBar
@@ -48,7 +48,7 @@ class VocabularyListPage: StyledVBox() {
         // set the text-listening event on the search-bar
         mSearchBar.setOnSearchStatusChangeListener(object: SearchBar.OnSearchStatusChangeListener {
             override fun onSearchStatusChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions) {
-                mSearchBar.setNumOfFiltered(mVocListView.filterByString(newValue, searchOptions))
+                mSearchBar.setNumOfFiltered(mVocListView.filter(newValue, searchOptions))
             }
         })
     }

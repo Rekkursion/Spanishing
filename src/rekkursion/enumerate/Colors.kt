@@ -34,5 +34,8 @@ enum class Colors(val color: Color) {
     HINT_TYPING_SP_ALPHABET_EVEN(Color.BLUEVIOLET),
 
     // the color for showing hints of typing special alphabets (odds)
-    HINT_TYPING_SP_ALPHABET_ODDS(Color.AZURE)
+    HINT_TYPING_SP_ALPHABET_ODDS(Color.AZURE),
+
+    // the text-color when the mouse is currently hovering on a certain node
+    MOUSE_HOVERING(Color.AZURE)
 }

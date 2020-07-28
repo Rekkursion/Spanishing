@@ -1,33 +1,17 @@
-package rekkursion.util
+package rekkursion.util.searchopts
 
 import rekkursion.enumerate.PartOfSpeech
-import rekkursion.manager.PreferenceManager
 import rekkursion.model.Copiable
+import rekkursion.util.pow
 
-// some options for searching
-class SearchOptions(
-        usingRegex: Boolean,
-        caseSensitive: Boolean,
-        searchTextOn: Int,
-        searchPosp: Int,
-        isCollectedOnly: Boolean)
-    : Copiable {
-
-    // using regex or not
-    private var mUsingRegex = usingRegex
-    var usingRegex
-        get() = mUsingRegex
-        set(value) { mUsingRegex = value }
-
-    // being case-sensitive or not
-    private var mCaseSensitive = caseSensitive
-    var caseSensitive
-        get() = mCaseSensitive
-        set(value) { mCaseSensitive = value }
+class VocSearchComp(searchTextOn: Int,
+                    searchPosp: Int,
+                    isCollectedOnly: Boolean): Copiable {
 
     // search texts on ESP, ENG, and/or CHI
     // 0(000) = NNN, 1(001) = NNY, 2(010) = NYN, 3(011) = NYY, etc, in the order of ESP|ENG|CHI
     private var mSearchTextOn: Int = searchTextOn
+    val searchTextOn get() = mSearchTextOn
     var isSearchingOnESP
         get() = mSearchTextOn.shr(2).and(1) == 1
         set(value) {
@@ -49,6 +33,7 @@ class SearchOptions(
 
     // search part-of-speeches
     private var mSearchPosp: Int = searchPosp
+    val searchPospOn get() = mSearchPosp
 
     // search only the collected vocabularies
     private var mIsCollectedOnly: Boolean = isCollectedOnly
@@ -57,20 +42,6 @@ class SearchOptions(
         set(value) { mIsCollectedOnly = value }
 
     /* ======================================== */
-
-    // set all search-options by another search-options
-    fun setAll(searchOptions: SearchOptions) {
-        usingRegex = searchOptions.mUsingRegex
-        caseSensitive = searchOptions.mCaseSensitive
-
-        if (mSearchTextOn != searchOptions.mSearchTextOn)
-            PreferenceManager.write("texts-search-on", searchOptions.mSearchTextOn.toString())
-        if (mSearchPosp != searchOptions.mSearchPosp)
-            PreferenceManager.write("posps-search-on", searchOptions.mSearchPosp.toString())
-        mSearchTextOn = searchOptions.mSearchTextOn
-        mSearchPosp = searchOptions.mSearchPosp
-        mIsCollectedOnly = searchOptions.mIsCollectedOnly
-    }
 
     // add part-of-speeches
     fun addPosps(vararg posps: PartOfSpeech) {
@@ -96,5 +67,5 @@ class SearchOptions(
 
     /* ======================================== */
 
-    override fun copy(): SearchOptions = SearchOptions(mUsingRegex, mCaseSensitive, mSearchTextOn, mSearchPosp, mIsCollectedOnly)
+    override fun copy(): VocSearchComp = VocSearchComp(mSearchTextOn, mSearchPosp, mIsCollectedOnly)
 }

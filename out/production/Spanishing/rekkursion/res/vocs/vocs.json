@@ -1,5 +1,40 @@
 [
     {
+        "esp": "la oreja",
+        "chi": "耳朵",
+        "posp": "f",
+        "collected": false,
+        "eng": "the ear"
+    },
+    {
+        "esp": "la tarta",
+        "chi": "蛋糕；果餡餅；派",
+        "posp": "f",
+        "collected": false,
+        "eng": "the cake; the tart; the pie"
+    },
+    {
+        "esp": "la persona",
+        "chi": "人；人稱",
+        "posp": "f",
+        "collected": false,
+        "eng": "the person"
+    },
+    {
+        "esp": "vivir",
+        "chi": "活；生活",
+        "posp": "v",
+        "collected": false,
+        "eng": "to live"
+    },
+    {
+        "esp": "el vivir",
+        "chi": "生活（方式）",
+        "posp": "m",
+        "collected": false,
+        "eng": "the lifestyle; the way of life"
+    },
+    {
         "esp": "el bar",
         "chi": "酒吧",
         "posp": "m",
@@ -917,13 +952,6 @@
         "eng": "the heart"
     },
     {
-        "esp": "cien",
-        "chi": "一百",
-        "posp": "m; adj",
-        "collected": false,
-        "eng": "one hundred"
-    },
-    {
         "esp": "la hora",
         "chi": "小時；時間",
         "posp": "f",
@@ -1701,6 +1729,48 @@
         "eng": "forty"
     },
     {
+        "esp": "cincuenta",
+        "chi": "五十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "fifty"
+    },
+    {
+        "esp": "sesenta",
+        "chi": "六十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "sixty"
+    },
+    {
+        "esp": "setenta",
+        "chi": "七十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "seventy"
+    },
+    {
+        "esp": "ochenta",
+        "chi": "八十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "eighty"
+    },
+    {
+        "esp": "noventa",
+        "chi": "九十",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "ninety"
+    },
+    {
+        "esp": "cien",
+        "chi": "一百",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "one hundred"
+    },
+    {
         "esp": "sexto/sexta",
         "chi": "第六；第六的；六分之一；六分之一的",
         "posp": "m/f; adj",
@@ -1722,7 +1792,63 @@
         "eng": "brown"
     },
     {
-        "esp": "sediento",
+        "esp": "el hormigueo",
+        "chi": "癢；刺痛（感）；焦慮（感）；煩躁（感）",
+        "posp": "m",
+        "collected": false,
+        "eng": "the tingle; the anxiety"
+    },
+    {
+        "esp": "el lugareño/la lugareña",
+        "chi": "本地人；當地人",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the local"
+    },
+    {
+        "esp": "lugareño/lugareña",
+        "chi": "本地的；當地的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "local; native"
+    },
+    {
+        "esp": "chapotear",
+        "chi": "噴；濺；灑",
+        "posp": "v",
+        "collected": false,
+        "eng": "to splash; to splash around"
+    },
+    {
+        "esp": "el faro",
+        "chi": "燈塔；頭燈",
+        "posp": "m",
+        "collected": false,
+        "eng": "the lighthouse; the headlight"
+    },
+    {
+        "esp": "descalzo/descalza",
+        "chi": "裸足的；赤腳的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "barefoot; barefooted"
+    },
+    {
+        "esp": "el guijarro",
+        "chi": "卵石；小圓石",
+        "posp": "m",
+        "collected": false,
+        "eng": "the pebble"
+    },
+    {
+        "esp": "embarcar",
+        "chi": "（使）上船",
+        "posp": "v",
+        "collected": false,
+        "eng": "to board; to embark"
+    },
+    {
+        "esp": "sediento/sedienta",
         "chi": "口渴的",
         "posp": "adj",
         "collected": false,
@@ -1743,7 +1869,7 @@
         "eng": "northern (Northern)"
     },
     {
-        "esp": "fructífero",
+        "esp": "fructífero/fructífera",
         "chi": "有成效的；有成果的；有收穫的",
         "posp": "adj",
         "collected": false,

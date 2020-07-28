@@ -1,12 +1,12 @@
 package rekkursion.view.searchbar
 
 import javafx.geometry.Insets
-import javafx.scene.control.CheckBox
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
 import rekkursion.util.GenericString
+import rekkursion.util.searchopts.VocSearchComp
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledCheckBox
 import rekkursion.view.styled.StyledLabel
@@ -25,6 +25,13 @@ class VocSearchBar: SearchBar() {
     private var mShowingAdvancedOptionsPanel = false
 
     init {
+        // set the vocabulary-search-component part of the search-option
+        searchOpts.vocComp = VocSearchComp(
+                PreferenceManager.textsSearchOn,
+                PreferenceManager.pospsSearchOn,
+                PreferenceManager.isCollectedOnly
+        )
+
         // unify the text-sizes
         setTextSizes(PropertiesManager.searchBarTextSize)
         mBtnAdvancedOptions.textSize = PropertiesManager.searchBarTextSize
@@ -41,9 +48,8 @@ class VocSearchBar: SearchBar() {
 
         // show only collected vocabularies
         mCkbShowOnlyCollected.selectedProperty().addListener { _, _, newValue ->
-            val opts = searchOptionsCopied
-            opts.isCollectedOnly = newValue
-            setSearchOptions(opts)
+            searchOpts.vocComp?.isCollectedOnly = newValue
+            notifyOptionsChanged()
             PreferenceManager.write("is-collected-only", newValue.toString())
         }
 
@@ -52,8 +58,6 @@ class VocSearchBar: SearchBar() {
             toggleAdvancedOptionsPanel()
             requestFocus()
         }
-
-        setSearchOptions(searchOptionsCopied)
     }
 
     // set the number of filtered

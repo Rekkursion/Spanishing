@@ -1,5 +1,6 @@
 package rekkursion.view.prac
 
+import javafx.scene.Cursor
 import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
@@ -62,6 +63,16 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
 
         // set the clicking event on the go-back-button
         mBtnGoBack.setOnAction { LayoutManager.switchPracticeContent() }
+
+        // add hovering-listeners to all title labels of the result-list-view
+        mLblTestedNo.hoverProperty().addListener { _, _, newValue -> hoverOnTitleLabels(mLblTestedNo, newValue) }
+        mLblTestedVocs.hoverProperty().addListener { _, _, newValue -> hoverOnTitleLabels(mLblTestedVocs, newValue) }
+        mLblTestedResults.hoverProperty().addListener { _, _, newValue -> hoverOnTitleLabels(mLblTestedResults, newValue) }
+
+        // add clicking-listeners to all title labels of the result-list-view
+        mLblTestedNo.setOnMouseClicked { clickOnTitleLabels(mLblTestedNo) }
+        mLblTestedVocs.setOnMouseClicked { clickOnTitleLabels(mLblTestedVocs) }
+        mLblTestedResults.setOnMouseClicked { clickOnTitleLabels(mLblTestedResults) }
     }
 
     /* ======================================== */
@@ -78,12 +89,25 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
                 GenericString(Strings.Wrong), GenericString(Strings.COLON),
                 GenericString(str = mReport.numOfWrong.toString()))
         Strings.register(mLblNumOfNoAnswered,
-                GenericString(Strings.NoAnswer), GenericString(Strings.COLON),
+                GenericString(Strings.NoAnswered), GenericString(Strings.COLON),
                 GenericString(str = mReport.numOfNoAnswered.toString()))
 
         Strings.register(mLblCorrectRate,
                 GenericString(Strings.CorrectRate), GenericString(Strings.COLON),
                 GenericString(str = mReport.mCorrectRateWithPercentage))
+    }
+
+    // the mouse is currently hovering on some title labels of the result-list-view
+    private fun hoverOnTitleLabels(lbl: StyledLabel, isHovering: Boolean) {
+        // set the cursor style
+        cursor = if (isHovering) Cursor.HAND else Cursor.DEFAULT
+        // set the text-color of the hovered label
+        lbl.textColor = if (isHovering) Colors.MOUSE_HOVERING.color else Colors.LABEL_DEFAULT.color
+    }
+
+    // the clicking event of title labels of the result-list-view
+    private fun clickOnTitleLabels(lbl: StyledLabel) {
+
     }
 
     /* ======================================== */
