@@ -15,7 +15,7 @@ abstract class AdjustableListView<T: Adjustable>(list: ArrayList<T>): ListView<T
     // filter the vocabularies by a string (w/ some options like using regex or not, case sensitive or not)
     open fun filter(str: String, searchOptions: SearchOptions): Int {
         items.clear()
-        items.addAll(mList.filter { voc -> voc.filterFrom(str, searchOptions) })
+        items.addAll(mList.filter { it.filterFrom(str, searchOptions) })
         return items.size
     }
 }

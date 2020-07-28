@@ -1,7 +1,9 @@
 package rekkursion.view.searchbar
 
 import rekkursion.enumerate.Strings
+import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
+import rekkursion.util.searchopts.ResSearchComp
 import rekkursion.view.styled.Styled
 import rekkursion.view.styled.StyledCheckBox
 
@@ -16,6 +18,9 @@ class ResultSearchBar: SearchBar() {
     private val mCkbShowNoAnswered = StyledCheckBox(Strings.NoAnswered)
 
     init {
+        // set the component which is responsible for searching results
+        searchOpts.resComp = ResSearchComp()
+
         // unify the text-sizes
         Styled.unifyTextSize(PropertiesManager.searchBarTextSize, mCkbShowCorrect, mCkbShowWrong, mCkbShowNoAnswered)
 
@@ -27,9 +32,22 @@ class ResultSearchBar: SearchBar() {
         // add these check-boxes into the basic search-bar
         pushNodesAtFirstRow(mCkbShowCorrect, mCkbShowWrong, mCkbShowNoAnswered)
 
-        // show only collected vocabularies
+        // show only correctly-answered results
         mCkbShowCorrect.selectedProperty().addListener { _, _, newValue ->
-            // TODO
+            searchOpts.resComp?.showCorrectResults = newValue
+            notifyOptionsChanged()
+        }
+
+        // show only wrongly-answered results
+        mCkbShowWrong.selectedProperty().addListener { _, _, newValue ->
+            searchOpts.resComp?.showWrongResults = newValue
+            notifyOptionsChanged()
+        }
+
+        // show only no-answered results
+        mCkbShowNoAnswered.selectedProperty().addListener { _, _, newValue ->
+            searchOpts.resComp?.showNoAnsweredResults = newValue
+            notifyOptionsChanged()
         }
     }
 }

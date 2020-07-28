@@ -8,10 +8,16 @@ import rekkursion.manager.PropertiesManager
 import rekkursion.manager.StatisticsManager
 import rekkursion.model.problem.Problem
 import rekkursion.util.GenericString
+import rekkursion.util.searchopts.SearchOptions
 import rekkursion.view.listviews.res.ResultListView
+import rekkursion.view.searchbar.ResultSearchBar
+import rekkursion.view.searchbar.SearchBar
 import rekkursion.view.styled.*
 
 class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
+    // the search-bar for searching results
+    private val mSearchBar = ResultSearchBar()
+
     // the result-list-view
     private val mResultListView = ResultListView(problemList)
 
@@ -59,7 +65,7 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
         registerLabels()
 
         // add the sub-views into this v-box
-        children.addAll(mGdpListTitles, mResultListView, mHbxStatistics, mLblCorrectRate, mBtnGoBack)
+        children.addAll(mSearchBar, mGdpListTitles, mResultListView, mHbxStatistics, mLblCorrectRate, mBtnGoBack)
 
         // set the clicking event on the go-back-button
         mBtnGoBack.setOnAction { LayoutManager.switchPracticeContent() }
@@ -73,6 +79,13 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
         mLblTestedNo.setOnMouseClicked { clickOnTitleLabels(mLblTestedNo) }
         mLblTestedVocs.setOnMouseClicked { clickOnTitleLabels(mLblTestedVocs) }
         mLblTestedResults.setOnMouseClicked { clickOnTitleLabels(mLblTestedResults) }
+
+        // set the listening event on the search-bar
+        mSearchBar.setOnSearchStatusChangeListener(object: SearchBar.OnSearchStatusChangeListener {
+            override fun onSearchStatusChanged(searchBar: SearchBar, oldValue: String, newValue: String, searchOptions: SearchOptions) {
+                mResultListView.filter(newValue, searchOptions)
+            }
+        })
     }
 
     /* ======================================== */

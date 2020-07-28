@@ -17,7 +17,14 @@ class ResultListView(problemList: ArrayList<Problem>): AdjustableListView<Proble
 
     // filter the result
     override fun filter(str: String, searchOptions: SearchOptions): Int {
-
+        super.filter(str, searchOptions)
+        searchOptions.resComp?.let { resComp ->
+            items.removeIf {
+                (!resComp.showCorrectResults && it.ansResult.isCorrect()) ||
+                        (!resComp.showWrongResults && it.ansResult.isWrong()) ||
+                        (!resComp.showNoAnsweredResults && it.ansResult.isNoAnswered())
+            }
+        }
         return items.size
     }
 }

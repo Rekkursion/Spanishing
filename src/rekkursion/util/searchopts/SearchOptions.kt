@@ -6,7 +6,8 @@ import rekkursion.model.Copiable
 class SearchOptions(
         usingRegex: Boolean,
         caseSensitive: Boolean,
-        vocComp: VocSearchComp? = null)
+        vocComp: VocSearchComp? = null,
+        resComp: ResSearchComp? = null)
     : Copiable {
 
     // using regex or not
@@ -26,6 +27,12 @@ class SearchOptions(
     var vocComp
         get() = mVocComp
         set(value) { mVocComp = value }
+
+    // the component for dedicatedly searching results
+    private var mResComp: ResSearchComp? = resComp
+    var resComp
+        get() = mResComp
+        set(value) { mResComp = value }
 
     /* ======================================== */
 

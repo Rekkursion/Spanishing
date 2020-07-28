@@ -30,16 +30,19 @@ abstract class Problem(index: Int, stem: Vocabulary): Copiable, Adjustable {
     abstract fun getStemStr(): String
 
     override fun filterFrom(str: String, searchOptions: SearchOptions): Boolean {
-        val usingRegex = searchOptions.usingRegex
-        val caseSensitive = searchOptions.caseSensitive
-        try {
-            // the passed string shall be used as a regex
-            if (usingRegex) (if (!caseSensitive) str.toLowerCase().toRegex() else str.toRegex()).let { regex ->
-                return mStem.esp.contains(regex)
-            }
-            // the plain text
-            else return mStem.esp == str
-        } catch (e: PatternSyntaxException) { return false }
+        if (str.isNotEmpty()) {
+            val usingRegex = searchOptions.usingRegex
+            val caseSensitive = searchOptions.caseSensitive
+            try {
+                // the passed string shall be used as a regex
+                if (usingRegex) (if (!caseSensitive) str.toLowerCase().toRegex() else str.toRegex()).let { regex ->
+                    return mStem.esp.contains(regex) || mStem.copiedMeaning.eng.contains(regex) || mStem.copiedMeaning.chi.contains(regex)
+                }
+                // the plain text
+                else return mStem.esp == str || mStem.copiedMeaning.eng == str || mStem.copiedMeaning.chi == str
+            } catch (e: PatternSyntaxException) { return false }
+        }
+        return true
     }
 
     /* ======================================== */

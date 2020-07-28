@@ -3,7 +3,7 @@
     "case-sensitive": true,
     "preferred-single-choice-problem-type": 2,
     "window-width": 1280,
-    "preferred-problem-num": 100,
+    "preferred-problem-num": 15,
     "is-collected-only": false,
     "texts-search-on": 7,
     "using-regex": false,

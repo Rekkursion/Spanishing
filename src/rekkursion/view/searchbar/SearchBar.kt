@@ -41,6 +41,9 @@ open class SearchBar: StyledVBox() {
     val searchOpts get() = mSearchOpts
 
     init {
+        // unify the text-sizes of sub-views
+        Styled.unifyTextSize(PropertiesManager.searchBarTextSize, mTxfInput, mCkbRegex, mCkbCaseSensitive)
+
         // set the icon image of the image-view
         mImgvIcon.image = Image("rekkursion/res/search.png", PropertiesManager.searchIconSize, PropertiesManager.searchIconSize, false, false)
 
