@@ -7,7 +7,7 @@ import rekkursion.model.Vocabulary
 import rekkursion.util.searchopts.SearchOptions
 import java.util.regex.PatternSyntaxException
 
-abstract class Problem(index: Int, stem: Vocabulary): Copiable, Adjustable {
+abstract class Problem(index: Int, stem: Vocabulary): Copiable, Adjustable<Problem> {
     // the index of this problem
     protected val mIndex = index
     val index get() = mIndex
@@ -39,7 +39,7 @@ abstract class Problem(index: Int, stem: Vocabulary): Copiable, Adjustable {
                     return mStem.esp.contains(regex) || mStem.copiedMeaning.eng.contains(regex) || mStem.copiedMeaning.chi.contains(regex)
                 }
                 // the plain text
-                else return mStem.esp == str || mStem.copiedMeaning.eng == str || mStem.copiedMeaning.chi == str
+                else return mStem.esp.contains(str) || mStem.copiedMeaning.eng.contains(str) || mStem.copiedMeaning.chi.contains(str)
             } catch (e: PatternSyntaxException) { return false }
         }
         return true

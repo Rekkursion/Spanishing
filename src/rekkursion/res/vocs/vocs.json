@@ -1,5 +1,61 @@
 [
     {
+        "esp": "el mueble",
+        "chi": "家具；傢俱",
+        "posp": "m",
+        "collected": false,
+        "eng": "the furniture"
+    },
+    {
+        "esp": "mueble",
+        "chi": "可移動的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "movable"
+    },
+    {
+        "esp": "el cuello",
+        "chi": "脖子；頸部；瓶頸；瓶口；衣領",
+        "posp": "m",
+        "collected": false,
+        "eng": "the neck; the collar"
+    },
+    {
+        "esp": "el dibujo",
+        "chi": "圖畫；圖片；素描；繪畫",
+        "posp": "m",
+        "collected": false,
+        "eng": "the drawing; the sketch; the picture"
+    },
+    {
+        "esp": "dibujar",
+        "chi": "素描；繪畫；繪圖",
+        "posp": "v",
+        "collected": true,
+        "eng": "to draw; to sketch"
+    },
+    {
+        "esp": "interesado/interesada",
+        "chi": "對...感興趣的；自私的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "interested; selfish"
+    },
+    {
+        "esp": "interesar",
+        "chi": "使感興趣",
+        "posp": "v",
+        "collected": true,
+        "eng": "to interest"
+    },
+    {
+        "esp": "desear",
+        "chi": "想要；希望",
+        "posp": "v",
+        "collected": false,
+        "eng": "to want; to wish"
+    },
+    {
         "esp": "la oreja",
         "chi": "耳朵",
         "posp": "f",
@@ -1795,105 +1851,105 @@
         "esp": "el hormigueo",
         "chi": "癢；刺痛（感）；焦慮（感）；煩躁（感）",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the tingle; the anxiety"
     },
     {
         "esp": "el lugareño/la lugareña",
         "chi": "本地人；當地人",
         "posp": "m/f",
-        "collected": false,
+        "collected": true,
         "eng": "the local"
     },
     {
         "esp": "lugareño/lugareña",
         "chi": "本地的；當地的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "local; native"
     },
     {
         "esp": "chapotear",
         "chi": "噴；濺；灑",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to splash; to splash around"
     },
     {
         "esp": "el faro",
         "chi": "燈塔；頭燈",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the lighthouse; the headlight"
     },
     {
         "esp": "descalzo/descalza",
         "chi": "裸足的；赤腳的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "barefoot; barefooted"
     },
     {
         "esp": "el guijarro",
         "chi": "卵石；小圓石",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the pebble"
     },
     {
         "esp": "embarcar",
         "chi": "（使）上船",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to board; to embark"
     },
     {
         "esp": "sediento/sedienta",
         "chi": "口渴的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "thirsty"
     },
     {
         "esp": "el columpio",
         "chi": "鞦韆",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the swing"
     },
     {
         "esp": "septentrional",
         "chi": "北方的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "northern (Northern)"
     },
     {
         "esp": "fructífero/fructífera",
         "chi": "有成效的；有成果的；有收穫的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "fruitful"
     },
     {
         "esp": "alquilar",
         "chi": "出租；租賃",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to rent"
     },
     {
         "esp": "el pastizal",
         "chi": "牧場",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the pasture"
     },
     {
         "esp": "el castillo de arena",
         "chi": "沙灘城堡；沙塔",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "sandcastle"
     },
     {
@@ -1928,7 +1984,7 @@
         "esp": "de antemano",
         "chi": "預先；事先",
         "posp": "adv",
-        "collected": false,
+        "collected": true,
         "eng": "in advance; beforehand"
     },
     {
@@ -1956,7 +2012,7 @@
         "esp": "la ocupación",
         "chi": "工作；職業；佔用；佔領；佔據",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the occupation"
     },
     {
@@ -1977,7 +2033,7 @@
         "esp": "el tesauro",
         "chi": "同義詞辭典",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the thesaurus"
     }
 ]

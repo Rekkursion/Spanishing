@@ -3,7 +3,7 @@ package rekkursion.model
 import rekkursion.util.searchopts.SearchOptions
 import java.util.regex.PatternSyntaxException
 
-class Vocabulary(esp: String, meaning: Meaning, isCollected: Boolean = false): Copiable, Adjustable {
+class Vocabulary(esp: String, meaning: Meaning, isCollected: Boolean = false): Copiable, Adjustable<Vocabulary> {
     // the vocabulary in the form of spanish (español)
     private val mEsp = esp
     val esp get() = mEsp

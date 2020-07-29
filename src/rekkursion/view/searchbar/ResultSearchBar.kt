@@ -1,7 +1,6 @@
 package rekkursion.view.searchbar
 
 import rekkursion.enumerate.Strings
-import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
 import rekkursion.util.searchopts.ResSearchComp
 import rekkursion.view.styled.Styled

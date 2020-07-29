@@ -120,7 +120,7 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
 
     // the clicking event of title labels of the result-list-view
     private fun clickOnTitleLabels(lbl: StyledLabel) {
-
+        // TODO: sort results by a certain attribute
     }
 
     /* ======================================== */

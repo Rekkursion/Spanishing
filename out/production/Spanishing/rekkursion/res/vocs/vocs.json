@@ -1,5 +1,61 @@
 [
     {
+        "esp": "el mueble",
+        "chi": "家具；傢俱",
+        "posp": "m",
+        "collected": false,
+        "eng": "the furniture"
+    },
+    {
+        "esp": "mueble",
+        "chi": "可移動的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "movable"
+    },
+    {
+        "esp": "el cuello",
+        "chi": "脖子；頸部；瓶頸；瓶口；衣領",
+        "posp": "m",
+        "collected": false,
+        "eng": "the neck; the collar"
+    },
+    {
+        "esp": "el dibujo",
+        "chi": "圖畫；圖片；素描；繪畫",
+        "posp": "m",
+        "collected": false,
+        "eng": "the drawing; the sketch; the picture"
+    },
+    {
+        "esp": "dibujar",
+        "chi": "素描；繪畫；繪圖",
+        "posp": "v",
+        "collected": false,
+        "eng": "to draw; to sketch"
+    },
+    {
+        "esp": "interesado/interesada",
+        "chi": "對...感興趣的；自私的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "interested; selfish"
+    },
+    {
+        "esp": "interesar",
+        "chi": "使感興趣",
+        "posp": "v",
+        "collected": false,
+        "eng": "to interest"
+    },
+    {
+        "esp": "desear",
+        "chi": "想要；希望",
+        "posp": "v",
+        "collected": false,
+        "eng": "to want; to wish"
+    },
+    {
         "esp": "la oreja",
         "chi": "耳朵",
         "posp": "f",

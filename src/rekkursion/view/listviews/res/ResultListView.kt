@@ -1,5 +1,6 @@
 package rekkursion.view.listviews.res
 
+import rekkursion.manager.PreferenceManager
 import rekkursion.model.problem.Problem
 import rekkursion.util.searchopts.SearchOptions
 import rekkursion.view.listviews.AdjustableListView
@@ -8,6 +9,9 @@ class ResultListView(problemList: ArrayList<Problem>): AdjustableListView<Proble
     init {
         // add all vocabularies from the list
         items.addAll(problemList)
+
+        // set the pref-height
+        prefHeight = PreferenceManager.windowHeight
 
         // set the cell factory
         setCellFactory { ResultListCell(problemList.size) }
