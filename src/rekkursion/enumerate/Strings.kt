@@ -63,6 +63,20 @@ enum class Strings(val chi: String, val eng: String) {
     SelectTypeOfSingleChoiceProblem("請選擇題目的類型：", "Please select the type of problems:"),
     // the title for selecting the number of problems
     SelectNumOfProblems("請選擇題目的數量：", "Please select the number of problems:"),
+    // the title for determining the scope for picking problems
+    PickingScope("請選擇出題範圍：", "All vocabularies or collected only?"),
+    // the name of the all-vocabularies radio-button when determining the picking scope
+    PickingScope_All("全部單字", "All"),
+    // the name of the collected-only radio-button when determining the picking scope
+    PickingScope_CollectedOnly("只含已收藏單字", "Collected only"),
+    // the prefix of text of all-scoped maximum vocabularies
+    PickingScope_MaxNumOfVocs_All_pre("全部共有 ", "There\'re "),
+    // the suffix of text of all-scoped maximum vocabularies
+    PickingScope_MaxNumOfVocs_All_suf(" 個單字。", " vocabularies."),
+    // the prefix of text of collected-scoped maximum vocabularies
+    PickingScope_MaxNumOfVocs_CollectedOnly_pre("共有 ", "There\'re "),
+    // the suffix of text of collected-scoped maximum vocabularies
+    PickingScope_MaxNumOfVocs_CollectedOnly_suf(" 個已收藏單字。", " collected vocabularies."),
 
     // the button name of skipping a single problem
     SkipProblem("跳過這題 (Ctrl + Enter)", "Skip (Ctrl + Enter)"),

@@ -1,10 +1,12 @@
 package rekkursion.view.prac
 
+import javafx.geometry.Insets
 import javafx.scene.control.RadioButton
 import javafx.scene.control.ToggleGroup
 import rekkursion.enumerate.SingleChoiceProblemType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
+import rekkursion.manager.PropertiesManager
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 
@@ -23,6 +25,10 @@ class SingleChoiceSettingsPanel: StyledVBox() {
     private val mToggleGroup = ToggleGroup()
 
     init {
+        // set the padding
+        padding = Insets(0.0, 0.0, PropertiesManager.generalPadding, 0.0)
+
+        // set all radio-buttons
         mRdbList.forEachIndexed { index, rdb ->
             // set the toggle-group of all radio-buttons
             rdb.toggleGroup = mToggleGroup

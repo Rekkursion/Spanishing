@@ -47,6 +47,9 @@ object PreferenceManager {
     // the user-preferred problem-type
     var preferredSingleChoiceProblemType: Int = PropertiesManager.defaultSingleChoiceProblemType
 
+    // the user-preferred picking scope
+    var preferredPickingScope: Int = PropertiesManager.defaultPickingScope
+
     // the user-preferred number of problems when doing practice
     var preferredProblemNum: Int = 10
 
@@ -79,6 +82,7 @@ object PreferenceManager {
             alertWhenSkipping = jObj.getBoolean("alert-when-skipping")
             alertWhenFinishing = jObj.getBoolean("alert-when-finishing")
             preferredSingleChoiceProblemType = jObj.getInt("preferred-single-choice-problem-type")
+            preferredPickingScope = jObj.getInt("preferred-picking-scope")
             preferredProblemNum = jObj.getInt("preferred-problem-num")
         } catch (e: Exception) { e.printStackTrace() }
     }

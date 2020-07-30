@@ -22,6 +22,9 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
     // the panel for the settings of single-choice problems only
     private val mSingleChoiceSettingsPanel = SingleChoiceSettingsPanel()
 
+    // the panel for determining the picking scope
+    private val mScopePickingPanel = ScopePickingPanel()
+
     // the title for showing the practice type
     private val mLblPracticeTypeTitle = StyledLabel(
             if (practiceType == PracticeType.SPELLING) Strings.SpellingProblem else Strings.SingleChoiceProblem,
@@ -61,15 +64,22 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
         }
 
         // add buttons into this v-box
-        children.addAll(mLblNumOfProblemsTitle, mNslNumOfProblems, mBtnStartPractice, mBtnGoBackToPracticeMenu)
+        children.addAll(mScopePickingPanel, mLblNumOfProblemsTitle, mNslNumOfProblems, mBtnStartPractice, mBtnGoBackToPracticeMenu)
 
         // the event of clicking on the start button
         mBtnStartPractice.setOnAction {
+            // re-set the maximum value of the number-selector to support narrower picking scope
+            mNslNumOfProblems.maxValue = min(
+                    mNslNumOfProblems.getNumber(),
+                    mScopePickingPanel.getPickingScope().getNumOfVocs()
+            )
+            // switch the content of the practice page
             LayoutManager.switchPracticeContent(
                     if (practiceType == PracticeType.SINGLE_CHOICE) SingleChoicePage(
                             mSingleChoiceSettingsPanel.getSingleChoiceProblemType(),
-                            mNslNumOfProblems.getNumber()
-                    ) else SpellingPage(mNslNumOfProblems.getNumber())
+                            mNslNumOfProblems.getNumber(),
+                            mScopePickingPanel.getPickingScope()
+                    ) else SpellingPage(mNslNumOfProblems.getNumber(), mScopePickingPanel.getPickingScope())
             )
         }
 
@@ -91,7 +101,5 @@ class PracticeSettingsView(practiceType: PracticeType): StyledVBox() {
 
     /* ======================================== */
 
-    override fun requestFocus() {
-        mNslNumOfProblems.requestFocus()
-    }
+    override fun requestFocus() { mNslNumOfProblems.requestFocus() }
 }

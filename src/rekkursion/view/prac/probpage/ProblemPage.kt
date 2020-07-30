@@ -4,6 +4,7 @@ import javafx.geometry.Insets
 import javafx.scene.Node
 import javafx.scene.control.ButtonType
 import rekkursion.enumerate.Colors
+import rekkursion.enumerate.PickingScope
 import rekkursion.enumerate.PracticeType
 import rekkursion.enumerate.Strings
 import rekkursion.manager.LayoutManager
@@ -20,12 +21,20 @@ import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 import rekkursion.view.styled.StyledVBox
 
-abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): StyledVBox() {
+abstract class ProblemPage(
+        practiceType: PracticeType,
+        numOfProblems: Int,
+        pickingScope: PickingScope)
+    : StyledVBox() {
+
     // the type of the practice
     private val mPracticeType = practiceType
 
     // the number of problems
     private val mNumOfProblems = numOfProblems
+
+    // the picking scope
+    private val mPickingScope = pickingScope
 
     // the label for showing the no. of this problem
     private val mLblNo = StyledLabel(textColor = Colors.NUMBERED.color)
@@ -124,7 +133,7 @@ abstract class ProblemPage(practiceType: PracticeType, numOfProblems: Int): Styl
     private fun pickVocabularies() {
         Thread {
             // pick some vocabularies
-            VocManager.pickVocabularies(mNumOfProblems).forEach { mPickedVocList.add(it.copy()) }
+            VocManager.pickVocabularies(mNumOfProblems, mPickingScope).forEach { mPickedVocList.add(it.copy()) }
             // generate the problems
             generateProblemsAndShowTheFirst()
         }.start()

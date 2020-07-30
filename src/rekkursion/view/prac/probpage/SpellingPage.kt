@@ -1,17 +1,14 @@
 package rekkursion.view.prac.probpage
 
 import javafx.application.Platform
-import rekkursion.enumerate.AnsResult
-import rekkursion.enumerate.Colors
-import rekkursion.enumerate.PracticeType
-import rekkursion.enumerate.Strings
+import rekkursion.enumerate.*
 import rekkursion.model.problem.SpellingProblem
 import rekkursion.view.prac.SpellingInputArea
 import rekkursion.view.styled.StyledButton
 import rekkursion.view.styled.StyledHBox
 import rekkursion.view.styled.StyledLabel
 
-class SpellingPage(numOfProblems: Int): ProblemPage(PracticeType.SPELLING, numOfProblems) {
+class SpellingPage(numOfProblems: Int, pickingScope: PickingScope): ProblemPage(PracticeType.SPELLING, numOfProblems, pickingScope) {
     // the input-area for the user to spell
     private val mSpellingArea = SpellingInputArea(spellingPage = this)
 

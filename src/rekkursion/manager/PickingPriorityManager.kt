@@ -1,5 +1,6 @@
 package rekkursion.manager
 
+import rekkursion.enumerate.PickingScope
 import rekkursion.model.Vocabulary
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
@@ -25,11 +26,13 @@ object PickingPriorityManager {
     /* ======================================== */
 
     // randomly but NOT uniformly pick a vocabulary
-    fun pickVoc(): Vocabulary {
+    fun pickVoc(scope: PickingScope): Vocabulary {
+        val collectedList = VocManager.copiedCollectedList
         val arr = mPQ.toTypedArray()
         val size = arr.size
         while (true) {
             val idx = ThreadLocalRandom.current().nextInt(0, size)
+            if (scope == PickingScope.ALL_VOCS || collectedList.contains(arr[idx].voc))
             if (arr[idx].check())
                 return arr[idx].voc
         }

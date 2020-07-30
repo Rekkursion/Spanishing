@@ -37,6 +37,9 @@ object PropertiesManager {
     // the default single choice problem type
     const val defaultSingleChoiceProblemType: Int = 2
 
+    // the default picking scope
+    const val defaultPickingScope: Int = 0
+
     // the size of a search-icon
     const val searchIconSize: Double = 24.0
 
@@ -47,7 +50,7 @@ object PropertiesManager {
     const val numOfOptionsInSingleChoiceProblem: Int = 4
 
     // the maximum number of problems per practice
-    const val maxNumOfProblemsPerPractice = 150
+    const val maxNumOfProblemsPerPractice = 200
 
     // the general spacing among uis
     const val generalSpacing: Double = 10.0

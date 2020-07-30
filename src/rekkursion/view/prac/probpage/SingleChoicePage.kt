@@ -3,10 +3,7 @@ package rekkursion.view.prac.probpage
 import javafx.application.Platform
 import javafx.scene.control.Button
 import javafx.scene.input.KeyCode
-import rekkursion.enumerate.AnsResult
-import rekkursion.enumerate.Colors
-import rekkursion.enumerate.PracticeType
-import rekkursion.enumerate.SingleChoiceProblemType
+import rekkursion.enumerate.*
 import rekkursion.manager.PropertiesManager
 import rekkursion.manager.VocManager
 import rekkursion.model.Vocabulary
@@ -15,7 +12,12 @@ import rekkursion.util.HoldingQueue
 import rekkursion.view.styled.StyledButton
 import kotlin.random.Random
 
-class SingleChoicePage(problemType: SingleChoiceProblemType, numOfProblems: Int): ProblemPage(PracticeType.SINGLE_CHOICE, numOfProblems) {
+class SingleChoicePage(
+        problemType: SingleChoiceProblemType,
+        numOfProblems: Int,
+        pickingScope: PickingScope)
+    : ProblemPage(PracticeType.SINGLE_CHOICE, numOfProblems, pickingScope) {
+
     // the type of single-choice problems
     private val mProblemType = problemType
 

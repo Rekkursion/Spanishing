@@ -15,10 +15,12 @@ import rekkursion.view.styled.StyledLabel
 // the number selector (integer only)
 class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int): StyledHBox() {
     // the minimum value
-    private val mMin = min
+    private var mMin = min
+    var minValue get() = mMin; set(value) { mMin = value; checkBounds() }
 
     // the maximum value
-    private val mMax = max
+    private var mMax = max
+    var maxValue get() = mMax; set(value) { mMax = value; checkBounds() }
 
     // the initial value
     private val mInitialValue = initialValue
@@ -54,6 +56,9 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
         // add those two buttons into a v-box
         mVbxIncAndDec.children.addAll(mLblIncrement, mLblDecrement)
 
+        // initially check the bounds
+        checkBounds()
+
         // add all uis into this h-box
         children.addAll(mTxfNumber, mVbxIncAndDec)
 
@@ -61,7 +66,9 @@ class NumberSelector(min: Int, max: Int, initialValue: Int, amountToStepBy: Int)
         mTxfNumber.textProperty().addListener { _, oldValue, newValue ->
             if (newValue.contains("[^0-9]".toRegex()))
                 mTxfNumber.text = oldValue
-            PreferenceManager.write("preferred-problem-num", mTxfNumber.text)
+            mTxfNumber.text.toIntOrNull()?.let {
+                PreferenceManager.write("preferred-problem-num", it.toString())
+            }
         }
 
         // set the key-typed listener
