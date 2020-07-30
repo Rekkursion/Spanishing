@@ -5,8 +5,10 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.VocManager
+import rekkursion.model.Vocabulary
 import rekkursion.util.GenericString
 import rekkursion.util.searchopts.SearchOptions
+import rekkursion.view.listviews.voc.VocabularyListCell
 import rekkursion.view.listviews.voc.VocabularyListView
 import rekkursion.view.searchbar.SearchBar
 import rekkursion.view.searchbar.VocSearchBar
@@ -18,7 +20,14 @@ class VocabularyListPage: StyledVBox() {
     private val mSearchBar = VocSearchBar()
 
     // the view of the vocabulary list
-    private val mVocListView = VocabularyListView(VocManager.copiedVocList)
+    private val mVocListView = VocabularyListView(
+            VocManager.copiedVocList,
+            object: VocabularyListCell.OnCollectionStatusChangeListener {
+                override fun onCollectingOrUncollecting(voc: Vocabulary, isCollecting: Boolean) {
+                    registerLabelForShowingNumOfVocs()
+                }
+            }
+    )
 
     // the label for showing the number of vocabularies
     private val mLblNumOfVocs = StyledLabel(textColor = Colors.NUMBERED.color)
@@ -32,15 +41,9 @@ class VocabularyListPage: StyledVBox() {
         mLblNumOfVocs.prefWidthProperty().bind(widthProperty())
         // set the alignment
         mLblNumOfVocs.alignment = Pos.CENTER_RIGHT
-        // set the text
-        mLblNumOfVocs.text = Strings.get(Strings.NumberOfVocs_pre) + VocManager.numOfVocabularies.toString() + Strings.get(Strings.NumberOfVocs_suf)
 
         // register the strings of labels
-        Strings.register(mLblNumOfVocs,
-                GenericString(Strings.NumberOfVocs_pre),
-                GenericString(str = VocManager.numOfVocabularies.toString()),
-                GenericString(Strings.NumberOfVocs_suf)
-        )
+        registerLabelForShowingNumOfVocs()
 
         // add all sub-views into this v-box
         children.addAll(mSearchBar, mVocListView, mLblNumOfVocs)
@@ -51,5 +54,21 @@ class VocabularyListPage: StyledVBox() {
                 mSearchBar.setNumOfFiltered(mVocListView.filter(newValue, searchOptions))
             }
         })
+    }
+
+    /* ======================================== */
+
+    // register/re-register the label for showing the number of vocabularies
+    private fun registerLabelForShowingNumOfVocs() {
+        Thread {
+            // register the strings of labels
+            Strings.register(mLblNumOfVocs,
+                    GenericString(Strings.NumberOfVocs_pre),
+                    GenericString(str = VocManager.numOfVocabularies.toString()),
+                    GenericString(Strings.NumberOfVocs_mid),
+                    GenericString(str = VocManager.copiedCollectedList.size.toString()),
+                    GenericString(Strings.NumberOfVocs_suf)
+            )
+        }.start()
     }
 }

@@ -10,7 +10,10 @@ import rekkursion.manager.VocManager
 import rekkursion.model.Vocabulary
 import rekkursion.view.StarButton
 
-class VocabularyListCell: ListCell<Vocabulary>() {
+class VocabularyListCell(onCollectionStatusChangeListener: OnCollectionStatusChangeListener? = null): ListCell<Vocabulary>() {
+    // the listener for collecting or uncollecting a certain vocabulary
+    private var mOnCollectionStatusChangeListener: OnCollectionStatusChangeListener? = onCollectionStatusChangeListener
+
     private val mAnchorPane = AnchorPane()
     private val mVbxContent = VBox()
     private val mHbxEspAndPosp = HBox()
@@ -58,6 +61,7 @@ class VocabularyListCell: ListCell<Vocabulary>() {
             mStarButton.setOnPressingListener(object: StarButton.OnPressingListener {
                 override fun onPressing(oldValue: Boolean, newValue: Boolean) {
                     VocManager.collectOrUncollect(item, newValue)
+                    mOnCollectionStatusChangeListener?.onCollectingOrUncollecting(item, newValue)
                 }
             })
 
@@ -69,5 +73,12 @@ class VocabularyListCell: ListCell<Vocabulary>() {
         }
         else
             graphic = null
+    }
+
+    /* ======================================== */
+
+    // the interface for collecting or uncollecting a certain vocabulary
+    interface OnCollectionStatusChangeListener {
+        fun onCollectingOrUncollecting(voc: Vocabulary, isCollecting: Boolean)
     }
 }

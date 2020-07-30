@@ -12,6 +12,8 @@
     {"esp": "la primavera"},
     {"esp": "los poderes"},
     {"esp": "el lugareño/la lugareña"},
+    {"esp": "mueble"},
+    {"esp": "derecho/derecha"},
     {"esp": "de antemano"},
     {"esp": "descalzo/descalza"},
     {"esp": "chapotear"},
@@ -22,8 +24,8 @@
     {"esp": "lugareño/lugareña"},
     {"esp": "dibujar"},
     {"esp": "fructífero/fructífera"},
+    {"esp": "izquierdo/izquierda"},
     {"esp": "el tesauro"},
     {"esp": "el Señor"},
-    {"esp": "llegar"},
-    {"esp": "mueble"}
+    {"esp": "llegar"}
 ]

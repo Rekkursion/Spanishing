@@ -7,8 +7,8 @@ import rekkursion.util.VocIO
 object VocManager {
     // read in all vocabularies from a json file
     private val mVocList = VocIO.readAllVocabularies()
-    val numOfVocabularies: Int get() = mVocList.size
     val copiedVocList: ArrayList<Vocabulary> get() = mVocList.clone() as ArrayList<Vocabulary>
+    val numOfVocabularies: Int get() = mVocList.size
     val copiedCollectedList: ArrayList<Vocabulary> get() = mVocList.filter { it.isCollected }.toCollection(arrayListOf()).clone() as ArrayList<Vocabulary>
 
     /* ======================================== */

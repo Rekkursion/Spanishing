@@ -5,12 +5,16 @@ import rekkursion.util.searchopts.SearchOptions
 import rekkursion.view.listviews.AdjustableListView
 import java.util.regex.PatternSyntaxException
 
-class VocabularyListView(vocList: ArrayList<Vocabulary>): AdjustableListView<Vocabulary>(vocList) {
+class VocabularyListView(
+        vocList: ArrayList<Vocabulary>,
+        onCollectionStatusChangeListener: VocabularyListCell.OnCollectionStatusChangeListener? = null)
+    : AdjustableListView<Vocabulary>(vocList) {
+
     init {
         items.addAll(mList)
 
         // set the cell factory
-        setCellFactory { VocabularyListCell() }
+        setCellFactory { VocabularyListCell(onCollectionStatusChangeListener) }
 
         // add the stylesheet of the vocabulary-list-view
         stylesheets.add("rekkursion/css/vocabulary_list_view.css")

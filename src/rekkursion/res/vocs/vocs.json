@@ -31,14 +31,14 @@
         "esp": "los poderes",
         "chi": "授權；權力",
         "posp": "pl",
-        "collected": false,
+        "collected": true,
         "eng": "the authority"
     },
     {
         "esp": "poder",
         "chi": "可以；可能；能；能夠",
         "posp": "aux; v",
-        "collected": false,
+        "collected": true,
         "eng": "can; may; to be able to"
     },
     {
@@ -66,7 +66,7 @@
         "esp": "mueble",
         "chi": "可移動的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "movable"
     },
     {
@@ -451,7 +451,7 @@
         "esp": "derecho/derecha",
         "chi": "右邊的；右手的；直的；直地",
         "posp": "adj; adv",
-        "collected": false,
+        "collected": true,
         "eng": "right; right-hand; straight"
     },
     {
@@ -465,7 +465,7 @@
         "esp": "izquierdo/izquierda",
         "chi": "左邊的；左手的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "left; left-hand"
     },
     {

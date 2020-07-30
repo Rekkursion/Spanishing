@@ -32,16 +32,20 @@ class StarButton(isPressed: Boolean,
 
     // press this star-button
     fun press() {
-        mOnPressingListener?.onPressing(mIsPressed, true)
-        mIsPressed = true
-        render()
+        if (!mIsPressed) {
+            mOnPressingListener?.onPressing(mIsPressed, true)
+            mIsPressed = true
+            render()
+        }
     }
 
     // unpress this star-button
     fun unpress() {
-        mOnPressingListener?.onPressing(mIsPressed, false)
-        mIsPressed = false
-        render()
+        if (mIsPressed) {
+            mOnPressingListener?.onPressing(mIsPressed, false)
+            mIsPressed = false
+            render()
+        }
     }
 
     // render the star according to the pressing status

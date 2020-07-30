@@ -1,5 +1,6 @@
 package rekkursion.enumerate
 
+import javafx.application.Platform
 import javafx.scene.control.*
 import javafx.scene.text.Text
 import javafx.stage.Stage
@@ -43,7 +44,8 @@ enum class Strings(val chi: String, val eng: String) {
 
     // the prefix & suffix for showing the number of vocabularies
     NumberOfVocs_pre("目前共有 ", "Total number of vocabularies: "),
-    NumberOfVocs_suf(" 個單詞。", ""),
+    NumberOfVocs_mid(" 個單詞。已收藏的有 ", ", including "),
+    NumberOfVocs_suf(" 個。", " collected."),
 
     // the button name of single choice problems
     SingleChoiceProblem("單選題型", "Single Choice Problem"),
@@ -163,25 +165,27 @@ enum class Strings(val chi: String, val eng: String) {
 
         // update a certain registered node when notifying it
         private fun updateRegistered(any: Any) {
-            mRegisteredHashMap[any]?.let { strs ->
-                val joined = strs.toString()
+            Platform.runLater {
+                mRegisteredHashMap[any]?.let { strs ->
+                    val joined = strs.toString()
 
-                (any as? Stage)?.title = joined
-                (any as? RadioButton)?.text = joined
-                (any as? Label)?.text = joined
-                (any as? Text)?.text = joined
-                (any as? TextField)?.text = joined
-                (any as? TextArea)?.text = joined
-                (any as? CheckBox)?.text = joined
-                (any as? Button)?.text = joined
-                (any as? ToggleButton)?.text = joined
-                (any as? ComboBox<*>)?.promptText = joined
-                (any as? Spinner<*>)?.promptText = joined
-                (any as? PreferenceField)?.setFieldName(joined)
-                (any as? Alert)?.let {
-                    it.title = strs.get(0)
-                    it.headerText = strs.get(1)
-                    it.contentText = strs.get(2)
+                    (any as? Stage)?.title = joined
+                    (any as? RadioButton)?.text = joined
+                    (any as? Label)?.text = joined
+                    (any as? Text)?.text = joined
+                    (any as? TextField)?.text = joined
+                    (any as? TextArea)?.text = joined
+                    (any as? CheckBox)?.text = joined
+                    (any as? Button)?.text = joined
+                    (any as? ToggleButton)?.text = joined
+                    (any as? ComboBox<*>)?.promptText = joined
+                    (any as? Spinner<*>)?.promptText = joined
+                    (any as? PreferenceField)?.setFieldName(joined)
+                    (any as? Alert)?.let {
+                        it.title = strs.get(0)
+                        it.headerText = strs.get(1)
+                        it.contentText = strs.get(2)
+                    }
                 }
             }
         }
