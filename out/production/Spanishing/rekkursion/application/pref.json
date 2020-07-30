@@ -4,7 +4,7 @@
     "preferred-single-choice-problem-type": 2,
     "window-width": 1280,
     "preferred-problem-num": 100,
-    "is-collected-only": true,
+    "is-collected-only": false,
     "texts-search-on": 7,
     "using-regex": true,
     "window-height": 749.5999755859375,

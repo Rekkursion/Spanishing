@@ -1,5 +1,61 @@
 [
     {
+        "esp": "el/la policía",
+        "chi": "警察；員警",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the police officer; the policeman; the policewoman"
+    },
+    {
+        "esp": "la policía",
+        "chi": "（集合體名詞）警方",
+        "posp": "f",
+        "collected": false,
+        "eng": "the police"
+    },
+    {
+        "esp": "la ropa",
+        "chi": "（集合體名詞）衣服；衣物",
+        "posp": "f",
+        "collected": false,
+        "eng": "the clothes; the clothing"
+    },
+    {
+        "esp": "el poder",
+        "chi": "力量；權力；能力；效力；影響力",
+        "posp": "m",
+        "collected": false,
+        "eng": "the power"
+    },
+    {
+        "esp": "los poderes",
+        "chi": "授權；權力",
+        "posp": "pl",
+        "collected": false,
+        "eng": "the authority"
+    },
+    {
+        "esp": "poder",
+        "chi": "可以；可能；能；能夠",
+        "posp": "aux; v",
+        "collected": false,
+        "eng": "can; may; to be able to"
+    },
+    {
+        "esp": "la ceniza",
+        "chi": "灰；灰燼；煙灰；菸灰",
+        "posp": "f",
+        "collected": false,
+        "eng": "the ash"
+    },
+    {
+        "esp": "querer",
+        "chi": "喜愛；喜歡；想要",
+        "posp": "v",
+        "collected": false,
+        "eng": "to love; to like; to want"
+    },
+    {
         "esp": "el mueble",
         "chi": "家具；傢俱",
         "posp": "m",
@@ -53,7 +109,7 @@
         "chi": "想要；希望",
         "posp": "v",
         "collected": false,
-        "eng": "to want; to wish"
+        "eng": "to want; to wish; to desire"
     },
     {
         "esp": "la oreja",
@@ -1846,6 +1902,13 @@
         "posp": "m; adj",
         "collected": false,
         "eng": "brown"
+    },
+    {
+        "esp": "cenizo/ceniza",
+        "chi": "菸灰色；淺灰色",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "ash gray"
     },
     {
         "esp": "el hormigueo",

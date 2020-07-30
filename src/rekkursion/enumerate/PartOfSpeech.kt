@@ -17,6 +17,7 @@ enum class PartOfSpeech(val abbr: String) {
 
     VERB("v"),
     AUXILIARY_VERB("aux"),
+    AUX_OR_VERB("aux; v"),
 
     ADJECTIVE("adj"),
     ADVERB("adv"),

@@ -1,5 +1,61 @@
 [
     {
+        "esp": "el/la policía",
+        "chi": "警察；員警",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the police officer; the policeman; the policewoman"
+    },
+    {
+        "esp": "la policía",
+        "chi": "（集合體名詞）警方",
+        "posp": "f",
+        "collected": false,
+        "eng": "the police"
+    },
+    {
+        "esp": "la ropa",
+        "chi": "（集合體名詞）衣服；衣物",
+        "posp": "f",
+        "collected": false,
+        "eng": "the clothes; the clothing"
+    },
+    {
+        "esp": "el poder",
+        "chi": "力量；權力；能力；效力；影響力",
+        "posp": "m",
+        "collected": false,
+        "eng": "the power"
+    },
+    {
+        "esp": "los poderes",
+        "chi": "授權；權力",
+        "posp": "pl",
+        "collected": false,
+        "eng": "the authority"
+    },
+    {
+        "esp": "poder",
+        "chi": "可以；可能；能；能夠",
+        "posp": "none",
+        "collected": false,
+        "eng": "can; may; to be able to"
+    },
+    {
+        "esp": "la ceniza",
+        "chi": "灰；灰燼；煙灰；菸灰",
+        "posp": "f",
+        "collected": false,
+        "eng": "the ash"
+    },
+    {
+        "esp": "querer",
+        "chi": "喜愛；喜歡；想要",
+        "posp": "v",
+        "collected": false,
+        "eng": "to love; to like; to want"
+    },
+    {
         "esp": "el mueble",
         "chi": "家具；傢俱",
         "posp": "m",
@@ -31,7 +87,7 @@
         "esp": "dibujar",
         "chi": "素描；繪畫；繪圖",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to draw; to sketch"
     },
     {
@@ -45,7 +101,7 @@
         "esp": "interesar",
         "chi": "使感興趣",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to interest"
     },
     {
@@ -53,7 +109,7 @@
         "chi": "想要；希望",
         "posp": "v",
         "collected": false,
-        "eng": "to want; to wish"
+        "eng": "to want; to wish; to desire"
     },
     {
         "esp": "la oreja",
@@ -1848,108 +1904,115 @@
         "eng": "brown"
     },
     {
+        "esp": "cenizo/ceniza",
+        "chi": "菸灰色；淺灰色",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "ash gray"
+    },
+    {
         "esp": "el hormigueo",
         "chi": "癢；刺痛（感）；焦慮（感）；煩躁（感）",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the tingle; the anxiety"
     },
     {
         "esp": "el lugareño/la lugareña",
         "chi": "本地人；當地人",
         "posp": "m/f",
-        "collected": false,
+        "collected": true,
         "eng": "the local"
     },
     {
         "esp": "lugareño/lugareña",
         "chi": "本地的；當地的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "local; native"
     },
     {
         "esp": "chapotear",
         "chi": "噴；濺；灑",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to splash; to splash around"
     },
     {
         "esp": "el faro",
         "chi": "燈塔；頭燈",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the lighthouse; the headlight"
     },
     {
         "esp": "descalzo/descalza",
         "chi": "裸足的；赤腳的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "barefoot; barefooted"
     },
     {
         "esp": "el guijarro",
         "chi": "卵石；小圓石",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the pebble"
     },
     {
         "esp": "embarcar",
         "chi": "（使）上船",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to board; to embark"
     },
     {
         "esp": "sediento/sedienta",
         "chi": "口渴的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "thirsty"
     },
     {
         "esp": "el columpio",
         "chi": "鞦韆",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the swing"
     },
     {
         "esp": "septentrional",
         "chi": "北方的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "northern (Northern)"
     },
     {
         "esp": "fructífero/fructífera",
         "chi": "有成效的；有成果的；有收穫的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "fruitful"
     },
     {
         "esp": "alquilar",
         "chi": "出租；租賃",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to rent"
     },
     {
         "esp": "el pastizal",
         "chi": "牧場",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the pasture"
     },
     {
         "esp": "el castillo de arena",
         "chi": "沙灘城堡；沙塔",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "sandcastle"
     },
     {
@@ -1984,7 +2047,7 @@
         "esp": "de antemano",
         "chi": "預先；事先",
         "posp": "adv",
-        "collected": false,
+        "collected": true,
         "eng": "in advance; beforehand"
     },
     {
@@ -2012,7 +2075,7 @@
         "esp": "la ocupación",
         "chi": "工作；職業；佔用；佔領；佔據",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the occupation"
     },
     {
@@ -2033,7 +2096,7 @@
         "esp": "el tesauro",
         "chi": "同義詞辭典",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the thesaurus"
     }
 ]
