@@ -51,7 +51,7 @@ class SpellingPage(numOfProblems: Int, pickingScope: PickingScope): ProblemPage(
         mBtnSubmit.setOnAction {
             if (mCurrentProblemIdx < mProblemList.size) {
                 val prob = mProblemList[mCurrentProblemIdx] as SpellingProblem
-                if (prob.getEsp() == mSpellingArea.toString()) {
+                if (mSpellingArea.checkCorrectness()) {
                     if (prob.ansResult == AnsResult.NO_ANSWERED)
                         prob.ansResult = AnsResult.CORRECT
                     showNextProblem()

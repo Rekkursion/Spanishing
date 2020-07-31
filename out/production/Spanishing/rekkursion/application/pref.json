@@ -8,8 +8,8 @@
     "alert-when-finishing": true,
     "posps-search-on": 2147483647,
     "window-width": 1280,
-    "preferred-problem-num": 20,
-    "is-collected-only": false,
+    "preferred-problem-num": 29,
+    "is-collected-only": true,
     "lang": "中文/Chinese",
     "alert-when-skipping": false
 }

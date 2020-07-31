@@ -22,6 +22,9 @@ class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null)
     // the list of text-fields
     private val mTextFieldList = arrayListOf<StyledTextField>()
 
+    // the spare (alternative) answers
+    private val mSpareAnsHashSet = hashSetOf<String>()
+
     init {
         update()
     }
@@ -41,34 +44,62 @@ class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null)
         }
     }
 
+    // check the correctness of spelling
+    fun checkCorrectness(): Boolean = mSpareAnsHashSet.contains(this.toString())
+
     // update the input-area
     private fun update() {
         // clear all sub-views
         children.clear()
         // clear all text-fields
         mTextFieldList.clear()
+        // clear all spare (alternative) answers
+        mSpareAnsHashSet.clear()
 
         // the string-builder to build the spanish component
         val sBuf = StringBuilder()
         // the string-builder to build the non-spanish component
         val nBuf = StringBuilder()
 
+        // add the first possible correct text into the answer-hash-set
+        mVoc?.substringBefore('(')?.trim()?.let { firstAns ->
+            mSpareAnsHashSet.add(firstAns)
+        }
+
         // iterate the string of the vocabulary
-        mVoc?.forEach { ch ->
+        var isInSpareRange = false
+        mVoc?.forEachIndexed { idx, ch ->
             // a spanish alphabet
             if (ch.isEspAlphabet()) {
-                // build the spanish component
-                sBuf.append(ch)
-                // if the non-spanish-builder is not empty, create a label
-                buildComponentUI(nBuf, false)
+                if (!isInSpareRange) {
+                    // build the spanish component
+                    sBuf.append(ch)
+                    // if the non-spanish-builder is not empty, create a label
+                    buildComponentUI(nBuf, false)
+                }
             }
-
             // a NON-spanish alphabet
             else {
-                // build the non-spanish component
-                nBuf.append(ch)
-                // if the spanish-builder is not empty, create a text-field
-                buildComponentUI(sBuf, true)
+                @Suppress("CascadeIf")
+                // it's a left parenthesis
+                if (ch == '(') {
+                    isInSpareRange = true
+                    mVoc?.indexOf(')', idx)?.let { idxOfClosed ->
+                        mSpareAnsHashSet.add(mVoc!!.substring(idx + 1, idxOfClosed).trim())
+                    }
+                }
+                // it's a right parenthesis
+                else if (ch == ')')
+                    isInSpareRange = false
+                // general cases
+                else {
+                    if (!isInSpareRange) {
+                        // build the non-spanish component
+                        nBuf.append(ch)
+                        // if the spanish-builder is not empty, create a text-field
+                        buildComponentUI(sBuf, true)
+                    }
+                }
             }
         }
         // if there's a spanish component at the tail
@@ -83,10 +114,8 @@ class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null)
     // build the ui (text-field or label) of the vocabulary
     private fun buildComponentUI(buf: StringBuilder, isSpanishComponent: Boolean) {
         // the builder is not empty, create a corresponding ui (text-field or label) according to that if it is a spanish component or not
-        if (buf.isNotEmpty()) {
-            // get the built component
-            val component = buf.toString()
-
+        val component = buf.toString()
+        if (component.isNotEmpty()) {
             // is a spanish component
             if (isSpanishComponent) {
                 // if this spanish component is a non-spelled-word, e.g., "de", "en", etc.
@@ -205,5 +234,5 @@ class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null)
             is TextField -> it.text
             else -> ""
         }
-    }
+    }.trim()
 }
