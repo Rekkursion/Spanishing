@@ -14,14 +14,11 @@ open class StyledTextField(width: Double,
     override var textSize: Int = PropertiesManager.Styled.defaultTextSize
         set(value) { field = value; adjustStyle() }
 
-    override var textColor: Color = PropertiesManager.Styled.defaultTextColor
+    override var textColor: Color = textColor
         set(value) { field = value; adjustStyle() }
 
     override var bgColor: Color = PropertiesManager.Styled.defaultTextFieldBgColor
         set(value) { field = value; adjustStyle() }
-
-    // the text color
-    private val mTextColor: Color = textColor
 
     init {
         // adjust css code
@@ -38,6 +35,7 @@ open class StyledTextField(width: Double,
     final override fun adjustStyle() {
         style = "-fx-font-size: $textSize;" +
                 "-fx-text-fill: rgb(${textColor.red * 255}, ${textColor.green * 255}, ${textColor.blue * 255});" +
+                "-fx-prompt-text-fill: rgb(120, 126, 100); }" +
                 "-fx-background-color: rgba(${bgColor.red * 255}, ${bgColor.green * 255}, ${bgColor.blue * 255}, ${bgColor.opacity * 255});"
     }
 }

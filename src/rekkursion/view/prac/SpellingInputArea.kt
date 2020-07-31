@@ -102,6 +102,8 @@ class SpellingInputArea(voc: String? = null, spellingPage: SpellingPage? = null)
                             "",
                             Colors.SPELLING.color
                     )
+                    // show the hint of the first character of this component
+                    textField.promptText = "${component.getOrNull(0)?.toString() ?: ""}..."
                     // set some events of the created text-field
                     setEventsOfSpellingTextField(textField)
                     // add the created text-field into this h-box

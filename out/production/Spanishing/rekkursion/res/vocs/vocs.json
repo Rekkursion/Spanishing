@@ -1,5 +1,47 @@
 [
     {
+        "esp": "la verdad",
+        "chi": "真相",
+        "posp": "f",
+        "collected": false,
+        "eng": "the truth"
+    },
+    {
+        "esp": "¿Verdad? (¿verdad?)",
+        "chi": "對嗎？",
+        "posp": "int",
+        "collected": false,
+        "eng": "Right? (..., right?)"
+    },
+    {
+        "esp": "de verdad",
+        "chi": "真的；真地",
+        "posp": "adj; adv",
+        "collected": false,
+        "eng": "real; really"
+    },
+    {
+        "esp": "la escena",
+        "chi": "場景；舞台",
+        "posp": "f",
+        "collected": false,
+        "eng": "the scene; the stage"
+    },
+    {
+        "esp": "el color",
+        "chi": "顏色",
+        "posp": "m",
+        "collected": false,
+        "eng": "the color"
+    },
+    {
+        "esp": "saber",
+        "chi": "知道；懂得；會...；品嘗",
+        "posp": "v",
+        "collected": false,
+        "eng": "to know; to taste"
+    },
+    {
         "esp": "el/la policía",
         "chi": "警察；員警",
         "posp": "m/f",
@@ -1890,6 +1932,20 @@
         "eng": "sixth"
     },
     {
+        "esp": "séptimo/séptima (sétimo/sétima)",
+        "chi": "第七；第七的；七分之一；七分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "seventh"
+    },
+    {
+        "esp": "enero",
+        "chi": "一月",
+        "posp": "m",
+        "collected": false,
+        "eng": "January"
+    },
+    {
         "esp": "octubre",
         "chi": "十月",
         "posp": "m",
@@ -1909,6 +1965,27 @@
         "posp": "m; adj",
         "collected": false,
         "eng": "ash gray"
+    },
+    {
+        "esp": "ardiente",
+        "chi": "燃燒的；熾熱的；熱情的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "burning; hot; ardent"
+    },
+    {
+        "esp": "la sequedad",
+        "chi": "乾；乾旱；乾燥；乾枯",
+        "posp": "f",
+        "collected": false,
+        "eng": "the dryness"
+    },
+    {
+        "esp": "la langosta",
+        "chi": "龍蝦；龍蝦肉；蝗蟲",
+        "posp": "f",
+        "collected": false,
+        "eng": "the lobster; the locust"
     },
     {
         "esp": "el hormigueo",
@@ -2098,5 +2175,26 @@
         "posp": "m",
         "collected": true,
         "eng": "the thesaurus"
+    },
+    {
+        "esp": "el hilo",
+        "chi": "線；裁縫線",
+        "posp": "m",
+        "collected": false,
+        "eng": "the thread; the string; the yarn"
+    },
+    {
+        "esp": "el mediodía",
+        "chi": "中午",
+        "posp": "m",
+        "collected": false,
+        "eng": "the noon; the midday"
+    },
+    {
+        "esp": "la medianoche",
+        "chi": "午夜",
+        "posp": "f",
+        "collected": false,
+        "eng": "the midnight (the plural form is \"mediasnoches\")"
     }
 ]
