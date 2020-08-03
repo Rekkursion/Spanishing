@@ -5,19 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/application/pref.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spanishing/rekkursion/application/pref.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/application/pref.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/application/pref.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/enumerate/PartOfSpeech.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/enumerate/PartOfSpeech.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/enumerate/Strings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/enumerate/Strings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/PickingPriorityManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/PickingPriorityManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/PropertiesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/PropertiesManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/manager/VocManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/manager/VocManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/model/Vocabulary.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/model/Vocabulary.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/model/problem/Problem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/model/problem/Problem.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rekkursion/res/vocs/collected.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/res/vocs/collected.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/res/vocs/vocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/res/vocs/vocs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/listviews/res/ResultListCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/listviews/res/ResultListCell.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/listviews/voc/VocabularyListCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/listviews/voc/VocabularyListCell.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/prac/ResultPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/prac/ResultPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/styled/StyledGridPane.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/styled/StyledGridPane.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekkursion/view/VocabularyListPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/rekkursion/view/VocabularyListPage.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

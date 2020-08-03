@@ -71,4 +71,10 @@ class VocabularyListPage: StyledVBox() {
             )
         }.start()
     }
+
+    override fun requestFocus() {
+        super.requestFocus()
+        mSearchBar.setNumOfFiltered(mVocListView.filter("", mSearchBar.searchOpts))
+        registerLabelForShowingNumOfVocs()
+    }
 }

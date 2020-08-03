@@ -1,8 +1,8 @@
 {
-    "preferred-picking-scope": 0,
+    "preferred-picking-scope": 1,
     "case-sensitive": true,
     "preferred-single-choice-problem-type": 2,
-    "texts-search-on": 5,
+    "texts-search-on": 7,
     "using-regex": false,
     "window-height": 700,
     "alert-when-finishing": true,

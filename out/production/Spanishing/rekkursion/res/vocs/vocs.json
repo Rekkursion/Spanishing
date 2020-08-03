@@ -2390,7 +2390,7 @@
         "esp": "el hilo",
         "chi": "線；裁縫線",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the thread; the string; the yarn"
     },
     {
@@ -2404,7 +2404,7 @@
         "esp": "la medianoche",
         "chi": "午夜",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the midnight (the plural form is \"mediasnoches\")"
     }
 ]

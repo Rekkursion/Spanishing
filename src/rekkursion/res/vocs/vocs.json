@@ -199,7 +199,7 @@
         "esp": "los poderes",
         "chi": "授權；權力",
         "posp": "pl",
-        "collected": false,
+        "collected": true,
         "eng": "the authority"
     },
     {
@@ -2271,7 +2271,7 @@
         "esp": "septentrional",
         "chi": "北方的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "northern (Northern)"
     },
     {
@@ -2299,7 +2299,7 @@
         "esp": "el castillo de arena",
         "chi": "沙灘城堡；沙塔",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "sandcastle"
     },
     {
@@ -2390,7 +2390,7 @@
         "esp": "el hilo",
         "chi": "線；裁縫線",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the thread; the string; the yarn"
     },
     {
@@ -2404,7 +2404,7 @@
         "esp": "la medianoche",
         "chi": "午夜",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the midnight (the plural form is \"mediasnoches\")"
     }
 ]
