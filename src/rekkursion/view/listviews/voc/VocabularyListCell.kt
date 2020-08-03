@@ -21,7 +21,7 @@ class VocabularyListCell(onCollectionStatusChangeListener: OnCollectionStatusCha
     private val mLblPosp = Label()
     private val mLblChiAndEng = Label()
 
-    private val mStarButton = StarButton(false, 40.0, 40.0)
+    private val mStarButton = StarButton(false, PropertiesManager.sizeOfStarButton, PropertiesManager.sizeOfStarButton)
 
     init {
         // set the spacings of v-box & h-box

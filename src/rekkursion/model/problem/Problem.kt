@@ -13,7 +13,8 @@ abstract class Problem(index: Int, stem: Vocabulary): Copiable, Adjustable<Probl
     val index get() = mIndex
 
     // the vocabulary of this problem's stem
-    protected val mStem = stem
+    protected val mStem = stem.copy()
+    var isCollected get() = mStem.isCollected; set(value) { mStem.isCollected = value }
 
     // the result of answering this single choice problem
     private var mAnsResult = AnsResult.NO_ANSWERED

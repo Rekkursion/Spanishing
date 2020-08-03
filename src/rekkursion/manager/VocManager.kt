@@ -10,7 +10,8 @@ object VocManager {
     private val mVocList = VocIO.readAllVocabularies()
     val copiedVocList: ArrayList<Vocabulary> get() = mVocList.clone() as ArrayList<Vocabulary>
     val numOfVocabularies: Int get() = mVocList.size
-    val copiedCollectedList: ArrayList<Vocabulary> get() = mVocList.filter { it.isCollected }.toCollection(arrayListOf()).clone() as ArrayList<Vocabulary>
+    val copiedCollectedList: ArrayList<Vocabulary> get() =
+        mVocList.filter { it.isCollected }.toCollection(arrayListOf()).clone() as ArrayList<Vocabulary>
 
     /* ======================================== */
 
@@ -49,11 +50,13 @@ object VocManager {
             if (isCollecting) {
                 if (!it.isCollected) {
                     it.isCollected = true
+                    PickingPriorityManager.setCollected(it, true)
                     VocIO.collectOrUncollectCertainVocabulary(it.esp, isCollecting)
                 }
             } else {
                 if (it.isCollected) {
                     it.isCollected = false
+                    PickingPriorityManager.setCollected(it, false)
                     VocIO.collectOrUncollectCertainVocabulary(it.esp, isCollecting)
                 }
             }

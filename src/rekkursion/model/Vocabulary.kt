@@ -21,7 +21,7 @@ class Vocabulary(esp: String, meaning: Meaning, isCollected: Boolean = false): C
     /* ======================================== */
 
     // copy a new vocabulary
-    override fun copy(): Vocabulary = Vocabulary(mEsp, mMeaning.copy())
+    override fun copy(): Vocabulary = Vocabulary(mEsp, mMeaning.copy(), mIsCollected)
 
     // filter the vocabularies by a string (w/ some options like using regex or not, case sensitive or not)
     override fun filterFrom(str: String, searchOptions: SearchOptions): Boolean {
@@ -41,9 +41,7 @@ class Vocabulary(esp: String, meaning: Meaning, isCollected: Boolean = false): C
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Vocabulary
+        if (other !is Vocabulary) return false
 
         if (mEsp != other.mEsp) return false
         if (mMeaning != other.mMeaning) return false
@@ -54,6 +52,7 @@ class Vocabulary(esp: String, meaning: Meaning, isCollected: Boolean = false): C
     override fun hashCode(): Int {
         var result = mEsp.hashCode()
         result = 31 * result + mMeaning.hashCode()
+        //result = 31 * result + mIsCollected.hashCode()
         return result
     }
 

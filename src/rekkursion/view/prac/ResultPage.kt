@@ -33,9 +33,12 @@ class ResultPage(problemList: ArrayList<Problem>): StyledVBox() {
     // the label for showing tested results (one per vocabulary)
     private val mLblTestedResults = StyledLabel(Strings.TestedResults)
 
+    // the label for showing the text of 'collection'
+    private val mLblCollectingTitle = StyledLabel(Strings.Collect)
+
     // the grid-pane for showing the titles of the tested vocabulary list
-    private val mGdpListTitles = StyledGridPane.Builder(3)
-            .setChildren(mLblTestedNo, mLblTestedVocs, mLblTestedResults)
+    private val mGdpListTitles = StyledGridPane.Builder(4)
+            .setChildren(mLblTestedNo, mLblTestedVocs, mLblTestedResults, mLblCollectingTitle)
             .setColumnsPercentWidths(*PropertiesManager.percentWidthsOfColumnsInResultListView)
             .create()
 

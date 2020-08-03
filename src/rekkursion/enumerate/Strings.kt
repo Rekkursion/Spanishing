@@ -135,6 +135,8 @@ enum class Strings(val chi: String, val eng: String) {
     No("不要", "No"),
     // the string of 'submit'
     Submit("送出", "Submit"),
+    // the string of 'collect'
+    Collect("收藏", "Collect"),
     // the string of a colon
     COLON("：", ": "),
 

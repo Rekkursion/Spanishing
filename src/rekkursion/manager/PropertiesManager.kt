@@ -62,13 +62,16 @@ object PropertiesManager {
     const val vocListItemPadding: Double = 4.0
 
     // the list of percent widths of columns used in the result-list-view
-    val percentWidthsOfColumnsInResultListView = doubleArrayOf(10.0, 70.0, 20.0)
+    val percentWidthsOfColumnsInResultListView = doubleArrayOf(10.0, 70.0, 15.0, 5.0)
 
     // words that is no need to be spelled in a spelling problem
-    val nonSpelledWords = hashSetOf("el", "la", "los", "las", "de", "a", "y", "en")
+    val nonSpelledWords = hashSetOf("el", "la", "los", "las", "un", "una", "de", "a", "y", "en")
 
     // the width of a character in the spelling-text-field
     const val widthOfChar: Double = 22.0
+
+    // the size of a regular star-button
+    const val sizeOfStarButton: Double = 40.0
 
     // the list of menu features
     val menuList: Array<String> = arrayOf(

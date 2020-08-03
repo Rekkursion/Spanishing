@@ -6,8 +6,10 @@ import rekkursion.enumerate.Colors
 import rekkursion.enumerate.Strings
 import rekkursion.manager.PreferenceManager
 import rekkursion.manager.PropertiesManager
+import rekkursion.manager.VocManager
 import rekkursion.model.problem.Problem
 import rekkursion.util.digits
+import rekkursion.view.StarButton
 import rekkursion.view.styled.StyledGridPane
 import rekkursion.view.styled.StyledLabel
 
@@ -27,9 +29,11 @@ class ResultListCell(numOfProblems: Int): ListCell<Problem>() {
     // the label for showing the result of the tested vocabulary
     private val mLblResult = StyledLabel()
 
+    private val mStarButton = StarButton(false, PropertiesManager.sizeOfStarButton, PropertiesManager.sizeOfStarButton)
+
     // the container of the cell (a row)
-    private val mGdpRow = StyledGridPane.Builder(3)
-            .setChildren(mLblProblemNo, mScpVoc, mLblResult)
+    private val mGdpRow = StyledGridPane.Builder(4)
+            .setChildren(mLblProblemNo, mScpVoc, mLblResult, mStarButton)
             .setColumnsPercentWidths(*PropertiesManager.percentWidthsOfColumnsInResultListView)
             .create()
 
@@ -47,10 +51,20 @@ class ResultListCell(numOfProblems: Int): ListCell<Problem>() {
 
         // set the contents of the item
         if (item != null && !empty) {
+            // set the pressing-listener on the star-button for collecting this vocabulary
+            mStarButton.setOnPressingListener(object: StarButton.OnPressingListener {
+                override fun onPressing(oldValue: Boolean, newValue: Boolean) {
+                    VocManager.collectOrUncollect(item.toVoc(), newValue)
+                    item.isCollected = newValue
+                }
+            })
+
             mLblProblemNo.text = String.format("%0${mNumOfProblems.digits()}d", item.index + 1)
             mLblVoc.text = item.toString()
             Strings.register(mLblResult, item.ansResult.strEnum)
             mLblResult.textColor = item.ansResult.colorEnum.color
+
+            if (item.isCollected) mStarButton.press() else mStarButton.unpress()
 
             if (graphic != mGdpRow) graphic = mGdpRow
         }

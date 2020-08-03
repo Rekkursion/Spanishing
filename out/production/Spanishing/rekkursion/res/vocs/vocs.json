@@ -1,5 +1,131 @@
 [
     {
+        "esp": "la estación de tren",
+        "chi": "火車站",
+        "posp": "f",
+        "collected": false,
+        "eng": "the train station"
+    },
+    {
+        "esp": "el tren",
+        "chi": "火車",
+        "posp": "m",
+        "collected": false,
+        "eng": "the train"
+    },
+    {
+        "esp": "la rodilla",
+        "chi": "膝蓋",
+        "posp": "f",
+        "collected": false,
+        "eng": "the knee"
+    },
+    {
+        "esp": "estar de rodillas",
+        "chi": "跪；跪下",
+        "posp": "v",
+        "collected": false,
+        "eng": "to kneel"
+    },
+    {
+        "esp": "la sala",
+        "chi": "大廳；客廳；法庭",
+        "posp": "f",
+        "collected": false,
+        "eng": "the hall; the living room; the courtroom"
+    },
+    {
+        "esp": "la cena",
+        "chi": "晚餐",
+        "posp": "f",
+        "collected": false,
+        "eng": "the dinner; the supper"
+    },
+    {
+        "esp": "dar una vuelta",
+        "chi": "散步；（騎車或開車）兜風",
+        "posp": "v",
+        "collected": true,
+        "eng": "to go for a walk; to go for a ride; to go for a drive"
+    },
+    {
+        "esp": "la vuelta",
+        "chi": "轉（方向）；回程；返回",
+        "posp": "f",
+        "collected": false,
+        "eng": "the turn; the return"
+    },
+    {
+        "esp": "el vuelto",
+        "chi": "找錢",
+        "posp": "m",
+        "collected": true,
+        "eng": "(money) the change"
+    },
+    {
+        "esp": "la multitud",
+        "chi": "人群；眾多；許多",
+        "posp": "f",
+        "collected": false,
+        "eng": "the multitude; the crowd"
+    },
+    {
+        "esp": "el tío/la tía",
+        "chi": "叔叔/姑姑；姑丈/嬸嬸；舅舅/阿姨；姨丈/舅媽；伯父/伯母",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the uncle/the aunt"
+    },
+    {
+        "esp": "la estrella",
+        "chi": "星星",
+        "posp": "f",
+        "collected": false,
+        "eng": "the star"
+    },
+    {
+        "esp": "el río",
+        "chi": "河流；溪流",
+        "posp": "m",
+        "collected": false,
+        "eng": "the river; the stream"
+    },
+    {
+        "esp": "comprar",
+        "chi": "購買",
+        "posp": "v",
+        "collected": false,
+        "eng": "to buy; to purchase"
+    },
+    {
+        "esp": "la factura",
+        "chi": "費用清單；帳單",
+        "posp": "f",
+        "collected": false,
+        "eng": "the invoice; the bill"
+    },
+    {
+        "esp": "la madera",
+        "chi": "木頭；木材；天資；天賦",
+        "posp": "f",
+        "collected": false,
+        "eng": "the wood; the timber; the makings"
+    },
+    {
+        "esp": "la memoria",
+        "chi": "記憶；回憶",
+        "posp": "f",
+        "collected": false,
+        "eng": "the memory"
+    },
+    {
+        "esp": "el dolor",
+        "chi": "疼痛；痛苦；悲痛；悲傷",
+        "posp": "m",
+        "collected": false,
+        "eng": "the ache; the pain; the grief; the sorrow"
+    },
+    {
         "esp": "la verdad",
         "chi": "真相",
         "posp": "f",
@@ -17,7 +143,7 @@
         "esp": "de verdad",
         "chi": "真的；真地",
         "posp": "adj; adv",
-        "collected": false,
+        "collected": true,
         "eng": "real; really"
     },
     {
@@ -73,14 +199,14 @@
         "esp": "los poderes",
         "chi": "授權；權力",
         "posp": "pl",
-        "collected": true,
+        "collected": false,
         "eng": "the authority"
     },
     {
         "esp": "poder",
         "chi": "可以；可能；能；能夠",
         "posp": "aux; v",
-        "collected": true,
+        "collected": false,
         "eng": "can; may; to be able to"
     },
     {
@@ -108,7 +234,7 @@
         "esp": "mueble",
         "chi": "可移動的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "movable"
     },
     {
@@ -129,7 +255,7 @@
         "esp": "dibujar",
         "chi": "素描；繪畫；繪圖",
         "posp": "v",
-        "collected": true,
+        "collected": false,
         "eng": "to draw; to sketch"
     },
     {
@@ -143,7 +269,7 @@
         "esp": "interesar",
         "chi": "使感興趣",
         "posp": "v",
-        "collected": true,
+        "collected": false,
         "eng": "to interest"
     },
     {
@@ -213,7 +339,7 @@
         "esp": "llegar",
         "chi": "到達；來到；達成",
         "posp": "v",
-        "collected": true,
+        "collected": false,
         "eng": "to arrive; to come; to reach; (to reach a place) to get"
     },
     {
@@ -255,7 +381,7 @@
         "esp": "la primavera",
         "chi": "春天",
         "posp": "f",
-        "collected": true,
+        "collected": false,
         "eng": "the spring"
     },
     {
@@ -297,14 +423,14 @@
         "esp": "el Señor",
         "chi": "上帝",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the Lord"
     },
     {
         "esp": "señor/señora",
         "chi": "極好的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "awesome"
     },
     {
@@ -493,7 +619,7 @@
         "esp": "derecho/derecha",
         "chi": "右邊的；右手的；直的；直地",
         "posp": "adj; adv",
-        "collected": true,
+        "collected": false,
         "eng": "right; right-hand; straight"
     },
     {
@@ -507,7 +633,7 @@
         "esp": "izquierdo/izquierda",
         "chi": "左邊的；左手的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "left; left-hand"
     },
     {
@@ -1478,10 +1604,10 @@
     },
     {
         "esp": "el tiempo",
-        "chi": "時間",
+        "chi": "時間；天氣",
         "posp": "m",
         "collected": false,
-        "eng": "the time"
+        "eng": "the time; the weather"
     },
     {
         "esp": "tener",
@@ -1925,6 +2051,41 @@
         "eng": "one hundred"
     },
     {
+        "esp": "primero/primera",
+        "chi": "第一；第一的；首要的；首先",
+        "posp": "m/f; adj; adv",
+        "collected": false,
+        "eng": "first"
+    },
+    {
+        "esp": "segundo/segunda",
+        "chi": "第二；第二的；次要的；其次",
+        "posp": "m/f; adj; adv",
+        "collected": false,
+        "eng": "second"
+    },
+    {
+        "esp": "tercero/tercera",
+        "chi": "第三；第三的；次次要的；其三",
+        "posp": "m/f; adj; adv",
+        "collected": false,
+        "eng": "third"
+    },
+    {
+        "esp": "cuarto/cuarta",
+        "chi": "第四；第四的；四分之一；四分之一的；（陽）房間",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "fourth; (m.) the (bed)room"
+    },
+    {
+        "esp": "quinto/quinta",
+        "chi": "第五；第五的；五分之一；五分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "fifth"
+    },
+    {
         "esp": "sexto/sexta",
         "chi": "第六；第六的；六分之一；六分之一的",
         "posp": "m/f; adj",
@@ -1937,6 +2098,34 @@
         "posp": "m/f; adj",
         "collected": false,
         "eng": "seventh"
+    },
+    {
+        "esp": "octavo/octava",
+        "chi": "第八；第八的；八分之一；八分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "eighth"
+    },
+    {
+        "esp": "noveno/novena",
+        "chi": "第九；第九的；九分之一；九分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "ninth"
+    },
+    {
+        "esp": "décimo/décima",
+        "chi": "第十；第十的；十分之一；十分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "tenth"
+    },
+    {
+        "esp": "el miércoles",
+        "chi": "星期三",
+        "posp": "m",
+        "collected": false,
+        "eng": "Wednesday"
     },
     {
         "esp": "enero",
@@ -1967,10 +2156,31 @@
         "eng": "ash gray"
     },
     {
+        "esp": "el cuaderno",
+        "chi": "筆記本；練習本",
+        "posp": "m",
+        "collected": false,
+        "eng": "the notebook; the exercise book"
+    },
+    {
+        "esp": "agostar",
+        "chi": "使乾涸；使乾枯",
+        "posp": "v",
+        "collected": true,
+        "eng": "to parch"
+    },
+    {
+        "esp": "el sorbo",
+        "chi": "吸吮；一口",
+        "posp": "m",
+        "collected": true,
+        "eng": "the sip"
+    },
+    {
         "esp": "ardiente",
         "chi": "燃燒的；熾熱的；熱情的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "burning; hot; ardent"
     },
     {
@@ -1984,7 +2194,7 @@
         "esp": "la langosta",
         "chi": "龍蝦；龍蝦肉；蝗蟲",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the lobster; the locust"
     },
     {
@@ -1998,14 +2208,14 @@
         "esp": "el lugareño/la lugareña",
         "chi": "本地人；當地人",
         "posp": "m/f",
-        "collected": true,
+        "collected": false,
         "eng": "the local"
     },
     {
         "esp": "lugareño/lugareña",
         "chi": "本地的；當地的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "local; native"
     },
     {
@@ -2019,14 +2229,14 @@
         "esp": "el faro",
         "chi": "燈塔；頭燈",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the lighthouse; the headlight"
     },
     {
         "esp": "descalzo/descalza",
         "chi": "裸足的；赤腳的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "barefoot; barefooted"
     },
     {
@@ -2047,49 +2257,49 @@
         "esp": "sediento/sedienta",
         "chi": "口渴的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "thirsty"
     },
     {
         "esp": "el columpio",
         "chi": "鞦韆",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the swing"
     },
     {
         "esp": "septentrional",
         "chi": "北方的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "northern (Northern)"
     },
     {
         "esp": "fructífero/fructífera",
         "chi": "有成效的；有成果的；有收穫的",
         "posp": "adj",
-        "collected": true,
+        "collected": false,
         "eng": "fruitful"
     },
     {
         "esp": "alquilar",
         "chi": "出租；租賃",
         "posp": "v",
-        "collected": true,
+        "collected": false,
         "eng": "to rent"
     },
     {
         "esp": "el pastizal",
         "chi": "牧場",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the pasture"
     },
     {
         "esp": "el castillo de arena",
         "chi": "沙灘城堡；沙塔",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "sandcastle"
     },
     {
@@ -2124,7 +2334,7 @@
         "esp": "de antemano",
         "chi": "預先；事先",
         "posp": "adv",
-        "collected": true,
+        "collected": false,
         "eng": "in advance; beforehand"
     },
     {
@@ -2152,7 +2362,7 @@
         "esp": "la ocupación",
         "chi": "工作；職業；佔用；佔領；佔據",
         "posp": "f",
-        "collected": true,
+        "collected": false,
         "eng": "the occupation"
     },
     {
@@ -2173,14 +2383,14 @@
         "esp": "el tesauro",
         "chi": "同義詞辭典",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the thesaurus"
     },
     {
         "esp": "el hilo",
         "chi": "線；裁縫線",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the thread; the string; the yarn"
     },
     {

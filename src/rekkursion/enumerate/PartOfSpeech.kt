@@ -11,6 +11,7 @@ enum class PartOfSpeech(val abbr: String) {
 
     M_OR_ADJ("m; adj"),
     M_OR_F_OR_ADJ("m/f; adj"),
+    M_OR_F_OR_ADJ_OR_ADV("m/f; adj; adv"),
 
     DEFINITE_ARTICLE("art.d"),
     INDEFINITE_ARTICLE("art.i"),

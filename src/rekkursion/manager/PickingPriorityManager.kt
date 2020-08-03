@@ -33,8 +33,16 @@ object PickingPriorityManager {
         while (true) {
             val idx = ThreadLocalRandom.current().nextInt(0, size)
             if (scope == PickingScope.ALL_VOCS || collectedList.contains(arr[idx].voc))
-            if (arr[idx].check())
-                return arr[idx].voc
+                if (arr[idx].check()) {
+                    return arr[idx].voc
+                }
+        }
+    }
+
+    // set the collected-status of a certain vocabulary
+    fun setCollected(voc: Vocabulary, isCollected: Boolean) {
+        mPQ.filter { it.voc == voc }.getOrNull(0)?.let {
+            it.isCollected = isCollected
         }
     }
 
@@ -45,6 +53,7 @@ object PickingPriorityManager {
         // the vocabulary
         private val mVoc = voc.copy()
         val voc get() = mVoc.copy()
+        var isCollected get() = mVoc.isCollected; set(value) { mVoc.isCollected = value }
 
         // the weight used when picking vocabularies
         private var mWeight = 1.0
