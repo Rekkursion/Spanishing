@@ -1,14 +1,14 @@
 {
     "preferred-picking-scope": 0,
     "case-sensitive": true,
-    "preferred-single-choice-problem-type": 2,
+    "preferred-single-choice-problem-type": 0,
     "texts-search-on": 7,
     "using-regex": false,
     "window-height": 700,
     "alert-when-finishing": true,
     "posps-search-on": 2147483647,
     "window-width": 1280,
-    "preferred-problem-num": 10,
+    "preferred-problem-num": 100,
     "is-collected-only": false,
     "lang": "中文/Chinese",
     "alert-when-skipping": false

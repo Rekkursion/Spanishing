@@ -3,7 +3,11 @@ package rekkursion.util
 import javafx.scene.control.Alert
 import org.json.JSONArray
 import org.json.JSONObject
+import rekkursion.enumerate.ConjugationType
 import rekkursion.enumerate.PartOfSpeech
+import rekkursion.enumerate.Persona
+import rekkursion.enumerate.Tense
+import rekkursion.model.Conjugation
 import rekkursion.model.Meaning
 import rekkursion.model.Vocabulary
 import java.io.*
@@ -18,6 +22,9 @@ object VocIO {
 
     // the filename of collected vocabularies
     private const val mCollectedVocsFilename = "src/rekkursion/res/vocs/collected.json"
+
+    // the filename of conjugations of verbs
+    private const val mVerbConjugationsFilename = "D:\\rekkursion\\mooc\\spanish\\spanish_verbs.json"
 
     // read all vocabularies from a json file
     fun readAllVocabularies(): ArrayList<Vocabulary> {
@@ -76,6 +83,9 @@ object VocIO {
 
         // write all vocabularies into another file
         writeAllVocabularies(ret)
+
+        // read conjugations of all read-in verbs
+        readConjugations(ret)
 
         // return the result list
         return ret
@@ -171,5 +181,97 @@ object VocIO {
 
         // return the result list
         return ret
+    }
+
+    // read conjugations of all verbs
+    private fun readConjugations(vocList: ArrayList<Vocabulary>) {
+        // the string of json content
+        var jsonString = ""
+
+        // get the json content from a certain file
+        try {
+            val file = File(mVerbConjugationsFilename)
+            val fis = FileInputStream(file)
+            val byteArr = fis.readAllBytes()
+            fis.close()
+            jsonString = String(byteArr, Charset.forName("UTF-8"))
+        } catch (e: FileNotFoundException) {}
+
+        // read the json content
+        try {
+            // iterate through the array of verbs
+            JSONArray(jsonString).forEach { verb ->
+                try {
+                    val v = verb as JSONObject
+                    val esp = v.optString("esp", "")
+                    if (esp.isNotEmpty()) {
+                        // create a builder of the conjugation
+                        val builder = Conjugation.Builder(esp)
+
+                        // get the irregular conjugations object
+                        v.optJSONObject("irr")?.let { irr ->
+                            // participles (present and/or past)
+                            buildParticiples(builder, irr.optJSONObject("participles"))
+
+                            // indicative conjugations
+                            buildIndicativeConjugations(builder, irr.optJSONObject("indicative"))
+                        }
+
+                        val conj = builder.create()
+                        println(conj.toString())
+                    }
+                } catch (e: Exception) {}
+            }
+        } catch (e: Exception) { e.printStackTrace() }
+    }
+
+    // the helper function to build participles
+    private fun buildParticiples(builder: Conjugation.Builder, par: JSONObject?) {
+        builder.setParticiples(par?.optString("present", null), par?.optString("past", null))
+    }
+
+    // the helper function to build conjugations of the indicative
+    private fun buildIndicativeConjugations(builder: Conjugation.Builder, ind: JSONObject?) {
+        val present = ind?.optJSONObject("present")
+        val preterite = ind?.optJSONObject("preterite")
+        val imperfect = ind?.optJSONObject("imperfect")
+        val conditional = ind?.optJSONObject("conditional")
+        val future = ind?.optJSONObject("future")
+
+        builder
+                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.PRESENT, present?.optString("y", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.PRESENT, present?.optString("t", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.PRESENT, present?.optString("ud", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.PRESENT, present?.optString("n", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.PRESENT, present?.optString("v", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.PRESENT, present?.optString("uds", null))
+
+                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.PRETERITE, preterite?.optString("y", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.PRETERITE, preterite?.optString("t", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.PRETERITE, preterite?.optString("ud", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.PRETERITE, preterite?.optString("n", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.PRETERITE, preterite?.optString("v", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.PRETERITE, preterite?.optString("uds", null))
+
+                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.IMPERFECT, imperfect?.optString("y", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.IMPERFECT, imperfect?.optString("t", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.IMPERFECT, imperfect?.optString("ud", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.IMPERFECT, imperfect?.optString("n", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.IMPERFECT, imperfect?.optString("v", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.IMPERFECT, imperfect?.optString("uds", null))
+
+                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.CONDITIONAL, conditional?.optString("y", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.CONDITIONAL, conditional?.optString("t", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.CONDITIONAL, conditional?.optString("ud", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.CONDITIONAL, conditional?.optString("n", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.CONDITIONAL, conditional?.optString("v", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.CONDITIONAL, conditional?.optString("uds", null))
+
+                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.FUTURE, future?.optString("y", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.FUTURE, future?.optString("t", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.FUTURE, future?.optString("ud", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.FUTURE, future?.optString("n", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.FUTURE, future?.optString("v", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.FUTURE, future?.optString("uds", null))
     }
 }
