@@ -8,6 +8,7 @@ enum class PartOfSpeech(val abbr: String) {
     M_OR_F_NOUN("m/f"),
     PLURAL("pl"),
     PRONOUN("pron"),
+    COUNTRY_NOUN("country"),
 
     M_OR_ADJ("m; adj"),
     M_OR_F_OR_ADJ("m/f; adj"),

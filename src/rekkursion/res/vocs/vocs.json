@@ -1,5 +1,334 @@
 [
     {
+        "esp": "crítico/crítica",
+        "chi": "關鍵的；決定性的；危急的；批評的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "critical"
+    },
+    {
+        "esp": "el crítico/la crítica",
+        "chi": "評論員；評論家；評論人；評論者；批評者",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the critic; the reviewer"
+    },
+    {
+        "esp": "el autobús",
+        "chi": "公共汽車；公車；公交；巴士",
+        "posp": "m",
+        "collected": false,
+        "eng": "the bus; (transportation) the coach"
+    },
+    {
+        "esp": "la radio",
+        "chi": "收音機；廣播",
+        "posp": "f",
+        "collected": false,
+        "eng": "the radio"
+    },
+    {
+        "esp": "el radio",
+        "chi": "半徑；（化學）鐳",
+        "posp": "m",
+        "collected": false,
+        "eng": "the radius; (chemistry) the radium"
+    },
+    {
+        "esp": "radiar",
+        "chi": "輻射；放射；發散；廣播；放送",
+        "posp": "v",
+        "collected": false,
+        "eng": "to radiate; to broadcast"
+    },
+    {
+        "esp": "la isla",
+        "chi": "島；嶼；島嶼",
+        "posp": "f",
+        "collected": false,
+        "eng": "the island; the isle"
+    },
+    {
+        "esp": "el plan",
+        "chi": "計劃；規劃；打算",
+        "posp": "m",
+        "collected": false,
+        "eng": "the plan; the program"
+    },
+    {
+        "esp": "el kétchup",
+        "chi": "番茄醬",
+        "posp": "m",
+        "collected": false,
+        "eng": "the ketchup; the catsup"
+    },
+    {
+        "esp": "deber",
+        "chi": "必須；應該；欠",
+        "posp": "aux; v",
+        "collected": false,
+        "eng": "must; have to; should; ought to; to owe"
+    },
+    {
+        "esp": "el deber",
+        "chi": "責任；義務",
+        "posp": "m",
+        "collected": false,
+        "eng": "the duty; the responsibility; the obligation"
+    },
+    {
+        "esp": "los deberes",
+        "chi": "家庭作業；功課",
+        "posp": "pl",
+        "collected": false,
+        "eng": "the homework(s)"
+    },
+    {
+        "esp": "la escalera",
+        "chi": "梯子；樓梯；（撲克牌）順子",
+        "posp": "f",
+        "collected": false,
+        "eng": "the stair; the staircase; the ladder; (cards) the straight"
+    },
+    {
+        "esp": "libre",
+        "chi": "自由的；免費的；空閒的；沒有佔用的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "free; spare; vacant"
+    },
+    {
+        "esp": "el comercio",
+        "chi": "商業；商務；生意；貿易",
+        "posp": "m",
+        "collected": false,
+        "eng": "the commerce; the business; the trade"
+    },
+    {
+        "esp": "comercial",
+        "chi": "商業的；生意的；貿易的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "commercial; business; trading"
+    },
+    {
+        "esp": "jugar",
+        "chi": "玩；賭；賭博",
+        "posp": "v",
+        "collected": false,
+        "eng": "to play; to bet; to gamble"
+    },
+    {
+        "esp": "el agujero",
+        "chi": "洞；坑；虧損；赤字",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hole; the deficit"
+    },
+    {
+        "esp": "el burro/la burra",
+        "chi": "驢子；蠢蛋；傻逼；固執的人",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the donkey; the moron; the stubborn person"
+    },
+    {
+        "esp": "el hotel",
+        "chi": "旅店；旅館；飯店；酒店",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hotel"
+    },
+    {
+        "esp": "la nota",
+        "chi": "成績；筆記；標記；註記；標註；便條；便利貼；注意事項；備忘；備忘錄；音符",
+        "posp": "f",
+        "collected": false,
+        "eng": "the grade; the note; the mark; the memo"
+    },
+    {
+        "esp": "la nieve",
+        "chi": "雪",
+        "posp": "f",
+        "collected": false,
+        "eng": "the snow"
+    },
+    {
+        "esp": "nevar",
+        "chi": "下雪；使變雪白",
+        "posp": "v",
+        "collected": true,
+        "eng": "to snow"
+    },
+    {
+        "esp": "nevado/nevada",
+        "chi": "多雪的；積雪的；雪白的",
+        "posp": "adj",
+        "collected": true,
+        "eng": "snowy; snow-capped; snow-covered; white"
+    },
+    {
+        "esp": "la nube",
+        "chi": "雲；雲朵；一大群（人或昆蟲）",
+        "posp": "f",
+        "collected": false,
+        "eng": "the cloud; the swarm"
+    },
+    {
+        "esp": "nublado/nublada",
+        "chi": "有雲的；多雲的；灰濛濛的；被遮蔽的",
+        "posp": "adj",
+        "collected": true,
+        "eng": "cloudy; clouded"
+    },
+    {
+        "esp": "nublar",
+        "chi": "遮蔽；蒙蔽；遮蓋；蓋住；隱藏；使模糊；使朦朧；使不清晰",
+        "posp": "v",
+        "collected": true,
+        "eng": "to cloud; to obscure; to blur"
+    },
+    {
+        "esp": "el cuidado",
+        "chi": "小心；細心；關心；照顧；照料",
+        "posp": "m",
+        "collected": false,
+        "eng": "the care"
+    },
+    {
+        "esp": "cuidado/cuidada",
+        "chi": "小心的；細心的；關心的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "careful"
+    },
+    {
+        "esp": "¡Cuidado!",
+        "chi": "小心！；注意！",
+        "posp": "int",
+        "collected": false,
+        "eng": "Be careful!; Watch out!"
+    },
+    {
+        "esp": "cuidar",
+        "chi": "注意；照顧；照料",
+        "posp": "v",
+        "collected": false,
+        "eng": "to care; to look after; to take care of; to pay attention"
+    },
+    {
+        "esp": "el espejo",
+        "chi": "鏡子；反映",
+        "posp": "m",
+        "collected": false,
+        "eng": "the mirror; the reflection"
+    },
+    {
+        "esp": "el capitán/la capitana",
+        "chi": "船長；艦長；隊長；指揮官",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the captain"
+    },
+    {
+        "esp": "la película",
+        "chi": "電影",
+        "posp": "f",
+        "collected": false,
+        "eng": "the movie; the film"
+    },
+    {
+        "esp": "la distancia",
+        "chi": "距離；間隔；差別",
+        "posp": "f",
+        "collected": false,
+        "eng": "the distance; the gap; the difference"
+    },
+    {
+        "esp": "dormir",
+        "chi": "睡覺",
+        "posp": "v",
+        "collected": false,
+        "eng": "to sleep"
+    },
+    {
+        "esp": "el hueso",
+        "chi": "骨頭；果核",
+        "posp": "m",
+        "collected": false,
+        "eng": "the bone; (fruit) the pit"
+    },
+    {
+        "esp": "el sistema",
+        "chi": "系統",
+        "posp": "m",
+        "collected": false,
+        "eng": "the system"
+    },
+    {
+        "esp": "el miedo",
+        "chi": "恐懼；害怕；憂慮",
+        "posp": "m",
+        "collected": false,
+        "eng": "the fear; the dread"
+    },
+    {
+        "esp": "el rey/la reina",
+        "chi": "國王/皇后",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the king/the queen"
+    },
+    {
+        "esp": "el jabón",
+        "chi": "肥皂；香皂",
+        "posp": "m",
+        "collected": false,
+        "eng": "the soap"
+    },
+    {
+        "esp": "el sombrero",
+        "chi": "帽子；墨西哥帽",
+        "posp": "m",
+        "collected": false,
+        "eng": "the hat; the cap; the sombrero"
+    },
+    {
+        "esp": "el cóctel (el coctel)",
+        "chi": "雞尾酒；雞尾酒會",
+        "posp": "m",
+        "collected": false,
+        "eng": "the cocktail; the cocktail party"
+    },
+    {
+        "esp": "despertar",
+        "chi": "叫醒；使清醒",
+        "posp": "v",
+        "collected": false,
+        "eng": "to awaken; to wake up"
+    },
+    {
+        "esp": "la taza",
+        "chi": "（有把手的）杯子；馬克杯",
+        "posp": "f",
+        "collected": false,
+        "eng": "the cup; the mug"
+    },
+    {
+        "esp": "doler",
+        "chi": "感到疼痛",
+        "posp": "v",
+        "collected": false,
+        "eng": "to hurt; to ache; to feel pain"
+    },
+    {
+        "esp": "valiente",
+        "chi": "勇敢的；勇猛的；英勇的；果敢的；大膽的；有勇氣的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "brave; courageous"
+    },
+    {
         "esp": "la bebida",
         "chi": "飲料；飲品",
         "posp": "f",
@@ -45,7 +374,7 @@
         "esp": "la oscuridad (la obscuridad)",
         "chi": "黑暗；無名；模糊；朦朧",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the dark; the darkness; the obscurity"
     },
     {
@@ -752,7 +1081,7 @@
         "esp": "estar de rodillas",
         "chi": "跪；跪下",
         "posp": "v",
-        "collected": true,
+        "collected": false,
         "eng": "to kneel"
     },
     {
@@ -773,7 +1102,7 @@
         "esp": "dar una vuelta",
         "chi": "散步；（騎車或開車）兜風",
         "posp": "v",
-        "collected": true,
+        "collected": false,
         "eng": "to go for a walk; to go for a ride; to go for a drive"
     },
     {
@@ -1326,7 +1655,7 @@
         "esp": "el pedazo",
         "chi": "片；塊",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the piece; the slice"
     },
     {
@@ -2513,6 +2842,69 @@
         "eng": "the traffic light"
     },
     {
+        "esp": "el este",
+        "chi": "東；東風；東方的",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "the east; eastern"
+    },
+    {
+        "esp": "el oeste",
+        "chi": "西；西風；西方的",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "the west; western"
+    },
+    {
+        "esp": "el sur",
+        "chi": "南；南風；南方的",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "the south; southern"
+    },
+    {
+        "esp": "el norte",
+        "chi": "北；北風；北方的",
+        "posp": "m; adj",
+        "collected": false,
+        "eng": "the north; northern"
+    },
+    {
+        "esp": "Norte América (América del Norte)",
+        "chi": "北美",
+        "posp": "country",
+        "collected": false,
+        "eng": "North America"
+    },
+    {
+        "esp": "Canadá",
+        "chi": "加拿大",
+        "posp": "country",
+        "collected": false,
+        "eng": "Canada"
+    },
+    {
+        "esp": "el/la canadiense",
+        "chi": "加拿大人；加拿大的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "Canadian"
+    },
+    {
+        "esp": "Groenlandia",
+        "chi": "格陵蘭",
+        "posp": "country",
+        "collected": false,
+        "eng": "Greenland"
+    },
+    {
+        "esp": "el/la groenlandés",
+        "chi": "格陵蘭人；格陵蘭的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "Greenlander; Greenlandic"
+    },
+    {
         "esp": "cero",
         "chi": "零",
         "posp": "m; adj",
@@ -2933,6 +3325,83 @@
         "eng": "tenth"
     },
     {
+        "esp": "undécimo/undécima (decimoprimero/decimoprimera)",
+        "chi": "第十一；第十一的；十一分之一；十一分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "eleventh"
+    },
+    {
+        "esp": "duodécimo/duodécima (decimosegundo/decimosegunda)",
+        "chi": "第十二；第十二的；十二分之一；十二分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "twelfth"
+    },
+    {
+        "esp": "decimotercero/decimotercera",
+        "chi": "第十三；第十三的；十三分之一；十三分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "thirteenth"
+    },
+    {
+        "esp": "decimocuarto/decimocuarta",
+        "chi": "第十四；第十四的；十四分之一；十四分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "fourteenth"
+    },
+    {
+        "esp": "decimoquinto/decimoquinta",
+        "chi": "第十五；第十五的；十五分之一；十五分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "fifteenth"
+    },
+    {
+        "esp": "decimosexto/decimosexta",
+        "chi": "第十六；第十六的；十六分之一；十六分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "sixteenth"
+    },
+    {
+        "esp": "decimoséptimo/decimoséptima",
+        "chi": "第十七；第十七的；十七分之一；十七分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "seventeenth"
+    },
+    {
+        "esp": "decimoctavo/decimoctava",
+        "chi": "第十八；第十八的；十八分之一；十八分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "eighteenth"
+    },
+    {
+        "esp": "decimonoveno/decimonovena",
+        "chi": "第十九；第十九的；十九分之一；十九分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "nineteenth"
+    },
+    {
+        "esp": "vigésimo/vigésima",
+        "chi": "第二十；第二十的；二十分之一；二十分之一的",
+        "posp": "m/f; adj",
+        "collected": false,
+        "eng": "twentieth"
+    },
+    {
+        "esp": "el lunes",
+        "chi": "星期一",
+        "posp": "m",
+        "collected": false,
+        "eng": "Monday"
+    },
+    {
         "esp": "el miércoles",
         "chi": "星期三",
         "posp": "m",
@@ -2940,11 +3409,32 @@
         "eng": "Wednesday"
     },
     {
+        "esp": "el jueves",
+        "chi": "星期四",
+        "posp": "m",
+        "collected": false,
+        "eng": "Thursday"
+    },
+    {
         "esp": "enero",
         "chi": "一月",
         "posp": "m",
         "collected": false,
         "eng": "January"
+    },
+    {
+        "esp": "febrero",
+        "chi": "二月",
+        "posp": "m",
+        "collected": false,
+        "eng": "February"
+    },
+    {
+        "esp": "marzo",
+        "chi": "三月",
+        "posp": "m",
+        "collected": false,
+        "eng": "March"
     },
     {
         "esp": "octubre",
@@ -2975,115 +3465,192 @@
         "eng": "pink"
     },
     {
+        "esp": "el pegamento",
+        "chi": "膠水；黏合劑；黏著劑",
+        "posp": "m",
+        "collected": false,
+        "eng": "the glue; the adhesive"
+    },
+    {
+        "esp": "faltar a clase",
+        "chi": "從課堂缺席",
+        "posp": "v",
+        "collected": false,
+        "eng": "to miss class; to skip class"
+    },
+    {
+        "esp": "el anaquel",
+        "chi": "架子；書架",
+        "posp": "m",
+        "collected": false,
+        "eng": "the shelf; the rack"
+    },
+    {
+        "esp": "la rayuela",
+        "chi": "跳房子/跳格子遊戲",
+        "posp": "f",
+        "collected": false,
+        "eng": "the hopscotch"
+    },
+    {
+        "esp": "el capítulo",
+        "chi": "篇；章；節；回；篇章；章節；章回",
+        "posp": "m",
+        "collected": false,
+        "eng": "the chapter"
+    },
+    {
+        "esp": "la engrapadora",
+        "chi": "訂書機",
+        "posp": "f",
+        "collected": false,
+        "eng": "the stapler"
+    },
+    {
+        "esp": "el cuadro de honor",
+        "chi": "榮譽名冊；勇士名冊；優等生名冊",
+        "posp": "m",
+        "collected": false,
+        "eng": "the honor roll"
+    },
+    {
+        "esp": "estudiantil",
+        "chi": "學生的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "student"
+    },
+    {
+        "esp": "calificar",
+        "chi": "評分；打分數；修飾；使有資格；使合格",
+        "posp": "v",
+        "collected": false,
+        "eng": "to grade; to qualify"
+    },
+    {
+        "esp": "el apunte",
+        "chi": "筆記；大綱；概要",
+        "posp": "m",
+        "collected": false,
+        "eng": "the note; the outline"
+    },
+    {
+        "esp": "los útiles escolares",
+        "chi": "學校用品；學生用品",
+        "posp": "pl",
+        "collected": true,
+        "eng": "the classroom materials"
+    },
+    {
         "esp": "el rendimiento",
         "chi": "表現；效率；吞吐率；生產率；（利益）回升",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the performance; the efficiency; the throughput; (profit) the return"
     },
     {
         "esp": "la cartulina",
         "chi": "硬紙板；紙板；卡紙",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the cardboard; the poster board"
     },
     {
         "esp": "hacer la tarea",
         "chi": "做作業/工作/任務",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to do one's homework/job/task"
     },
     {
         "esp": "el mapamundi",
         "chi": "世界地圖",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the world map"
     },
     {
         "esp": "el diestro/la diestra",
         "chi": "右撇子的；右撇子的人",
         "posp": "m/f; adj",
-        "collected": false,
+        "collected": true,
         "eng": "right-handed; the right-handed person"
     },
     {
         "esp": "el zurdo/la zurda",
         "chi": "左撇子的；左撇子的人",
         "posp": "m/f; adj",
-        "collected": false,
+        "collected": true,
         "eng": "left-handed; the left-handed person"
     },
     {
         "esp": "la mochila",
         "chi": "（後）背包；學生背包",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the backpack; the schoolbag"
     },
     {
         "esp": "becar",
         "chi": "提供獎助學金",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to give a scholarship to"
     },
     {
         "esp": "el sacapuntas",
         "chi": "削鉛筆刀；削鉛筆機",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the pencil sharpener"
     },
     {
         "esp": "el bolígrafo (el boli)",
         "chi": "原子筆",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the ballpoint pen; the pen"
     },
     {
         "esp": "ronronear",
         "chi": "發出低沉而平穩的聲音；打呼嚕",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to purr"
     },
     {
         "esp": "el pupitre",
         "chi": "書桌；課桌",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the desk (especially for students)"
     },
     {
         "esp": "el recreo",
         "chi": "（課間）休息時間；娛樂；消遣",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the recess; the break; the recreation"
     },
     {
         "esp": "prestar atención",
         "chi": "注意；關注；留心；留意",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to pay attention"
     },
     {
         "esp": "la docencia",
         "chi": "教師工作；教導；教授；教學（活動）；教育（工作）",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the teaching"
     },
     {
         "esp": "la asignatura",
         "chi": "科系；科目；學科；課程",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "(education) the subject; the course"
     },
     {
@@ -3223,7 +3790,7 @@
         "esp": "el pastizal",
         "chi": "牧場",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the pasture"
     },
     {
@@ -3253,13 +3820,6 @@
         "posp": "adj",
         "collected": false,
         "eng": "summery"
-    },
-    {
-        "esp": "la taza",
-        "chi": "（有把手的）杯子；馬克杯",
-        "posp": "f",
-        "collected": false,
-        "eng": "the cup; the mug"
     },
     {
         "esp": "de antemano",
@@ -3342,7 +3902,7 @@
         "esp": "prestar",
         "chi": "借出；提供；供應；供給",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to lend; to provide"
     },
     {
@@ -3382,7 +3942,7 @@
     },
     {
         "esp": "lavar",
-        "chi": "洗；沖洗；洗（衣服）",
+        "chi": "洗；沖洗；洗滌；洗（衣服）",
         "posp": "v",
         "collected": false,
         "eng": "to wash; to launder"
@@ -3391,7 +3951,7 @@
         "esp": "desayunar",
         "chi": "吃早餐",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to have breakfast"
     },
     {
@@ -3402,17 +3962,17 @@
         "eng": "to feel; to feel sorry for"
     },
     {
-        "esp": "de nuevo/de nueva",
+        "esp": "de nuevo",
         "chi": "重新；再次",
         "posp": "adv",
-        "collected": false,
+        "collected": true,
         "eng": "again; once again"
     },
     {
         "esp": "de vez en cuando",
         "chi": "偶爾",
         "posp": "adv",
-        "collected": false,
+        "collected": true,
         "eng": "once in a while"
     },
     {
@@ -3449,5 +4009,110 @@
         "posp": "v",
         "collected": false,
         "eng": "to frost; to freeze"
+    },
+    {
+        "esp": "los útiles",
+        "chi": "工具；器具；用具；用品",
+        "posp": "pl",
+        "collected": true,
+        "eng": "the tools; the implements; the supplies"
+    },
+    {
+        "esp": "útil",
+        "chi": "有用的；可用的；有幫助的；有益的",
+        "posp": "adj",
+        "collected": true,
+        "eng": "useful; usable; helpful"
+    },
+    {
+        "esp": "inútil",
+        "chi": "沒用的；無用的；無幫助的；無益的",
+        "posp": "adj",
+        "collected": true,
+        "eng": "useless; futile; unhelpful"
+    },
+    {
+        "esp": "el cuadro",
+        "chi": "正方形；表格；圖表；圖畫；繪畫；場景；腳踏車身的支架框",
+        "posp": "m",
+        "collected": false,
+        "eng": "the square; (graph) the table; the chart; the picture; the painting; the scene; the (bicycle's) frame"
+    },
+    {
+        "esp": "el honor",
+        "chi": "榮譽；貞潔；美德",
+        "posp": "m",
+        "collected": false,
+        "eng": "the honor; the virtue"
+    },
+    {
+        "esp": "los honores",
+        "chi": "榮譽勳章；優等的頭銜",
+        "posp": "pl",
+        "collected": false,
+        "eng": "the honors"
+    },
+    {
+        "esp": "engrapar",
+        "chi": "用訂書機訂住或訂起來；用夾具夾住或固定住",
+        "posp": "v",
+        "collected": false,
+        "eng": "to staple; to clamp"
+    },
+    {
+        "esp": "faltar",
+        "chi": "缺席",
+        "posp": "v",
+        "collected": false,
+        "eng": "(not attend) to miss; to skip; to be absent from"
+    },
+    {
+        "esp": "el cabello",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
+    },
+    {
+        "esp": "aun",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
+    },
+    {
+        "esp": "aún",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
+    },
+    {
+        "esp": "todavía",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
+    },
+    {
+        "esp": "bastante",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
+    },
+    {
+        "esp": "nadie",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
+    },
+    {
+        "esp": "respirar",
+        "chi": "",
+        "posp": "none",
+        "collected": false,
+        "eng": ""
     }
 ]

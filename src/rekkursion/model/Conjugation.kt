@@ -1,5 +1,6 @@
 package rekkursion.model
 
+import org.json.JSONArray
 import rekkursion.enumerate.ConjugationType
 import rekkursion.enumerate.Persona
 import rekkursion.enumerate.Tense
@@ -15,10 +16,11 @@ class Conjugation private constructor(esp: String) {
 
         // set a certain conjugation (if there's no conjugation passed, then it will be viewed as a regular conjugation)
         fun setConjugation(conjugationType: ConjugationType, persona: Persona, tense: Tense, conjugation: String? = null): Builder {
-            instance.mConjDict
+            val d = instance.mConjDict
                     .getOrPut(conjugationType) { HashMap() }
                     .getOrPut(persona) { HashMap() }
-                    .put(tense, conjugation ?: instance.getRegularConjugation(conjugationType, persona, tense))
+            if (conjugation != null || !d.containsKey(tense))
+                d.put(tense, conjugation ?: instance.getRegularConjugation(conjugationType, persona, tense))
             return this
         }
 

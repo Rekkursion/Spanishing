@@ -207,15 +207,15 @@ object VocIO {
                     if (esp.isNotEmpty()) {
                         // create a builder of the conjugation
                         val builder = Conjugation.Builder(esp)
+                        // get the irregular conjugations object if this word has one
+                        val irr: JSONObject? = v.optJSONObject("irr")
+                        // get the stem-changer if this word is a stem-changing word
+                        val stmchg = v.optString("stmchg", "")
 
-                        // get the irregular conjugations object
-                        v.optJSONObject("irr")?.let { irr ->
-                            // participles (present and/or past)
-                            buildParticiples(builder, irr.optJSONObject("participles"))
-
-                            // indicative conjugations
-                            buildIndicativeConjugations(builder, irr.optJSONObject("indicative"))
-                        }
+                        // participles (present and/or past)
+                        buildParticiples(builder, irr?.optJSONObject("participles"))
+                        // indicative conjugations
+                        buildIndicativeConjugations(builder, irr?.optJSONObject("indicative"), esp, stmchg)
 
                         val conj = builder.create()
                         println(conj.toString())
@@ -231,7 +231,7 @@ object VocIO {
     }
 
     // the helper function to build conjugations of the indicative
-    private fun buildIndicativeConjugations(builder: Conjugation.Builder, ind: JSONObject?) {
+    private fun buildIndicativeConjugations(builder: Conjugation.Builder, ind: JSONObject?, esp: String, stmchg: String) {
         val present = ind?.optJSONObject("present")
         val preterite = ind?.optJSONObject("preterite")
         val imperfect = ind?.optJSONObject("imperfect")
@@ -239,12 +239,12 @@ object VocIO {
         val future = ind?.optJSONObject("future")
 
         builder
-                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.PRESENT, present?.optString("y", null))
-                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.PRESENT, present?.optString("t", null))
-                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.PRESENT, present?.optString("ud", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.PRESENT, present?.optString("y", null) ?: constructStmchgForm(esp, stmchg, Persona.YO))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.PRESENT, present?.optString("t", null) ?: constructStmchgForm(esp, stmchg, Persona.TÚ))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTED, Tense.PRESENT, present?.optString("ud", null) ?: constructStmchgForm(esp, stmchg, Persona.USTED))
                 .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.PRESENT, present?.optString("n", null))
                 .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.PRESENT, present?.optString("v", null))
-                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.PRESENT, present?.optString("uds", null))
+                .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.PRESENT, present?.optString("uds", null) ?: constructStmchgForm(esp, stmchg, Persona.USTEDES))
 
                 .setConjugation(ConjugationType.INDICATIVE, Persona.YO, Tense.PRETERITE, preterite?.optString("y", null))
                 .setConjugation(ConjugationType.INDICATIVE, Persona.TÚ, Tense.PRETERITE, preterite?.optString("t", null))
@@ -273,5 +273,39 @@ object VocIO {
                 .setConjugation(ConjugationType.INDICATIVE, Persona.NOSOTROS, Tense.FUTURE, future?.optString("n", null))
                 .setConjugation(ConjugationType.INDICATIVE, Persona.VOSOTROS, Tense.FUTURE, future?.optString("v", null))
                 .setConjugation(ConjugationType.INDICATIVE, Persona.USTEDES, Tense.FUTURE, future?.optString("uds", null))
+    }
+
+    // the helper function to construct the stem-changing forms
+    private fun constructStmchgForm(esp: String, stmchg: String, persona: Persona): String? {
+        try {
+            // the index of the '>'
+            val idxOfArrow = stmchg.indexOf('>')
+            if (idxOfArrow == -1)
+                return null
+
+            // get the part in the original word that shall be changed
+            val bef = stmchg.substring(0, idxOfArrow)
+            // get the stem-changer
+            val aft = stmchg.substring(idxOfArrow + 1)
+
+            // find the part in the original word to be changed
+            val idxOfBef = esp.substring(0, esp.length - 2).lastIndexOf(bef[0])
+
+            // construct the stem-changed form (have NOT applied the persona-varying)
+            val stemChanged = esp.replaceRange(idxOfBef..idxOfBef, aft)
+            val changedStem = stemChanged.substring(0, stemChanged.length - 2)
+            val tail = stemChanged.substring(stemChanged.length - 2)
+
+            // construct the persona-varying to the stem-changed form
+            return when (persona) {
+                Persona.YO -> "${changedStem}o"
+                Persona.TÚ -> "$changedStem${if (tail == "ar") "as" else "es"}"
+                Persona.USTED -> "$changedStem${if (tail == "ar") "a" else "e"}"
+                // nosotros- and vosotros- forms do NOT apply the stem-changing rules
+                Persona.NOSOTROS -> null
+                Persona.VOSOTROS -> null
+                Persona.USTEDES -> "$changedStem${if (tail == "ar") "an" else "en"}"
+            }
+        } catch (e: Exception) { return null }
     }
 }
