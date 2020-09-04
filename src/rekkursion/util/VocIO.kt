@@ -84,9 +84,6 @@ object VocIO {
         // write all vocabularies into another file
         writeAllVocabularies(ret)
 
-        // read conjugations of all read-in verbs
-        readConjugations(ret)
-
         // return the result list
         return ret
     }
@@ -184,7 +181,7 @@ object VocIO {
     }
 
     // read conjugations of all verbs
-    private fun readConjugations(vocList: ArrayList<Vocabulary>) {
+    fun readConjugations(): ArrayList<Conjugation> {
         // the string of json content
         var jsonString = ""
 
@@ -196,6 +193,9 @@ object VocIO {
             fis.close()
             jsonString = String(byteArr, Charset.forName("UTF-8"))
         } catch (e: FileNotFoundException) {}
+
+        // the list of conjugations as the return value
+        val ret = arrayListOf<Conjugation>()
 
         // read the json content
         try {
@@ -217,12 +217,15 @@ object VocIO {
                         // indicative conjugations
                         buildIndicativeConjugations(builder, irr?.optJSONObject("indicative"), esp, stmchg)
 
-                        val conj = builder.create()
-                        println(conj.toString())
+                        // add the created conjugation into the return-list
+                        ret.add(builder.create())
                     }
                 } catch (e: Exception) {}
             }
         } catch (e: Exception) { e.printStackTrace() }
+
+        // return the built list of conjugations
+        return ret
     }
 
     // the helper function to build participles

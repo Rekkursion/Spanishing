@@ -1,5 +1,166 @@
 [
     {
+        "esp": "la chaqueta",
+        "chi": "夾克；正式外套裝",
+        "posp": "f",
+        "collected": false,
+        "eng": "the jacket; the blazer"
+    },
+    {
+        "esp": "el arte",
+        "chi": "藝術；藝能；技藝；技能",
+        "posp": "f",
+        "collected": false,
+        "eng": "the art; the artistry; the skill"
+    },
+    {
+        "esp": "la llave",
+        "chi": "鑰匙；水龍頭；開關；扳手",
+        "posp": "f",
+        "collected": false,
+        "eng": "the key; the faucet; the tap; the switch; the wrench; the spanner"
+    },
+    {
+        "esp": "el extranjero/la extranjera",
+        "chi": "外國；外國人",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the abroad; the foreigner"
+    },
+    {
+        "esp": "extranjero/extranjera",
+        "chi": "外國的；國外的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "foreign"
+    },
+    {
+        "esp": "el par",
+        "chi": "雙；對",
+        "posp": "m",
+        "collected": false,
+        "eng": "the pair; the couple"
+    },
+    {
+        "esp": "par",
+        "chi": "雙數的；偶數的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "(number) even"
+    },
+    {
+        "esp": "el parque",
+        "chi": "公園；綠地；車隊",
+        "posp": "m",
+        "collected": false,
+        "eng": "the park; the parkland; the fleet"
+    },
+    {
+        "esp": "la flor",
+        "chi": "花；花朵；花卉",
+        "posp": "f",
+        "collected": false,
+        "eng": "the flower"
+    },
+    {
+        "esp": "el ordenador",
+        "chi": "電腦",
+        "posp": "m",
+        "collected": false,
+        "eng": "the computer"
+    },
+    {
+        "esp": "junto",
+        "chi": "一起（的）；鄰近的",
+        "posp": "adj; adv",
+        "collected": false,
+        "eng": "together; closely"
+    },
+    {
+        "esp": "junto a",
+        "chi": "與...一起；在...旁邊",
+        "posp": "prep",
+        "collected": true,
+        "eng": "with; along with; together with; next to"
+    },
+    {
+        "esp": "similar",
+        "chi": "相似的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "similar"
+    },
+    {
+        "esp": "significar",
+        "chi": "表示；表明；意味著；意思是",
+        "posp": "v",
+        "collected": false,
+        "eng": "to signify; to mean; to indicate"
+    },
+    {
+        "esp": "conducir",
+        "chi": "駕駛；領導；導致；造成；傳導",
+        "posp": "v",
+        "collected": false,
+        "eng": "to drive; to lead; to conduct"
+    },
+    {
+        "esp": "llorar",
+        "chi": "哭；哭泣；流（淚）；哀悼；悲傷",
+        "posp": "v",
+        "collected": false,
+        "eng": "to cry; to weep; to mourn"
+    },
+    {
+        "esp": "la cerveza",
+        "chi": "啤酒",
+        "posp": "f",
+        "collected": false,
+        "eng": "the beer"
+    },
+    {
+        "esp": "el pez",
+        "chi": "魚",
+        "posp": "m",
+        "collected": false,
+        "eng": "the fish"
+    },
+    {
+        "esp": "el puzle",
+        "chi": "拼圖",
+        "posp": "m",
+        "collected": false,
+        "eng": "(game) the jigsaw; the jigsaw puzzle"
+    },
+    {
+        "esp": "el/la soldado",
+        "chi": "士兵；軍人",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the soldier"
+    },
+    {
+        "esp": "llevar",
+        "chi": "帶走；拿走；穿戴；歷時；（時間）流逝/經過；引導；導向；帶領；領導；（駕駛交通工具）載（人）；管理",
+        "posp": "v",
+        "collected": false,
+        "eng": "to take; to carry; to wear; (time) to be; to lead; to conduct; to drive (to give a ride); to manage"
+    },
+    {
+        "esp": "el jardín",
+        "chi": "花園；公園；院子",
+        "posp": "m",
+        "collected": false,
+        "eng": "the garden; the park; the yard"
+    },
+    {
+        "esp": "sentar",
+        "chi": "使坐下；建立；設立；創立",
+        "posp": "v",
+        "collected": false,
+        "eng": "to sit; to set; to establish"
+    },
+    {
         "esp": "crítico/crítica",
         "chi": "關鍵的；決定性的；危急的；批評的",
         "posp": "adj",
@@ -31,14 +192,14 @@
         "esp": "el radio",
         "chi": "半徑；（化學）鐳",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the radius; (chemistry) the radium"
     },
     {
         "esp": "radiar",
         "chi": "輻射；放射；發散；廣播；放送",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to radiate; to broadcast"
     },
     {
@@ -374,7 +535,7 @@
         "esp": "la oscuridad (la obscuridad)",
         "chi": "黑暗；無名；模糊；朦朧",
         "posp": "f",
-        "collected": true,
+        "collected": false,
         "eng": "the dark; the darkness; the obscurity"
     },
     {
@@ -3235,10 +3396,10 @@
     },
     {
         "esp": "millón",
-        "chi": "一百萬",
+        "chi": "百萬",
         "posp": "m; adj",
         "collected": false,
-        "eng": "one million"
+        "eng": "million"
     },
     {
         "esp": "mil millones",
@@ -3249,10 +3410,10 @@
     },
     {
         "esp": "billón",
-        "chi": "一兆",
+        "chi": "兆",
         "posp": "m; adj",
         "collected": false,
-        "eng": "one trillion"
+        "eng": "trillion"
     },
     {
         "esp": "primero/primera",
@@ -3465,73 +3626,129 @@
         "eng": "pink"
     },
     {
+        "esp": "el madrugador/la madrugadora",
+        "chi": "（常常、習慣）早起的人",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the early riser; the morning person"
+    },
+    {
+        "esp": "madrugador",
+        "chi": "（常常、習慣）早起的",
+        "posp": "adj",
+        "collected": true,
+        "eng": "early-rising"
+    },
+    {
+        "esp": "laborioso",
+        "chi": "艱難的；巨難的；耗時耗力的；費力的",
+        "posp": "adj",
+        "collected": true,
+        "eng": "laborious; arduous"
+    },
+    {
+        "esp": "otear",
+        "chi": "查看；俯視；俯瞰；鳥瞰",
+        "posp": "v",
+        "collected": true,
+        "eng": "to scan; to look down on"
+    },
+    {
+        "esp": "la lonchera",
+        "chi": "便當盒；午餐盒",
+        "posp": "f",
+        "collected": true,
+        "eng": "the lunch box"
+    },
+    {
+        "esp": "cuchichear",
+        "chi": "小聲說話；低語；耳語",
+        "posp": "v",
+        "collected": true,
+        "eng": "to whisper"
+    },
+    {
+        "esp": "el/la escolar",
+        "chi": "小學生",
+        "posp": "m/f",
+        "collected": false,
+        "eng": "the schoolchild"
+    },
+    {
+        "esp": "escolar",
+        "chi": "學校的",
+        "posp": "adj",
+        "collected": false,
+        "eng": "school"
+    },
+    {
         "esp": "el pegamento",
         "chi": "膠水；黏合劑；黏著劑",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the glue; the adhesive"
     },
     {
         "esp": "faltar a clase",
         "chi": "從課堂缺席",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to miss class; to skip class"
     },
     {
         "esp": "el anaquel",
         "chi": "架子；書架",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the shelf; the rack"
     },
     {
         "esp": "la rayuela",
         "chi": "跳房子/跳格子遊戲",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the hopscotch"
     },
     {
         "esp": "el capítulo",
         "chi": "篇；章；節；回；篇章；章節；章回",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the chapter"
     },
     {
         "esp": "la engrapadora",
         "chi": "訂書機",
         "posp": "f",
-        "collected": false,
+        "collected": true,
         "eng": "the stapler"
     },
     {
         "esp": "el cuadro de honor",
         "chi": "榮譽名冊；勇士名冊；優等生名冊",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the honor roll"
     },
     {
         "esp": "estudiantil",
         "chi": "學生的",
         "posp": "adj",
-        "collected": false,
+        "collected": true,
         "eng": "student"
     },
     {
         "esp": "calificar",
         "chi": "評分；打分數；修飾；使有資格；使合格",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to grade; to qualify"
     },
     {
         "esp": "el apunte",
         "chi": "筆記；大綱；概要",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the note; the outline"
     },
     {
@@ -3881,7 +4098,7 @@
         "esp": "el hilo",
         "chi": "線；裁縫線",
         "posp": "m",
-        "collected": true,
+        "collected": false,
         "eng": "the thread; the string; the yarn"
     },
     {
@@ -4035,36 +4252,85 @@
         "esp": "el cuadro",
         "chi": "正方形；表格；圖表；圖畫；繪畫；場景；腳踏車身的支架框",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the square; (graph) the table; the chart; the picture; the painting; the scene; the (bicycle's) frame"
     },
     {
         "esp": "el honor",
         "chi": "榮譽；貞潔；美德",
         "posp": "m",
-        "collected": false,
+        "collected": true,
         "eng": "the honor; the virtue"
     },
     {
         "esp": "los honores",
         "chi": "榮譽勳章；優等的頭銜",
         "posp": "pl",
-        "collected": false,
+        "collected": true,
         "eng": "the honors"
     },
     {
         "esp": "engrapar",
         "chi": "用訂書機訂住或訂起來；用夾具夾住或固定住",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "to staple; to clamp"
     },
     {
         "esp": "faltar",
         "chi": "缺席",
         "posp": "v",
-        "collected": false,
+        "collected": true,
         "eng": "(not attend) to miss; to skip; to be absent from"
+    },
+    {
+        "esp": "el rompecabezas",
+        "chi": "拼圖；難題",
+        "posp": "m",
+        "collected": true,
+        "eng": "the puzzle; the jigsaw; the jigsaw puzzle"
+    },
+    {
+        "esp": "desconcertar",
+        "chi": "使擾亂；使困惑；使迷惑",
+        "posp": "v",
+        "collected": true,
+        "eng": "to disconcert; to puzzle; to baffle; to bewilder; to confuse"
+    },
+    {
+        "esp": "concertar",
+        "chi": "安排；整理；協調；達成（一致）；調音",
+        "posp": "v",
+        "collected": true,
+        "eng": "to set up; to arrange; to agree; to tune"
+    },
+    {
+        "esp": "soldar",
+        "chi": "焊接；鍛接；使連接；使結合",
+        "posp": "v",
+        "collected": true,
+        "eng": "to solder; to weld"
+    },
+    {
+        "esp": "luego",
+        "chi": "（副）然後；接著；等等；馬上；（連）因此；所以",
+        "posp": "adv; conj",
+        "collected": true,
+        "eng": "(adv) then; later; soon; (conj) therefore"
+    },
+    {
+        "esp": "la computadora",
+        "chi": "電腦",
+        "posp": "f",
+        "collected": true,
+        "eng": "the computer"
+    },
+    {
+        "esp": "la paja",
+        "chi": "稻草；麥稈；吸管；手交；手淫",
+        "posp": "f",
+        "collected": true,
+        "eng": "the straw; the hay; the hand job; the wank"
     },
     {
         "esp": "el cabello",

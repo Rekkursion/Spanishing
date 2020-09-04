@@ -1,6 +1,7 @@
 package rekkursion.manager
 
 import rekkursion.enumerate.PickingScope
+import rekkursion.model.Conjugation
 import rekkursion.model.Vocabulary
 import rekkursion.util.VocIO
 
@@ -12,6 +13,10 @@ object VocManager {
     val numOfVocabularies: Int get() = mVocList.size
     val copiedCollectedList: ArrayList<Vocabulary> get() =
         mVocList.filter { it.isCollected }.toCollection(arrayListOf()).clone() as ArrayList<Vocabulary>
+
+    // read in conjugations of all verbs
+    private val mConjList = VocIO.readConjugations()
+    val copiedConjList: ArrayList<Conjugation> get() = mConjList.clone() as ArrayList<Conjugation>
 
     /* ======================================== */
 

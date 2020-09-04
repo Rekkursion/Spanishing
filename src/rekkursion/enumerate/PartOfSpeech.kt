@@ -29,6 +29,8 @@ enum class PartOfSpeech(val abbr: String) {
     CONJUNCTION("conj"),
     INTERJECTION("int"),
 
+    ADV_OR_CONJ("adv; conj"),
+
     // in case of some errors
     NONE("none");
 

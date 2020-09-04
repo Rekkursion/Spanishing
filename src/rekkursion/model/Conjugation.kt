@@ -1,12 +1,11 @@
 package rekkursion.model
 
-import org.json.JSONArray
 import rekkursion.enumerate.ConjugationType
 import rekkursion.enumerate.Persona
 import rekkursion.enumerate.Tense
 import rekkursion.enumerate.VerbType
 
-class Conjugation private constructor(esp: String) {
+class Conjugation private constructor(esp: String): Copiable {
     @Suppress("ReplaceWithEnumMap", "ReplacePutWithAssignment")
     class Builder(esp: String) {
         // the instance of the building-up conjugation
@@ -129,6 +128,36 @@ class Conjugation private constructor(esp: String) {
 
     // concatenate the verb with a certain tail
     private fun concate(tail: String): String = mEsp + tail
+
+    /* ======================================== */
+
+    override fun copy(): Conjugation {
+        val ret = Conjugation(mEsp)
+        ret.mPresentParticiple = mPresentParticiple
+        ret.mPastParticiple = mPastParticiple
+        ret.mConjDict.putAll(mConjDict)
+        return ret
+    }
+
+    /* ======================================== */
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Conjugation) return false
+
+        if (mEsp != other.mEsp) return false
+        if (mPresentParticiple != other.mPresentParticiple) return false
+        if (mPastParticiple != other.mPastParticiple) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = mEsp.hashCode()
+        result = 31 * result + mPresentParticiple.hashCode()
+        result = 31 * result + mPastParticiple.hashCode()
+        return result
+    }
 
     override fun toString(): String =
             """
